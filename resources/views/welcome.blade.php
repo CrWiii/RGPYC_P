@@ -1037,11 +1037,166 @@
                                             </section>
                                             <h3><span class="head-font capitalize-font">Gestores</span></h3>
                                             <section>
-                                                <p>eam aliquip probatus complectitur ei. Sale omnes persius sea ut, repudiare mnesarchum te nec. Ei ubique veritus mediocrem eos. Mel at per, possit accusamus vim an. Cu vel possit dolorum. Elit placerat molestiae mea ne te ferri errem noluisse quo, meis civibus ea est viris delectus recteque ad, mei persius suavitate ad.</p>
+                                                <div class="col-md-12 block_border">
+                                                        <div class="col-md-12 col-md-12 form-group row fix-size-for-input">
+                                                    <label  class="col-md-2 form-label">Aseguradora <label style="color: #FF0000;">(*)</label> </label>
+                                                    <div class="col-sm-2 fix-size-for-input">
+                                                        <div class="form-group{{ $errors->has('cia_id') ? ' has-error' : '' }}" id="cia_id_block" >
+                                                            <select class="form-control input-sm" name="cia_id" id="cia_id">
+                                                                    <option value="0" @if (old('cia_id') == '0') selected="selected" @endif>SELECCIONE UNA ASEGURADORA</option>
+                                                                    @foreach($cia as $key => $value)
+                                                                        <option value="{{$key}}" @if (old('cia_id') == $key) selected="selected" @endif>{{$value}}</option>
+                                                                    @endforeach
+                                                            </select>
+                                                            @if ($errors->has('cia_id'))
+                                                                    <span class="help-block" style="color: #ff0000">
+                                                                        <strong>{{ $errors->first('cia_id') }}</strong>
+                                                                    </span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <label class="col-md-2 form-label">Broker </label>
+                                                    <div class="col-md-2 fix-size-for-input" id="broker_id_block">                                              
+                                                        <select class="form-control select2" name="broker_id" id="broker_id" style="width: 100%">
+                                                            <option selected="selected" value="0" >SELECCIONE UN BROKER</option>
+                                                            @foreach(@$Brokers as $broker)
+                                                                <option value="{{$broker->id}}">{{$broker->description}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                    <label class="col-md-2 form-label">Responsable</label>
+                                                    <div class="col-md-2 fix-size-for-input" id="responsable_id_block">
+                                                        <select class="form-control input-sm" name="responsable_id" id="responsable_id">
+                                                            <option value="0">SELECCIONE UN RESPONSABLE</option>
+                                                            @foreach($Responsables as $responsable)
+                                                            <option value="{{$responsable->id}}">{{$responsable->search}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 col-md-12 form-group row fix-size-for-input">
+
+                                                    <label  class="col-md-2 form-label">Responsable <label style="color: #ffffff;">(*)</label> </label>
+                                                    <div class="col-md-2 fix-size-for-input" id="ejecutivo_aseguradora_name_block">
+                                                        <div class="form-group">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control input-sm" name="ejecutivo_aseguradora_name" id="ejecutivo_aseguradora_name" value="{{ old('ejecutivo_aseguradora_name') }}" disabled="disabled">
+                                                                <input type="hidden" name="ejecutivo_aseguradora_id" id="ejecutivo_aseguradora_id" value="{{ old('ejecutivo_aseguradora_id') }}">
+                                                                <span class="input-group-btn">
+                                                                    <button id="searchPerson" data-id="3" type="button" class="btn btn-default btn-sm"><i class="fa fa-search"></i></button>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <label  class="col-md-2 form-label">Responsable</label>
+                                                    <div class="col-md-2 fix-size-for-input" id="ejecutivo_broker_name_block">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control input-sm" name="ejecutivo_broker_name" id="ejecutivo_broker_name" value="{{ old('ejecutivo_broker_name') }}" disabled="disabled">
+                                                            <input type="hidden" name="ejecutivo_broker_id" id="ejecutivo_broker_id" value="{{ old('ejecutivo_broker_id') }}" >
+                                                            <span class="input-group-btn">
+                                                                <button id="searchPerson" data-id="4" type="button" class="btn btn-default btn-sm"><i class="fa fa-search"></i></button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <label class="col-md-2 form-label">Ajustador</label>
+                                                    <div class="col-md-2 fix-size-for-input" id="ajustador_asignado_id_block">
+                                                        <select class="form-control input-sm" name="ajustador_asignado_id" id="ajustador_asignado_id">
+                                                                <option selected="selected" value="0" >SELECCIONE UN AJUSTADOR</option>
+                                                            @foreach($ajustadores as $ajustador)
+                                                                <option value="{{$ajustador->id}}">{{$ajustador->search}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+
+
+
+                                                    </div>
+
+
+                                                <div class="col-md-12 col-md-12 form-group row fix-size-for-input">
+                                                    <label  class="col-md-2 form-label">N° de Siniestro  <label style="color: #ffffff;">(*)</label> </label>
+                                                     <div class="col-md-2 fix-size-for-input"> 
+                                                        <div class="form-group">
+                                                            <input type="text"  class="form-control input-sm" name="num_siniestro_cia" id="num_siniestro_cia">
+                                                        </div>
+                                                    </div>
+                                                    <label  class="col-md-2 form-label">N° de Siniestro Broker</label>
+                                                    <div class="col-md-2 fix-size-for-input">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control input-sm" name="num_siniestro_broker" id="num_siniestro_broker">
+                                                        </div>
+                                                    </div>
+                                                    <label  class="col-md-2 form-label">Equipo</label>
+                                                    <div class="col-md-2 fix-size-for-input">
+                                                        <div class='input-group date'>
+                                                        <span class="input-group-addon" data-toggle="modal" data-target="#modal-equipo"><span class="glyphicon glyphicon-plus"></span></span>
+                                                        <input type="text" class="form-control input-sm" id="equipo" name="equipo" disabled="disabled">
+                                                        <span class="input-group-addon"><i data-toggle="tooltip" style="width: 100%;" data-html="true" id="post_title"><span class="glyphicon glyphicon-eye-open"></span></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12 col-md-12 form-group row fix-size-for-input">
+                                                    <label  class="col-md-2 form-label">N° de Póliza <label style="color: #FF0000; font-size:0.9em;"></label> </label>
+                                                    <div class="col-md-2 fix-size-for-input" id="num_poliza_block">
+                                                        <div class="form-group">
+                                                            <input type="text"  class="form-control input-sm" name="num_poliza" id="num_poliza">
+                                                        </div>
+                                                    </div>                              
+                                                </div>
+
+                                                </div>
                                             </section>
                                             <h3><span class="head-font capitalize-font">Inspeccion</span></h3>
                                             <section>
-                                                <p>Quo epicurei perfecto instructior id, semper verear virtute te has. Mucius oblique vis ne, ius ei erat nonumes necessitatibus..</p>
+                                                <div class="col-md-12 block_border">
+                                                    <div class="col-md-12 col-md-12 form-group row fix-size-for-input" id="div_inspeccion">
+                                                        <label  class="col-md-2 form-label"><!--Fecha y Hora en la que se--> Coordina la Inspección </label>
+                                                        <div class="col-md-2 fix-size-for-input">
+                                                            <div class='input-group date'>
+                                                                <span class="input-group-addon" id="vitacora" data-toggle="modal" data-target="#modal-vitacora"><span class="glyphicon glyphicon-plus"></span></span>
+                                                                <input type="text" class="form-control input-sm" id="fecha_coordinacion_inspeccion" name="fecha_coordinacion_inspeccion" disabled="disabled" >
+                                                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                            </div>
+                                                        </div>
+
+                                                            <label class="col-md-2 form-label"><!--Fecha y Hora para la que se--> programa la Inspección</label>
+                                                            <div class="col-md-2 fix-size-for-input">
+                                                                <div class='input-group date'>
+                                                                    <input type="text" class="form-control input-sm" id="fecha_programada_inspeccion" name="fecha_programada_inspeccion">
+                                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                                </div>
+                                                            </div>
+
+                                                            <label  class="col-md-2 form-label">Direccion de Inspección</label>
+                                                            <div class="col-md-2">
+                                                                <input type="text" class="form-control  input-sm" name="direccion_inspeccion" id="direccion_inspeccion">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12 col-md-12 form-group row fix-size-for-input" style="margin-top: 5px !important">
+                                                            <label  class="col-md-2 form-label">Referencia de Dirección </label>
+                                                            <div class="col-md-2 fix-size-for-input">
+                                                                <input type="text" class="form-control  input-sm" name="direccion_referencia" id="direccion_referencia">
+                                                            </div>
+                                                            <label  class="col-md-2 form-label">Persona de Contacto</label>
+                                                            
+                                                            <div class="col-md-2 fix-size-for-input" id="contact_inspeccion_block">
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control input-sm" name="contact_inspeccion_name" id="contact_inspeccion_name" value="{{ old('contact_inspeccion_name') }}" disabled="disabled">
+                                                                    <input type="hidden" name="contact_inspeccion_id" id="contact_inspeccion_id" value="{{ old('contact_inspeccion_id') }}">
+                                                                    <span class="input-group-btn">
+                                                                        <button id="searchPerson" data-id="8" type="button" class="btn btn-default btn-sm"><i class="fa fa-search"></i></button>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <span>
+                                                    <button id="boton_SinIns" type="button" class="btn btn-default btn-sm"  data-toggle="tooltip" title="Significa que no se a conseguido la informacion necesaria para coordinar con el asegurado"><input type="checkbox" id="checkBox_EnEsp"> En Espera </button>
+                                                    <button id="boton_SinIns" type="button" class="btn btn-default btn-sm"  data-toggle="tooltip" title="Significa que el reclamo no amerita una inspeccion en el sitio"><input type="checkbox" id="checkBox_SinIns"> Sin inspeccion</button>
+                                                </span>
                                             </section>
 
                                         </div>
