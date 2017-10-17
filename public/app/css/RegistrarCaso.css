@@ -1,0 +1,211 @@
+.framn{
+	margin-left: 0px;padding: 0px;
+}
+.bhty{
+	width:100%;padding: 5px;
+}
+.title-reg{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.box-title{
+	font-size: 20px !important;
+	color:#505c62 !important;
+}
+.ui-autocomplete {
+    z-index: 5000;
+}
+
+.block_border{
+	margin:0; color:#555; border: 1px solid #a79a9a; padding:20px 10px 10px 10px; border-radius: 5px;
+}
+.la-red{
+	color: #FF0000;
+}
+.select2-selection {
+    font-size: 12px !important;
+}
+
+.select2-results__options{
+    font-size: 12px !important;
+}
+
+.select2-results__option{
+	text-transform: uppercase !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+	line-height: 22px !important;
+}
+.ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+  * html .ui-autocomplete {
+    height: 100px;
+  }
+ 
+	.btnarrw{
+			margin-top: 0px;
+			float: right;
+		}
+	.btninf{
+		font-size: 0.8em !important;float: right;padding-top: 1px !important; padding-bottom: 1px !important; margin-right: 10px;margin-top: 2px !important;
+	}
+	.modal-backdrop.in {
+	    opacity: 0 !important;
+	}
+	.box-body{
+		padding: 5px !important;
+	}
+	.panel-default{
+		margin-bottom: 0px !important;
+	}
+	.panel-heading{
+		padding: 5px !important;
+	}
+	.glyphicon{
+		color:#9ba7ad !important;
+	}
+
+
+	.numlist{
+	font-size: 100%;
+	color:#9ba7ad;
+}
+.frameTit{
+	vertical-align: middle;
+	padding-left: 10px !important; 
+	font-size: 0.95em !important;
+	color:#9ba7ad !important;
+}
+.content-header{
+
+}
+.gg{
+	margin-left: 0px;padding: 0px;
+}
+.ggt > tbody > tr > th {
+	padding-top: 4px !important;
+	background-color: #f5f5f5 !important;
+}
+
+.form-control{
+		color:#000000;
+}
+    .collapsedBorder {
+    	margin-bottom: 10px;
+    }
+	.row{
+		font-size: 1em !important;
+	}
+	.form-label{
+		padding-top: 5px;
+    	padding-bottom: 3px;
+    	padding-right: 0px;
+	}
+	.form-group{
+		margin-bottom: 0px;
+	}
+
+	.sizePadding{
+		padding-right: 4px;
+		margin-bottom: 0px;
+    /* height: 35px; */
+
+		/*padding-left: 5px;*/
+	}
+
+	.form-control{
+		color:#000000;
+	}
+
+	input, textarea{
+		text-transform: uppercase;
+	} 
+
+	input[type=submit] {
+		text-transform: capitalize;
+	}
+
+	input[type=email] {
+		text-transform: lowercase;
+	}
+
+	select.input-sm {
+    	height: 25px;
+    	line-height: 15px;
+	}
+/*	.input-sm {
+    	height: 25px;
+    	line-height: 15px;
+	}*/
+	.input-sm {
+	    padding: 2px 10px;
+	}
+
+	.collapsedBorder{
+		border:1px solid #a79a9a;
+	}
+
+	.glyphicon {
+    	color: #484646 !important;
+	}
+
+	.tooltip-inner {
+		font-size: 0.9em !important;
+	    max-width: 250px;
+	    /* If max-width does not work, try using width instead */
+	    width: 250px; 
+	}
+
+	.modal-lg {
+	    height:   500px;
+	}
+
+	.removeValid{
+		border: 1px solid #ccc !important;
+	}
+	.addValid{
+		border: 2.5px solid #f90000 !important;
+	}
+
+/*.JColResizer td, .JColResizer th{overflow:hidden;} */
+@media screen and (max-width: 767px) {table {border: 0; } table thead {display: none; } table tr {margin-bottom: 10px; display: block; border-bottom: 2px solid #ddd; } table td {display: block; text-align: right; font-size: 13px; border-bottom: 1px dotted #ccc; } table td:last-child {border-bottom: 0; } table td:before {content: attr(data-label); float: left; text-transform: uppercase; font-weight: bold; } } 
+#searchclear {position: absolute; right: 5px; top: 0; bottom: 0; height: 14px; margin: auto; font-size: 14px; cursor: pointer; color: #ccc; }
+.cssload-spin-box {position: absolute; margin: auto; left: 0; top: 0; bottom: 0; right: 0; width: 15px; height: 15px; border-radius: 100%; box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); -o-box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); -ms-box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); -webkit-box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); -moz-box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); animation: cssload-spin ease infinite 4.6s; -o-animation: cssload-spin ease infinite 4.6s; -ms-animation: cssload-spin ease infinite 4.6s; -webkit-animation: cssload-spin ease infinite 4.6s; -moz-animation: cssload-spin ease infinite 4.6s; } @keyframes cssload-spin {0%, 100% {box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); } 25% {box-shadow: -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73); } 50% {box-shadow: -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223); } 75% {box-shadow: 15px -15px #dfdfdf, 15px 15px #4f4d49, -15px 15px #dfdfdf, -15px -15px #4f4d49; } } @-o-keyframes cssload-spin {0%, 100% {box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); } 25% {box-shadow: -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73); } 50% {box-shadow: -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223); } 75% {box-shadow: 15px -15px #dfdfdf, 15px 15px #4f4d49, -15px 15px #dfdfdf, -15px -15px #4f4d49; } } @-ms-keyframes cssload-spin {0%, 100% {box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); } 25% {box-shadow: -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73); } 50% {box-shadow: -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223); } 75% {box-shadow: 15px -15px #dfdfdf, 15px 15px #4f4d49, -15px 15px #dfdfdf, -15px -15px #4f4d49; } } @-webkit-keyframes cssload-spin {0%, 100% {box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); } 25% {box-shadow: -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73); } 50% {box-shadow: -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223); } 75% {box-shadow: 15px -15px #dfdfdf, 15px 15px #4f4d49, -15px 15px #dfdfdf, -15px -15px #4f4d49; } } @-moz-keyframes cssload-spin {0%, 100% {box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); } 25% {box-shadow: -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73); } 50% {box-shadow: -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223); } 75% {box-shadow: 15px -15px #dfdfdf, 15px 15px #4f4d49, -15px 15px #dfdfdf, -15px -15px #4f4d49; } } 
+
+
+.fix-size-for-all .panel-body{
+    padding: 5px !important;
+}
+.fix-size-for-all .block_border {
+	padding: 10px !important;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin: 0 !important;
+}
+
+@media (min-width:1000px) and (max-width:1024px){
+	label{
+		font-size: 0.85em !important;
+	}
+    .fix-size-for-input{
+	    padding-left: 0px !important;
+    	padding-right: 0px !important;
+
+    }
+    .select2-container .select2-selection--single {
+    	height: 30px !important;
+    }
+    .input-sm {
+    	height: 30px !important;
+	}
+}

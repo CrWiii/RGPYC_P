@@ -21,6 +21,7 @@
         
         <!-- bootstrap-touchspin CSS -->
         <link href="vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('app/css/RegistrarCaso.css') }}">
         
         <!-- Custom CSS -->
         <link href="dist/css/style.css" rel="stylesheet" type="text/css">
@@ -1224,7 +1225,29 @@
             </div>
             <!-- /Main Content -->
         </div>
-        <!-- /#wrapper -->
+
+    @include('componentes.BuscarPersona')
+    @include('componentes.vitacora')
+    @include('componentes.equipo')
+    @include('componentes.espera')
+
+
+<script type="text/javascript">
+    var redirectToR = "{{URL::to('/ListaSiniestros')}}";
+</script>
+<!-- <script src="{{ asset('plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
+<script src="{{ asset('plugins/jQueryUI/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('plugins/select2/select2.full.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<script src="{{asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
+<script src="{{asset('plugins/datepicker/bootstrap-datepicker.js') }}"></script>
+<script src="{{asset('plugins/timepicker/bootstrap-datetimepicker.min.js') }}"></script>
+<script src="{{asset('plugins/timepicker/bootstrap-datetimepicker.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/es.js"></script>
+<script src="//cdn.jsdelivr.net/momentjs/latest/moment-with-locales.min.js"></script>
+<script src="{{asset('/plugins/datepicker/locales/bootstrap-datepicker.es.js') }}"></script>
+<script src="https://tecactus-4b42.kxcdn.com/reniec-sunat-js.min.js"></script> -->
+
         
         <!-- JavaScript -->
         
@@ -1254,6 +1277,9 @@
         <script src="vendors/bower_components/switchery/dist/switchery.min.js"></script>
         <!-- Init JavaScript -->
         <script src="dist/js/init.js"></script>
+
+        <script src="{{asset('app/js/RegistroCaso.js')}}"></script>
+        <script src="{{asset('app/js/BuscarPersona.js')}}"></script>
             
     </body>
 </html>
