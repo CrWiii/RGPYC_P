@@ -1,3 +1,34 @@
+input{
+	height: 30px !important;
+}
+div.clearfix > ul > li > a {
+    padding: 3px 5px !important;
+}
+#searchPerson{
+	padding: 5px 15px !important;
+}
+.btn-fix-call-modal{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+.page-wrapper {
+    margin-left: 0px !important;
+    padding: 35px 0px;
+}
+.fix-panel{
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+}
+.container-fluid{
+	padding-right: 8px !important;
+	padding-left: 8px !important;
+}
+.wizard > .content {
+    min-height: 20em !important;
+    background: #ffffff !important;
+}
 .framn{
 	margin-left: 0px;padding: 0px;
 }

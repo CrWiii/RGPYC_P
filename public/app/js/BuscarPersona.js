@@ -23,6 +23,7 @@
 				source: "/getPersona",
 				minLength: 3,
 					select: function(event, ui) {
+						$('#FormRegistrarPersona').show();
 						var data = ui.item;
 						person_id_selected = data.id;
 						populateInputs(data);
@@ -34,14 +35,17 @@
 
 	function populateInputs(data){
 		$('#persona_id_selected_,#nombres,#apellido_paterno,#apellido_materno,#dni,#email,#telefono,#cargo').val('').removeAttr('disabled','disabled');
-		if(data.id){$('#persona_id_selected_').val(data.id);}
-		if(data.nombres){$('#nombres').val(data.nombres).attr('disabled','disabled');}
-		if(data.apellido_paterno){$('#apellido_paterno').val(data.apellido_paterno).attr('disabled','disabled');}
-		if(data.apellido_materno){$('#apellido_materno').val(data.apellido_materno).attr('disabled','disabled');}
-		if(data.dni){$('#dni').val(data.dni).attr('disabled','disabled');}
-		if(data.email){$('#email').val(data.email).attr('disabled','disabled');}
-		if(data.telefono){$('#telefono').val(data.telefono).attr('disabled','disabled');}
-		if(data.cargo){$('#cargo').val(data.cargo).attr('disabled','disabled');}
+
+		if(data){
+			$('#persona_id_selected_').val(data.id);
+			$('#nombres').val(data.nombres).attr('disabled','disabled');
+			$('#apellido_paterno').val(data.apellido_paterno).attr('disabled','disabled');
+			$('#apellido_materno').val(data.apellido_materno).attr('disabled','disabled');
+			$('#dni').val(data.dni).attr('disabled','disabled');
+			$('#email').val(data.email).attr('disabled','disabled');
+			$('#telefono').val(data.telefono).attr('disabled','disabled');
+			$('#cargo').val(data.cargo).attr('disabled','disabled');
+		}
 	}
 	function updatePersonaSelected(person_type,data){
 		switch(person_type){ 
@@ -241,5 +245,14 @@
 	});
 	$(document).on('click','#clearParam',function(){
 		clearPersonaSelected(person_type);
+		$('#FormRegistrarPersona').hide();
 		$('#paramForSearch,#nombres,#apellido_paterno,#apellido_materno,#dni,#email,#telefono,#cargo,#fecha_nacimiento').val('').removeAttr('disabled','disabled');
+	});
+
+	$(document).on('click','#NuevaPersona', function(){
+		$('#FormRegistrarPersona').show();
+	});
+	$(document).on('click','#paramForSearch',function(){
+		clearPersonaSelected(person_type);
+		$('#FormRegistrarPersona').hide();
 	});

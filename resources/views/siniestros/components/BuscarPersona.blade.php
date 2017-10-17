@@ -10,22 +10,27 @@
           	{{csrf_field()}}
             <div class="control-group col-md-12" style="margin: 5px;margin-bottom: 20px !important;">
                 <div class="col-md-4">
-                    <label class="control-label">DNI o Nombre:</label>
+                    <label class="control-label">Nombre:</label>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <div class="input-group">
                             <input type="text" class="form-control input-sm" name="paramForSearch" id="paramForSearch">
                             <span class="input-group-btn" title="Limpiar">
-                                <button id="clearParam" data-id="1" type="button" class="btn btn-default btn-sm"><i class="fa fa-eraser"></i></button>
+                                <button id="clearParam" data-id="1" type="button" class="btn btn-default btn-sm btn-fix-call-modal"><i class="fa fa-eraser"></i></button>
                                 </span>
                         </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <button id="NuevaPersona" data-id="1" type="button" class="btn btn-default btn-sm btn-fix-call-modal"><i class="fa fa-user"></i></button>                        
                     </div>
                 </div>
             </div>
 
             
-
+        <div id="FormRegistrarPersona" style="display: none">
             <div class="control-group col-md-12" style="margin: 5px;">
             	<div class="col-md-4">
             		<label class="control-label">Nombres:</label>
@@ -116,7 +121,7 @@
             	<div class="col-md-2">
             	</div>
             </div>
-                       
+        </div>             
             <div class="control-group">
                 <label class="control-label" for="when"></label> 
                   <div class="controls controls-row" id="whens">
@@ -124,6 +129,8 @@
                   <input type="hidden" id="whenss" />
                   <input type="hidden" id="persona_id_selected_" name="">
             </div>
+        
+
           </form>
         </div>
         <div class="modal-footer">
