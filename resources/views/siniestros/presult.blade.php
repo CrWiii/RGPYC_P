@@ -1,91 +1,83 @@
-<style type="text/css">
-	table > tbody > tr > td {
-		vertical-align: middle !important;
-		text-align:center;
-		padding-bottom: 4px !important;
-		padding-top: 4px !important;
-	}
-</style>
 <table id="nom"  width="100%" border="0" cellpadding="0" cellspacing="0" class="table table-bordered" style="white-space: nowrap;font-size: 11px !important">
 	<thead>
-		<tr style="background-color: #eff3f5 !important;color:#5c6a71 !important;">
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px;width: 50px">
+		<tr class="table-tit">
+			<th style="text-align:center;width: 50px">
 				<a id="sorter" data-cont="num_ajuste" style="cursor: pointer !important;">N° Ajuste
 					<i id="sort" data-cont="num_ajuste"  style="font-size: 11px;padding-top: 2px;cursor: pointer !important; display: none;" class="fa fa-long-arrow-down"></i>
 				</a>
 			</th>
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px;width: 90px;padding-left: 4px;">
+			<th style="text-align:center;width: 90px;padding-left: 4px;">
 				<a id="sorter" data-cont="cia_id" style="cursor: pointer !important;">Aseguradora 
 					<i id="sort" data-cont="cia_id"  style="font-size: 11px;padding-top: 2px;cursor: pointer !important; display: none;" class="fa fa-arrows-v"></i>
 				</a>
 			</th>
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px;width: 50px;padding-left: 4px;" >
+			<th style="text-align:center;width: 50px;padding-left: 4px;" >
 				<a id="sorter" data-cont="num_siniestro_cia" style="cursor: pointer !important;">N° Siniestro
 					<i id="sort" data-cont="num_siniestro_cia"  style="font-size: 11px;padding-top: 2px; display: none;" class="fa fa-arrows-v"></i>
 				</a>
 			</th>
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px;width: 75px;padding-left: 4px;" >
+			<th style="text-align:center;width: 75px;padding-left: 4px;" >
 				<a  id="sorter" data-cont="broker_id" style="cursor: pointer !important;">Broker
 					<i id="sort" data-cont="broker_id"  style="font-size: 11px;padding-top: 2px; display: none;" class="fa fa-arrows-v"></i>
 				</a>
 			</th>
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px;width: 50px;padding-left: 4px;" >
+			<th style="text-align:center;width: 50px;padding-left: 4px;" >
 				<a  id="sorter" data-cont="num_siniestro_broker" style="cursor: pointer !important;">N° Broker
 					<i id="sort" data-cont="num_siniestro_broker"  style="font-size: 11px;padding-top: 2px; display: none;" class="fa fa-arrows-v"></i>
 				</a>
 			</th>
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px;width: 95px;" >
+			<th style="text-align:center;width: 95px;" >
 				<a  id="sorter" data-cont="asegurado_name" style="cursor: pointer !important;">Asegurado
 					<i id="sort" data-cont="asegurado_name"  style="font-size: 11px;padding-top: 2px; display: none;" class="fa fa-arrows-v"></i>
 				</a>
 			</th>
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px;width: 85px">
+			<th style="text-align:center;width: 85px">
 				<a id="sorter" data-cont="ramo_id" style="cursor: pointer !important;">Ramo
 					<i id="sort" data-cont="ramo_id"  style="font-size: 11px;padding-top: 2px;cursor: pointer !important; display: none;" class="fa fa-arrows-v"></i>
 				</a>
 			</th>
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px;width: 50px;">
+			<th style="text-align:center;width: 50px;">
 				<a  id="sorter" data-cont="num_poliza" style="cursor: pointer !important;">N° Poliza
 					<i id="sort" data-cont="num_poliza"  style="font-size: 11px;padding-top: 2px;cursor: pointer !important; display: none;" class="fa fa-arrows-v"></i>
 				</a>
 			</th>
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px;width: 50px">
+			<th style="text-align:center;width: 50px">
 				<a  id="sorter" data-cont="fecha_siniestro" style="cursor: pointer !important;">F. Siniestro
 					<i id="sort" data-cont="fecha_siniestro"  style="font-size: 11px;padding-top: 2px;cursor: pointer !important; display: none;" class="fa fa-arrows-v"></i>
 				</a>
 			</th>
 			
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px;width: 50px">
+			<th style="text-align:center;width: 50px">
 				<a  id="sorter" data-cont="notifier_date" style="cursor: pointer !important;">F. Encargo
 					<i id="sort" data-cont="notifier_date"  style="font-size: 11px;padding-top: 2px;cursor: pointer !important; display: none;" class="fa fa-arrows-v"></i>
 				</a>
 			</th>
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px;width: 70px">
+			<th style="text-align:center;width: 70px">
 				<a  id="sorter" data-cont="moneda" style="cursor: pointer !important;">Moneda
 					<i id="sort" data-cont="moneda"  style="font-size: 11px;padding-top: 2px;cursor: pointer !important;display: none;" class="fa fa-arrows-v"></i>
 				</a>
 			</th>
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px;width: 70px">
+			<th style="text-align:center;width: 70px">
 				<a  id="sorter" data-cont="monto_reclamo" style="cursor: pointer !important;">M. Reclamado
 					<i id="sort" data-cont="monto_reclamo"  style="font-size: 11px;padding-top: 2px;cursor: pointer !important; display: none;" class="fa fa-arrows-v"></i>
 				</a>
 			</th>
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px; width: 60px">
+			<th style="text-align:center;width: 60px">
 				<a  id="sorter" data-cont="reserva_inicial" style="cursor: pointer !important;">Reserva Neta
 					<i id="sort" data-cont="reserva_inicial"  style="font-size: 11px;padding-top: 2px;cursor: pointer !important; display: none;" class="fa fa-arrows-v"></i>
 				</a>
 			</th>
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px;width: 30px">
+			<th style="text-align:center;width: 30px">
 				<a  id="sorter" data-cont="notifier_date" style="cursor: pointer !important;">Dias
 					<i id="sort" data-cont="notifier_date"  style="font-size: 11px;padding-top: 2px;cursor: pointer !important; display: none;" class="fa fa-arrows-v"></i>
 				</a>
 			</th>
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px;width: 80px">
+			<th style="text-align:center;width: 80px">
 				<a  id="sorter" data-cont="fecha_iforme_final" style="cursor: pointer !important;">Ultimo Informe
 					<i id="sort" data-cont="fecha_iforme_final"  style="font-size: 11px;padding-top: 2px;cursor: pointer !important; display: none;" class="fa fa-arrows-v"></i>
 				</a>
 			</th>
-			<th style="text-align:center;padding-bottom: 4px;padding-top: 4px;width: 100px">
+			<th style="text-align:center;width: 100px">
 				<a  id="sorter" data-cont="estado_id" style="cursor: pointer !important;">Estado
 					<i id="sort" data-cont="estado_id" style="font-size: 11px;padding-top: 2px;cursor: pointer !important; display: none;" class="fa fa-arrows-v"></i>
 				</a>
@@ -267,9 +259,6 @@
 	<div id="pagi" >
 		{!! $Casos->render() !!}
 	</div>
-	<style type="text/css">
-		.pagination{margin-top: 5px !important;margin-bottom: 5px !important;}
-	</style>
 </div>
 
 <!--

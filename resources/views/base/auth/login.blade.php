@@ -4,17 +4,48 @@
     SR2 - Login
 @endsection
 
+@section('styles')
+<link href="{{ asset('/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>   
+<link href="{{ asset('/dist/css/style.css') }}" rel="stylesheet" type="text/css">
+<style type="text/css">
+    .btnn{
+    height: 35px !important;
+    /*font-family: 'ABeeZee',Arial,Helvetica,sans-serif;*/
+    border-radius: 3px !important;
+    font-size: 11.5px !important;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: normal;
+    padding: 6px 15px !important;
+    border: 1px solid #dedede !important;
+    background: #ffffff !important;
+    color: #000 !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#efefef));
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    overflow: visible;
+}
+</style>
+@endsection
+
 @section('content')
 
     <div class="page-wrapper pa-0 ma-0 auth-page">
         <div class="container-fluid">
-            <div class="table-struct full-width full-height">
+            <div class="table-struct full-width">
                 <div class="table-cell vertical-align-middle auth-form-wrap">
                     <div class="auth-form  ml-auto mr-auto no-float">
                         <div class="row">
                             <div class="col-sm-12 col-xs-12">
                                 <div class="mb-30">
-                                    <h3 class="text-center txt-dark mb-10"><div id="logoo"><img id="logo" src="{{url('/img/logo.jpg')}}" width="280" style="padding-left: 20px;"></div></h3>
+                                    <h3 class="text-center txt-dark mb-10"><div id="logoo"><img id="logo" src="{{url('/img/pyc.png')}}" width="360" style="padding-left: 20px;"></div></h3>
                                     <h6 class="text-center nonecase-font txt-grey"></h6>
                                 </div>  
                                 <div class="form-wrap">
@@ -52,7 +83,7 @@
                                             <div class="clearfix"></div>
                                         </div>
                                         <div class="form-group text-center">
-                                            <button type="submit" class="btn btn-info btn-primary btn-rounded">Log in</button>
+                                            <button type="submit" class="btnn">Ingresar</button>
                                         </div>
                                     </form>
                                 </div>
@@ -67,6 +98,15 @@
 
 @endsection
 @section('scripts')
+<script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('dist/js/dataTables-data.js') }}"></script>
+    <script src="{{ asset('dist/js/jquery.slimscroll.js') }}"></script>
+    <script src="{{ asset('vendors/bower_components/owl.carousel/dist/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('vendors/bower_components/switchery/dist/switchery.min.js') }}"></script>
+    <script src="{{ asset('dist/js/dropdown-bootstrap-extended.js') }}"></script>
+    <script src="{{ asset('dist/js/init.js') }}"></script>
 <script type="text/javascript">
 
 $(document).on('blur','#email', function(){

@@ -72,7 +72,7 @@ class CasoController extends Controller{
 
         $this->validarPermisos($user,$query);
 
-        $Casos = $query->paginate(20);
+        $Casos = $query->paginate(25);
 
         $TotResultCases = $Casos->total($Casos);
 
@@ -121,11 +121,11 @@ class CasoController extends Controller{
                $param =  $request->orderby;
                $CasosZ =  $query->with(array('cia' => function ($subQuery) use($param){
                                 $subQuery->orderBy('nombre_comercial', $param);}
-                    ))->paginate(20);
-                $Casos = $query->orderby($request->campo_tab,  $request->orderby)->paginate(20);
+                    ))->paginate(25);
+                $Casos = $query->orderby($request->campo_tab,  $request->orderby)->paginate(25);
             }
             else{
-                $Casos = $query->orderby($request->campo_tab,  $request->orderby)->paginate(20);
+                $Casos = $query->orderby($request->campo_tab,  $request->orderby)->paginate(25);
             }
             $TotResultCases = $Casos->total($Casos);
             return view('siniestros.presult',compact('Casos','TotResultCases'));

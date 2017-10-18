@@ -139,5 +139,6 @@ return [
     'lastname'                  => 'Apellido',
     'firstname'                 => 'Nombre',
     'regnewmember'              => 'Registar un nuevo miembro',
+    'title_reg'                 => 'Registrar Caso',
 
 ];

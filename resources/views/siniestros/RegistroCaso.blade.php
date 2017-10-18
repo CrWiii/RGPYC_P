@@ -1,13 +1,20 @@
 @extends('base.layouts.app')
 
 @section('htmlheader_title')
-	SR2 - Registro de Caso
+	SR2 - {{trans('message.title_reg')}}
 @endsection
 
 @section('styles')
-	<link href="vendors/bower_components/jquery-wizard.js/css/wizard.css" rel="stylesheet" type="text/css"/>
+<!-- 	<link href="vendors/bower_components/jquery-wizard.js/css/wizard.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="vendors/bower_components/jquery.steps/demo/css/jquery.steps.css">
+    <link href="vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css"/> -->
+
+
+    <link href="vendors/bower_components/jquery-wizard.js/css/wizard.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="vendors/bower_components/jquery.steps/demo/css/jquery.steps.css">
+    <link href="vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
     <link href="vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css"/>
+    <link href="dist/css/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ asset('plugins/jQueryUI/jquery-ui.css') }}">
     <link rel="stylesheet" href="{{ asset('app/css/RegistrarCaso.css') }}">
 @endsection
@@ -25,7 +32,7 @@
                 <div class="container-fluid">
                     <div class="row heading-bg">
                         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                          <h4 class="txt-dark">Registrar Caso</h4>
+                          <h4 class="txt-dark">{{trans('message.title_reg')}}</h4>
                         </div>
                         <!-- Breadcrumb -->
                         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
@@ -37,6 +44,7 @@
                         </div>
                         <!-- /Breadcrumb -->
                     </div>
+
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="panel panel-default card-view">
@@ -455,20 +463,20 @@
 	<script type="text/javascript">
 		var redirectToR = "{{URL::to('/ListaSiniestros')}}";
 	</script>
-	<!-- <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script> -->
-	<!-- <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
-	<script src="vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>     
-	<script src="vendors/bower_components/jquery.steps/build/jquery.steps.min.js"></script>
-	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
-	<script src="dist/js/form-wizard-data.js"></script>
-	<!-- <script src="vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script> -->
-	<script src="vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
-	<script src="dist/js/starrr.js"></script>
-	<!-- <script src="dist/js/jquery.slimscroll.js"></script> -->
-	<!-- <script src="dist/js/dropdown-bootstrap-extended.js"></script> -->
-	<!-- <script src="vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script> -->
-	<!-- <script src="vendors/bower_components/switchery/dist/switchery.min.js"></script> -->
-	<!-- <script src="dist/js/init.js"></script> -->
+    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>     
+    <script src="vendors/bower_components/jquery.steps/build/jquery.steps.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+    <script src="dist/js/form-wizard-data.js"></script>
+    <script src="vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="dist/js/starrr.js"></script>
+    <script src="dist/js/jquery.slimscroll.js"></script>
+    <script src="dist/js/dropdown-bootstrap-extended.js"></script>
+    <script src="vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="vendors/bower_components/switchery/dist/switchery.min.js"></script>
+    <script src="dist/js/init.js"></script>
 	<script src="{{ asset('plugins/jQueryUI/jquery-ui.min.js') }}"></script>
 	<script src="{{asset('app/js/RegistroCaso.js')}}"></script>
 	<script src="{{asset('app/js/BuscarPersona.js')}}"></script>

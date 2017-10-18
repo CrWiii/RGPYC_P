@@ -3,7 +3,7 @@
         <div class="nav-header pull-left">
             <div class="logo-wrap">
                 <a href="/">
-                    <span class="brand-img"><img class="brand-img-f" src="{{url('/img/logo.jpg')}}"></span>
+                    <span class="brand-img"><img class="brand-img-f" src="{{url('/img/pyc.png')}}"></span>
                     <!-- <span class="brand-img"><img src="{{url('/img/logo_mini.png')}}" width="30" height="30"></span> -->
                     <!-- <span class="brand-text">SR2</span> -->
                 </a>

@@ -127,5 +127,6 @@ return [
     'password'                => 'Password',
     'retrypepassword'         => 'Retype password',
     'fullname'                => 'Full Name',
+    'title_reg'               => 'Register Case',
     
 ];
