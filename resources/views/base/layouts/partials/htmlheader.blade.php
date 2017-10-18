@@ -5,19 +5,21 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="{{ asset('/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>   
-    <link href="{{ asset('/dist/css/style.css') }}" rel="stylesheet" type="text/css">
+
     <style type="text/css">
+        .pr-0{
+            font-size: 1.4em !important;
+        }
         .logo-wrap{
-            padding-top: 10px !important;
+            padding-top: 0px !important;
         }
         .page-wrapper {
             margin-left: 0px !important;
-            background: #ffffff;
+            background: #ffffff !important;
         }
         .brand-img-f{
-            height: 50px !important;
-            width: 190px !important;
+            height: 80px !important;
+            width: 230px !important;
         }
         .navbar.navbar-inverse.navbar-fixed-top .nav-header {
             width: 250px !important;
@@ -29,6 +31,21 @@
         .heading-bg {
             height: 30px !important;
             padding: 1px 0 !important;
+        }
+        .navbar.navbar-inverse.navbar-fixed-top .nav-header {
+            height: 85px;
+        }
+        .navbar.navbar-inverse.navbar-fixed-top {
+            min-height: 85px;
+        }
+        .navbar.navbar-inverse.navbar-fixed-top .nav-header {
+            height: 85px;
+        }
+        .navbar.navbar-inverse.navbar-fixed-top .nav.navbar-right {
+            margin-right: 0;
+            height: 85px !important;
+            vertical-align: middle;
+            padding-top: 10px !important;
         }
     </style>
 

@@ -8,45 +8,19 @@
 @section('main-content')
 
 @section('styles')
-<style type="text/css">
-/*.JColResizer td, .JColResizer th{overflow:hidden;} */
-
-@media screen and (max-width: 767px) {table {border: 0; } table thead {display: none; } table tr {margin-bottom: 10px; display: block; border-bottom: 2px solid #ddd; } table td {display: block; text-align: right; font-size: 13px; border-bottom: 1px dotted #ccc; } table td:last-child {border-bottom: 0; } table td:before {content: attr(data-label); float: left; text-transform: uppercase; font-weight: bold; } } 
-#searchclear {position: absolute; right: 5px; top: 0; bottom: 0; height: 14px; margin: auto; font-size: 14px; cursor: pointer; color: #ccc; }
-.cssload-spin-box {position: absolute; margin: auto; left: 0; top: 0; bottom: 0; right: 0; width: 15px; height: 15px; border-radius: 100%; box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); -o-box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); -ms-box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); -webkit-box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); -moz-box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); animation: cssload-spin ease infinite 4.6s; -o-animation: cssload-spin ease infinite 4.6s; -ms-animation: cssload-spin ease infinite 4.6s; -webkit-animation: cssload-spin ease infinite 4.6s; -moz-animation: cssload-spin ease infinite 4.6s; } @keyframes cssload-spin {0%, 100% {box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); } 25% {box-shadow: -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73); } 50% {box-shadow: -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223); } 75% {box-shadow: 15px -15px #dfdfdf, 15px 15px #4f4d49, -15px 15px #dfdfdf, -15px -15px #4f4d49; } } @-o-keyframes cssload-spin {0%, 100% {box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); } 25% {box-shadow: -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73); } 50% {box-shadow: -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223); } 75% {box-shadow: 15px -15px #dfdfdf, 15px 15px #4f4d49, -15px 15px #dfdfdf, -15px -15px #4f4d49; } } @-ms-keyframes cssload-spin {0%, 100% {box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); } 25% {box-shadow: -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73); } 50% {box-shadow: -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223); } 75% {box-shadow: 15px -15px #dfdfdf, 15px 15px #4f4d49, -15px 15px #dfdfdf, -15px -15px #4f4d49; } } @-webkit-keyframes cssload-spin {0%, 100% {box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); } 25% {box-shadow: -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73); } 50% {box-shadow: -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223); } 75% {box-shadow: 15px -15px #dfdfdf, 15px 15px #4f4d49, -15px 15px #dfdfdf, -15px -15px #4f4d49; } } @-moz-keyframes cssload-spin {0%, 100% {box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); } 25% {box-shadow: -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73); } 50% {box-shadow: -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223); } 75% {box-shadow: 15px -15px #dfdfdf, 15px 15px #4f4d49, -15px 15px #dfdfdf, -15px -15px #4f4d49; } } 
-	.card-view.panel > .panel-heading {
-		padding: 5px 15px !important;
-	}
-	input{
-		height: 30px !important;
-	}
-	.fix-panel{
-		padding-right: 0px !important;
-    	padding-left: 0px !important;
-	}
-	.fix-button{
-		padding: 4px 15px !important;
-	}
-	.container-fluid{
-		padding: 0px !important;
-	}
-	.page-wrapper{
-		padding: 70px 0px !important;
-	}
-	.sel-rounded{
-		border-radius: 60px;
-	}
-</style>
+    <link href="{{ asset('/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>   
+    <link href="{{ asset('/dist/css/style.css') }}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="{{ asset('app/css/ListaCasos.css') }}">
 @endsection
 
 <div class="col-sm-12 fix-panel">
 	<div class="panel panel-default card-view">
-		<div class="panel-heading">
+		<!-- <div class="panel-heading">
 			<div class="pull-left">
 				<h6 class="panel-title txt-dark">Lista de Casos</h6>
 			</div>
 			<div class="clearfix"></div>
-		</div>
+		</div> -->
 		<div class="panel-wrapper collapse in">
 			<div class="panel-body">
 				<div class="row" id="filtersPanel">
@@ -54,8 +28,10 @@
 				    <div class="col-md-2">
 				    	<div class="collapsed-box">
 					   		<div class="form-group">
-				        		<a href="{{url('/RegistrarCaso')}}" class="btn btn-primary input-sm fix-button btn-rounded">Nuevo Reclamo
-				        		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>				            	
+				        		<a href="{{url('/RegistrarCaso')}}" class="btn btn-default input-sm fix-button btn-rounded">
+				        			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+				        			Nuevo Reclamo
+				        		</a>
 				        	</div>
 				      	</div>
 				    </div>
@@ -86,7 +62,7 @@
 				    	<div class="collapsed-box" style="float:right;">
 					    	<div class="form-group">
 					       		<div class="input-group">
-					          		<button type="button" class="btn btn-default pull-right input-sm btn-rounded" id="daterange-btn" style="width: 183px;padding-top: 4px !important;" >
+					          		<button type="button" class="btn btn-default pull-right input-sm btn-rounded" id="daterange-btn" style="width: 183px;padding-top: 3px !important;" >
 					            		<span><i class="fa fa-calendar" ></i> Rango de Fecha <i class="fa fa-caret-down"></i></span>
 					          		</button>
 					        	</div>
@@ -105,7 +81,9 @@
 				    <div class="col-md-1">
 				      	<div class="collapsed-box" style="float:left;">
 					    	<div class="btn-group" style="margin-bottom: 15px;width: 100%">
-						    	<a href="{{url('/ReporteExcelCaso')}}" class="btn btn-success input-sm fix-button btn-rounded">Exportar <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a>
+						    	<a href="{{url('/ReporteExcelCaso')}}" class="btn btn-default input-sm fix-button btn-rounded">
+						    		<i class="fa  fa-file-excel-o"></i>   Exportar
+						    	</a>
 							</div>
 				      	</div>
 				    </div>
@@ -143,6 +121,15 @@
 <script src="{{ asset('plugins/jQueryUI/jquery-ui.min.js') }}"></script>
 <script src="{{asset('js/colResizable-1.6.min.js')}}"></script> -->
 @section('scripts2')
+<script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+	<script src="{{ asset('dist/js/dataTables-data.js') }}"></script>
+	<script src="{{ asset('dist/js/jquery.slimscroll.js') }}"></script>
+	<script src="{{ asset('vendors/bower_components/owl.carousel/dist/owl.carousel.min.js') }}"></script>
+	<script src="{{ asset('vendors/bower_components/switchery/dist/switchery.min.js') }}"></script>
+	<script src="{{ asset('dist/js/dropdown-bootstrap-extended.js') }}"></script>
+	<script src="{{ asset('dist/js/init.js') }}"></script>
 <script>
 	$(window).on('hashchange', function(){
 	    if (window.location.hash) {
