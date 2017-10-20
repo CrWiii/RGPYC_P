@@ -201,6 +201,7 @@
 		person_type = $(this).attr('data-id');
 		validatePersonaType(person_type);
 		$('#modal-default').modal('show');
+		console.log(person_type);
 	});
 	$(document).on('click','#select_person',function(){
 		var tnombres = $('#nombres').val();

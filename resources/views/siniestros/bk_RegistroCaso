@@ -1,0 +1,1432 @@
+@extends('base.layouts.app')
+
+@section('htmlheader_title')
+	 trans('adminlte_lang::message.home') 
+@endsection
+
+@section('main-content')
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"> -->
+<!-- <link rel="stylesheet" href="{{ asset('plugins/datepicker/datepicker3.css') }}"> -->
+<!-- <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}"> -->
+<!-- <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('plugins/timepicker/bootstrap-datetimepicker.min.css') }}"> -->
+<link rel="stylesheet" href="{{ asset('plugins/jQueryUI/jquery-ui.css') }}">
+
+
+<style type="text/css">
+ 
+	.btnarrw{
+			margin-top: 2px;
+			float: right;
+		}
+	.btninf{
+		font-size: 0.8em !important;float: right;padding-top: 1px !important; padding-bottom: 1px !important; margin-right: 10px;margin-top: 2px !important;
+	}
+	.modal-backdrop.in {
+	    opacity: 0 !important;
+	}
+	.box-body{
+		padding: 5px !important;
+	}
+	.panel-default{
+		margin-bottom: 0px !important;
+	}
+	.panel-heading{
+		padding-left: 5px !important;
+		padding-top: 5px !important
+	}
+	.glyphicon{
+		color:#9ba7ad !important;
+	}
+
+
+	.numlist{
+	font-size: 100%;
+	color:#9ba7ad;
+}
+.frameTit{
+	vertical-align: middle;
+	padding-left: 10px !important; 
+	font-size: 0.95em !important;
+	color:#9ba7ad !important;
+}
+.content-header{
+
+}
+.gg{
+	margin-left: 0px;padding: 0px;
+}
+.ggt > tbody > tr > th {
+	padding-top: 4px !important;
+	background-color: #f5f5f5 !important;
+}
+
+.form-control{
+		color:#000000;
+}
+    .collapsedBorder {
+    	margin-bottom: 10px;
+    }
+	.row{
+		font-size: 1em !important;
+	}
+	.form-label{
+		padding-top: 5px;
+    	padding-bottom: 3px;
+    	padding-right: 0px;
+	}
+	.form-group{
+		margin-bottom: 0px;
+	}
+
+	.sizePadding{
+		padding-right: 4px;
+		margin-bottom: 0px;
+    /* height: 35px; */
+
+		/*padding-left: 5px;*/
+	}
+
+	.form-control{
+		color:#000000;
+	}
+
+	input, textarea{
+		text-transform: uppercase;
+	} 
+
+	input[type=submit] {
+		text-transform: capitalize;
+	}
+
+	input[type=email] {
+		text-transform: lowercase;
+	}
+
+	select.input-sm {
+    	height: 25px;
+    	line-height: 15px;
+	}
+/*	.input-sm {
+    	height: 25px;
+    	line-height: 15px;
+	}*/
+	.input-sm {
+	    padding: 2px 10px;
+	}
+
+	.collapsedBorder{
+		border:1px solid #a79a9a;
+	}
+
+	.glyphicon {
+    	color: #484646 !important;
+	}
+
+	.tooltip-inner {
+		font-size: 0.9em !important;
+	    max-width: 250px;
+	    /* If max-width does not work, try using width instead */
+	    width: 250px; 
+	}
+
+
+/*.JColResizer td, .JColResizer th{overflow:hidden;} */
+@media screen and (max-width: 767px) {table {border: 0; } table thead {display: none; } table tr {margin-bottom: 10px; display: block; border-bottom: 2px solid #ddd; } table td {display: block; text-align: right; font-size: 13px; border-bottom: 1px dotted #ccc; } table td:last-child {border-bottom: 0; } table td:before {content: attr(data-label); float: left; text-transform: uppercase; font-weight: bold; } } 
+#searchclear {position: absolute; right: 5px; top: 0; bottom: 0; height: 14px; margin: auto; font-size: 14px; cursor: pointer; color: #ccc; }
+.cssload-spin-box {position: absolute; margin: auto; left: 0; top: 0; bottom: 0; right: 0; width: 15px; height: 15px; border-radius: 100%; box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); -o-box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); -ms-box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); -webkit-box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); -moz-box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); animation: cssload-spin ease infinite 4.6s; -o-animation: cssload-spin ease infinite 4.6s; -ms-animation: cssload-spin ease infinite 4.6s; -webkit-animation: cssload-spin ease infinite 4.6s; -moz-animation: cssload-spin ease infinite 4.6s; } @keyframes cssload-spin {0%, 100% {box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); } 25% {box-shadow: -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73); } 50% {box-shadow: -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223); } 75% {box-shadow: 15px -15px #dfdfdf, 15px 15px #4f4d49, -15px 15px #dfdfdf, -15px -15px #4f4d49; } } @-o-keyframes cssload-spin {0%, 100% {box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); } 25% {box-shadow: -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73); } 50% {box-shadow: -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223); } 75% {box-shadow: 15px -15px #dfdfdf, 15px 15px #4f4d49, -15px 15px #dfdfdf, -15px -15px #4f4d49; } } @-ms-keyframes cssload-spin {0%, 100% {box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); } 25% {box-shadow: -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73); } 50% {box-shadow: -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223); } 75% {box-shadow: 15px -15px #dfdfdf, 15px 15px #4f4d49, -15px 15px #dfdfdf, -15px -15px #4f4d49; } } @-webkit-keyframes cssload-spin {0%, 100% {box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); } 25% {box-shadow: -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73); } 50% {box-shadow: -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223); } 75% {box-shadow: 15px -15px #dfdfdf, 15px 15px #4f4d49, -15px 15px #dfdfdf, -15px -15px #4f4d49; } } @-moz-keyframes cssload-spin {0%, 100% {box-shadow: 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223); } 25% {box-shadow: -15px 15px rgb(223,223,223), -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73); } 50% {box-shadow: -15px -15px rgb(79,77,73), 15px -15px rgb(223,223,223), 15px 15px rgb(79,77,73), -15px 15px rgb(223,223,223); } 75% {box-shadow: 15px -15px #dfdfdf, 15px 15px #4f4d49, -15px 15px #dfdfdf, -15px -15px #4f4d49; } } 
+</style>
+
+<script src="{{ asset('plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
+
+
+<div class="container-fluid spark-screen">
+	<div class="row">
+		<div class="col-md-12 col-md-offset-2" style="margin-left: 0px;padding: 0px;">
+		<form action="" method="post" id="form-supremo">
+		{{csrf_field()}}
+			<div class="box">
+	        	<div class="box-header with-border" style="width:100%;padding: 5px;">
+	        		<div style="text-align: left;padding-top: 5px;padding-bottom: 5px;">
+	        			<h1 class="box-title" style="font-size: 20px;color:#505c62 !important">
+	        			Datos del Reclamo</h1> 
+	        			<!-- <button id="filters" class="btn btn-default btn-xs" style="padding: 3px 5px !important;float: right;"><span id="filtersButton" class="glyphicon glyphicon-arrow-up"> Filtros</span></button>-->
+	        		</div>
+        		</div>
+
+				<!-- BLOQUE 1 -->
+				<div class="box-body">
+											<div class="panel panel-default">
+								            	<div class="panel-heading">	
+								            		<div class="panel-title"> 
+								            			<a id="data1" class="btn btn-default btn-xs btnarrw">
+								            				<span id="icon1" class="glyphicon glyphicon-arrow-up" ></span>
+								            			</a>
+														<span class="numlist" >&#9312;</span><strong class="frameTit"> Notificación</strong>
+								            		</div>
+								            	</div>  
+								            	<div class="panel-body" id="detlail1">
+														<div class="col-md-12" style="margin:0; color:#555; border: 1px solid #a79a9a; padding:20px 10px 10px 10px;margin-bottom: 10px; border-radius: 5px;">
+																		    <div class="col-md-12 col-md-12 form-group row">
+																					<label  class="col-md-2 form-label"><strong>Quien Notificó: </strong><label style="color: #FF0000">(*)</label></label>
+																						<div class="col-md-2">
+																							<div class="form-group{{ $errors->has('notifier_type_id') ? ' has-error' : '' }}">
+																								<select class="form-control input-sm" name="notifier_type_id" id="notifier_type_id">
+																										<option value="0" @if (old('notifier_type_id') == '0') selected="selected" @endif >[ELIJA UNO]</option>
+																	                                    @foreach($notifier as $key => $value)
+																	                                        <option value="{{$key}}" @if (old('notifier_type_id') == $key) selected="selected" @endif>{{$value}}</option>
+																	                                    @endforeach
+																								</select>
+																								@if ($errors->has('notifier_type_id'))
+																	                                <span class="help-block" style="color: #ff0000">
+																	                                    <strong>{{ $errors->first('notifier_type_id') }}</strong>
+																	                                </span>
+																	                      	    @endif
+																							</div>
+																						</div>
+																					<label class="col-md-2 form-label"><strong>Nombre Notificante: </strong><label style="color: #FF0000">(*)</label></label>
+																						<div class="col-md-2">
+																							<div class="form-group">
+																								<div class="input-group">
+																					                <input type="text" class="form-control input-sm" name="notifier_name" id="notifier_name" value="{{ old('notifier_name') }}" disabled="disabled">
+																					                <input type="hidden" name="notifier_id" id="notifier_id" value="{{ old('notifier_id') }}">
+																				                    	<span class="input-group-btn">
+																					                    	<button id="searchPerson" data-id="1" type="button" class="btn btn-default btn-sm"><i class="fa fa-search"></i></button>
+																				                    	</span>
+																				              	</div>
+																				            </div>
+																							<!-- <div class="box-tools pull-right">
+																				                <div class="has-feedback">
+																				                	<input type="text" class="form-control input-sm" placeholder="Search Mail">
+																				                 	<span class="glyphicon glyphicon-search form-control-feedback"></span><a data-toggle="modal" data-target="#modal-default"></a>
+																				                </div>
+																				            </div> -->
+																						 	<!-- <div class="form-group{{ $errors->has('notifier_name') ? ' has-error' : '' }}">
+																								<input type="text" class="form-control input-sm" name="notifier_name" value="{{ old('notifier_name') }}" >
+																								<input type="hidden" name="notifier_id" value="{{ old('notifier_id') }}">			
+																								@if ($errors->has('notifier_name'))
+																	                                <span class="help-block" style="color: #ff0000">
+																	                                    <strong>{{ $errors->first('notifier_name') }}</strong>
+																	                                </span>
+																	                      	    @endif
+																                        	</div> -->
+																						</div>	
+																					<label class="col-md-2 form-label"><strong>Fecha y Hora: </strong><label style="color: #FF0000">(*)</label></label>
+																					<div class="col-md-2">
+																							<div class="form-group{{ $errors->has('notifier_date') ? ' has-error' : '' }}">
+																								<div class='input-group date'>
+																									 <input type="text" class="form-control input-sm" id="notifier_date" name="notifier_date" value="{{ old('notifier_date') }}">
+																									 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+																									 @if ($errors->has('notifier_date'))
+																		                                <span class="help-block" style="color: #ff0000">
+																		                                    <strong>{{ $errors->first('notifier_date') }}</strong>
+																		                                </span>
+																		                      	     @endif
+																								</div>
+																							</div>
+																					</div>
+																			</div>
+																			<div class="col-md-12 col-md-12 form-group row" id="notificacion_tab">
+																				<label  class="col-md-2 form-label">Quien Confirmó (Aseguradora)</label>
+																				<div class="col-md-2">
+																						<!-- <input type="text" class="form-control input-sm" name="confirming_who_name" id="confirming_who_name"> -->
+																					<div class="form-group">
+																						<div class="input-group">
+																					        <input type="text" class="form-control input-sm" name="confirming_who_name" id="confirming_who_name" value="{{ old('confirming_who_name') }}" disabled="disabled">
+																					        <input type="hidden" name="confirming_who_id" id="confirming_who_id" value="{{ old('confirming_who_id') }}">
+																				            	<span class="input-group-btn">
+																					            	<button id="searchPerson" data-id="2" type="button" class="btn btn-default btn-sm"><i class="fa fa-search"></i></button>
+																				            	</span>
+																				        </div>
+																				    </div>
+																				</div>
+																				<label  class="col-md-2 form-label">Cargo Confirmante</label>
+																				<div class="col-md-2">
+																						<input type="text" class="form-control input-sm" name="confirming_position" id="confirming_position">
+																				</div>
+																				<label class="col-md-2 form-label">Fecha y Hora <label style="color: #FF0000; font-size:0.9em;">(*)</label></label>
+																				<div class="col-md-2">
+																					<div class="form-group{{ $errors->has('confirming_date') ? ' has-error' : '' }}">
+																							<div class='input-group date'>
+																								<input type="text" class="form-control input-sm" id="confirming_date" name="confirming_date" value="{{ old('confirming_date') }}"   >
+																								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+								                    											</span>
+																								@if ($errors->has('confirming_date'))
+																		                            <span class="help-block" style="color: #ff0000">
+																		                                <strong>{{ $errors->first('confirming_date') }}</strong>
+																		                            </span>
+																		                   		@endif
+																							</div>
+																					</div>					
+																				</div>
+																			</div>
+												       	</div>
+												</div>
+											</div>
+				</div>
+
+				<!-- BLOQUE 2 -->
+				<div class="box-body">
+											<div class="panel panel-default">
+								            	<div class="panel-heading">	
+								            		<div class="panel-title"> 
+								            			<a id="data2" class="btn btn-default btn-xs btnarrw">
+								            			<span id="icon2" class="glyphicon glyphicon-arrow-down" ></span>
+								            			</a>
+														<span class="numlist" >&#9313;</span><strong class="frameTit"> Reclamo</strong>
+								            		</div>
+								            	</div>  
+								            	<div class="panel-body" id="detlail2" style="display: none;">
+													<div class="col-md-12" style="margin:0; color:#555; border: 1px solid #a79a9a; padding:20px 10px 10px 10px;margin-bottom: 10px; border-radius: 5px;">
+													<div class="col-md-12 col-md-12 form-group row">
+															<label  class="col-md-2 form-label"> Contratante</label>
+															<div class="col-md-2">
+																<input type="text" class="form-control input-sm" name="contratante_name" id="contratante_name">
+																<input type="hidden" name="contratante_id" id="contratante_id">
+															</div>
+															<label  class="col-md-2 form-label">Asegurado</label>
+															<div class="col-md-2">
+																<input type="text" class="form-control input-sm" name="asegurado_name" id="asegurado_name">
+																<input type="hidden" name="asegurado_id" id="asegurado_id">
+															</div>
+															<label  class="col-md-2 form-label">Fecha y Hora del Siniestro <label style="color: #FF0000; font-size:0.9em;">(*)</label></label>
+															<div class="col-md-2">
+																<div class="form-group{{ $errors->has('fecha_siniestro') ? ' has-error' : '' }}">
+																<div class='input-group date'>
+																	<input type="text" class="form-control input-sm" id="fecha_siniestro" name="fecha_siniestro" value="{{ old('fecha_siniestro') }}">
+																	<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+								                    				</span>
+																	@if ($errors->has('fecha_siniestro'))
+											                                <span class="help-block" style="color: #ff0000">
+											                                    <strong>{{ $errors->first('fecha_siniestro') }}</strong>
+											                                </span>
+											                   		@endif
+																</div>
+
+																</div>
+															</div>
+													</div>		
+													<div class="col-md-12 col-md-12 form-group row">
+														<label  class="col-md-2 form-label">Lugar del Siniestro</label>
+														<div class="col-md-2">
+															<input type="text" class="form-control  input-sm" name="lugar_siniestro" id="lugar_siniestro">
+														</div>
+														<label  class="col-md-2 form-label">Giro de Negocio/Ocupacion</label>
+														<div class="col-md-2">
+															<input type="text" class="form-control  input-sm" name="giro_negocio" id="giro_negocio">
+														</div>
+													</div>
+													<div class="col-md-12 col-md-12 form-group row">
+														<label  class="col-md-2 form-label">Tipo de Siniestro | <label style="color: #FF0000">(*)</label></label>
+														<div class="col-sm-2">
+															<div class="form-group{{ $errors->has('tipo_siniestro_id') ? ' has-error' : '' }}">
+															 	<select class="form-control input-sm" name="tipo_siniestro_id" id="tipo_siniestro_id">
+																		<option value="0" @if (old('tipo_siniestro_id') == '0') selected="selected" @endif>[ELIJA UNA]</option>
+																		@foreach($tipo_siniestro as $key => $value)
+										                                    <option value="{{$key}}" @if (old('tipo_siniestro_id') == $key) selected="selected" @endif>{{$value}}</option>
+										                               	@endforeach
+																</select class="form-control" >
+																@if ($errors->has('tipo_siniestro_id'))
+										                                <span class="help-block" style="color: #ff0000">
+										                                    <strong>{{ $errors->first('tipo_siniestro_id') }}</strong>
+										                                </span>
+										                   		@endif
+															</div>
+														</div>
+														<label  class="col-md-2 form-label">Distrito - Prov. - Dpto.</label>
+														<div class="col-md-2">
+															<input type="text" class="form-control input-sm" name="ubigeo_name" id="ubigeo_name">
+														</div>
+														<label  class="col-md-2 form-label">Ramo Afectado</label>
+														<div class="col-md-2">
+																<div class="form-group{{ $errors->has('ramo_id') ? ' has-error' : '' }}">
+																	<select class="form-control input-sm" name="ramo_id" id="ramo_id">
+																			<option value="0" @if (old('ramo_id') == '0') selected="selected" @endif >[ELIJA UNO]</option>
+										                                    @foreach($ramo as $key => $value)
+										                                        <option value="{{$key}}" @if (old('ramo_id') == $key) selected="selected" @endif>{{$value}}</option>
+										                                    @endforeach
+																	</select>
+																	@if ($errors->has('ramo_id'))
+										                                <span class="help-block" style="color: #ff0000">
+										                                    <strong>{{ $errors->first('ramo_id') }}</strong>
+										                                </span>
+										                      	    @endif
+																</div>
+														</div>
+													</div>
+													<div class="col-md-12 col-md-12 form-group row">
+														<label  class="col-md-2 form-label">Correo Electrónico</label>
+														<div class="col-md-2">
+															<input type="email" class="form-control input-sm" name="contact_contratante_email" id="contact_contratante_email">
+														</div>
+														<label  class="col-md-2 form-label">Persona de Contacto <label style="color: #FF0000; font-size:0.9em;">(*)</label></label>
+														<div class="col-md-2">
+															<div class="form-group{{ $errors->has('contact_contratante_name') ? ' has-error' : '' }}">
+																<input type="text" class="form-control input-sm" name="contact_contratante_name" value="{{ old('contact_contratante_name') }}" id="contact_contratante_name">
+																<input type="hidden" name="contact_contratante_id" id="contact_contratante_id" value="{{ old('contact_contratante_id') }}">
+																@if ($errors->has('contact_contratante_id'))
+										                                <span class="help-block" style="color: #ff0000">
+										                                    <strong>{{ $errors->first('contact_contratante_id') }}</strong>
+										                                </span>
+										                   		@endif
+															</div>
+														</div>
+														<label class="col-md-2 form-label">Telefono</label>
+														<div class="col-md-2">
+															<input type="text" class="form-control input-sm" name="contact_contratante_telefono" id="contact_contratante_telefono">
+															<input type="hidden" >
+														</div>
+													</div>
+													<div class="col-md-12 col-md-12 form-group row">
+														<label  class="col-md-2 form-label">Descripción del Siniestro <label style="color: #FF0000; font-size:0.9em;">(*)</label></label>
+														<div class="col-md-10">
+															
+															<div class="form-group {{ $errors->has('descripcion_siniestro') ? 'has-error' : '' }}">
+										 
+															<textarea name="descripcion_siniestro" id="descripcion_siniestro" class="form-control" placeholder="">{{ old('descripcion_siniestro') }}</textarea>
+																<!-- <span class="text-danger">{{ $errors->first('descripcion_siniestro') }}</span> -->
+																@if($errors->has('descripcion_siniestro'))
+									                                <span class="help-block" style="color: #FF0000">
+									                                    <strong>{{ $errors->first('descripcion_siniestro') }}</strong>
+									                                </span>
+									                   			@endif
+															</div>
+																<!-- @if ($errors->has('descripcion_siniestro'))
+									                                <span class="help-block" style="color: #ff0000">
+									                                    <strong>{{ $errors->first('descripcion_siniestro') }}</strong>
+									                                </span>
+									                   			@endif
+									                   			{{{ old('descripcion_siniestro') }}} -->
+														</div>
+													</div>
+												       	</div>
+												</div>
+											</div>
+				</div>
+
+				<!-- BLOQUE 3-->
+				<div class="box-body">
+											<div class="panel panel-default">
+								            	<div class="panel-heading">	
+								            		<div class="panel-title"> 
+								            			<a id="data3" class="btn btn-default btn-xs btnarrw">
+								            			<span id="icon3" class="glyphicon glyphicon-arrow-down" ></span>
+								            			</a>
+														<span class="numlist" >&#9314;</span><strong class="frameTit"> Gestores</strong>
+								            		</div>
+								            	</div>  
+								            	<div class="panel-body" id="detlail3" style="display: none;">
+														<div class="col-md-12" style="margin:0; color:#555; border: 1px solid #a79a9a; padding:20px 10px 10px 10px;margin-bottom: 10px; border-radius: 5px;">
+															 <div class="col-md-12 col-md-12 form-group row">
+														<label  class="col-md-2 form-label">Aseguradora <label style="color: #FF0000; font-size:0.9em;">(*)</label> </label>
+														<div class="col-sm-2">
+															<div class="form-group{{ $errors->has('cia_id') ? ' has-error' : '' }}">
+																<select class="form-control input-sm" name="cia_id" id="cia_id">
+																		<option value="0" @if (old('cia_id') == '0') selected="selected" @endif>[ELIJA UNA]</option>
+																		@foreach($cia as $key => $value)
+										                                    <option value="{{$key}}" @if (old('cia_id') == $key) selected="selected" @endif>{{$value}}</option>
+										                                @endforeach
+																</select>
+																@if ($errors->has('cia_id'))
+										                                <span class="help-block" style="color: #ff0000">
+										                                    <strong>{{ $errors->first('cia_id') }}</strong>
+										                                </span>
+										                   		@endif
+															</div>
+														</div>
+														<label class="col-md-2 form-label">Broker </label>
+														<div class="col-md-2">
+															<input type="text" class="form-control input-sm" name="broker_name" id="broker_name">
+															<input type="hidden" name="broker_id" id="broker_id">
+														</div>
+														<label class="col-md-2 form-label">Tipo de Ajuste</label>
+														<div class="col-md-2">
+															<select class="form-control input-sm" name="tipo_ajuste_id" id="tipo_ajuste_id">
+																<option value="0" >[ELIJA UNO]</option>
+																@foreach($tipo_ajuste as $key => $value)
+										                            <option value="{{$key}}">{{$value}}</option>
+										                        @endforeach
+															</select>
+														</div>
+													</div>
+
+													<div class="col-md-12 col-md-12 form-group row">
+														<label  class="col-md-2 form-label">N° de Póliza <label style="color: #FF0000; font-size:0.9em;"></label> </label>
+														<div class="col-md-2">
+															<input type="text" class="form-control input-sm" name="num_poliza" id="num_poliza" >
+
+														</div>
+														<label class="col-md-2 form-label"> <label style="color: #FF0000; font-size:0.9em;"></label></label>
+														<div class="col-md-2">
+														 
+														</div>
+														<label class="col-md-2 form-label"></label>
+														<div class="col-md-2">
+															
+														</div>
+													</div>
+
+													<div class="col-md-12 col-md-12 form-group row">
+														<label  class="col-md-2 form-label">Responsable</label>
+														<div class="col-md-2">
+															<input type="text" class="form-control input-sm" name="ejecutivo_aseguradora_name" id="ejecutivo_aseguradora_name">
+															<input type="hidden" name="ejecutivo_aseguradora_id" id="ejecutivo_aseguradora_id">
+														</div>
+														<label  class="col-md-2 form-label">Responsable</label>
+														<div class="col-md-2">
+															<input type="text" class="form-control input-sm" name="ejecutivo_broker_name" id="ejecutivo_broker_name">
+															<input type="hidden" name="ejecutivo_broker_id" id="ejecutivo_broker_id">
+														</div>
+														<label class="col-md-2 form-label">Ajustador</label>
+														<div class="col-md-2">
+															<input type="text" class="form-control input-sm" name="gestor_ajustador" id="gestor_ajustador">
+															 
+														</div>
+													</div>
+
+													<div class="col-md-12 col-md-12 form-group row">
+														<label  class="col-md-2 form-label">Teléfono Responsable </label>
+														<div class="col-md-2">
+															<input type="text" class="form-control input-sm" name="ejecutivo_aseguradora_telefono" id="ejecutivo_aseguradora_telefono">
+														</div>
+														<label  class="col-md-2 form-label">Teléfono Responsable</label>
+														<div class="col-md-2">
+															<input type="text" class="form-control input-sm" name="ejecutivo_broker_telefono" id="ejecutivo_broker_telefono">
+														</div>
+														<label class="col-md-2 form-label">Telefono Ajustador</label>
+														<div class="col-md-2">
+															<input type="text" class="form-control input-sm" name="gestor_telefono" id="gestor_telefono">
+															<input type="hidden" name="">
+														</div>
+													</div>
+
+													<div class="col-md-12 col-md-12 form-group row">
+														<label  class="col-md-2 form-label">Correo Electrónico </label>
+														<div class="col-md-2">
+															<input type="email" class="form-control input-sm" name="ejecutivo_aseguradora_correo" id="ejecutivo_aseguradora_correo">
+														</div>
+														<label  class="col-md-2 form-label">Correo Electrónico</label>
+														<div class="col-md-2">
+															<input type="email" class="form-control input-sm" name="ejecutivo_broker_correo" id="ejecutivo_broker_correo">
+														</div>
+														<label class="col-md-2 form-label">Correo Ajustador</label>
+														<div class="col-md-2">
+															<input type="email" class="form-control input-sm" name="gestor_correo" id="gestor_correo">
+															<input type="hidden" name="">
+														</div>
+													</div>
+
+													<div class="col-md-12 col-md-12 form-group row">
+														<label  class="col-md-2 form-label">N° de Siniestro</label>
+														<div class="col-md-2">
+															<input type="text" class="form-control input-sm" name="num_siniestro_cia" id="num_siniestro_cia">
+														</div>
+														<label  class="col-md-2 form-label">N° de Siniestro Broker</label>
+														<div class="col-md-2">
+															<input type="text" class="form-control input-sm" name="num_siniestro_broker" id="num_siniestro_broker">
+														</div>
+														<label  class="col-md-2 form-label">Equipo</label>
+														<div class="col-md-2">
+															<div class='input-group date'>
+															<span class="input-group-addon" id="vitacora" data-toggle="modal" data-target="#modal-equipo"><span class="glyphicon glyphicon-plus"></span></span>
+															<input type="text" class="form-control input-sm" id="equipo" name="equipo" disabled="disabled">
+															<span class="input-group-addon"><i data-toggle="tooltip" style="width: 100%;" data-html="true" id="post_title"><span class="glyphicon glyphicon-eye-open"></span></i></span>
+															</div>
+														</div>
+													</div>
+												       	</div>
+												</div>
+											</div>
+				</div>
+						 
+				<!-- BLOQUE 4-->
+				<div class="box-body">
+						<div class="panel panel-default">
+								<div class="panel-heading">	
+								            		<div class="panel-title"> 
+								            			<a id="data4" class="btn btn-default btn-xs btnarrw">
+								            			<span id="icon4" class="glyphicon glyphicon-arrow-down" ></span>
+								            			</a>
+														<span class="numlist" >&#9315;</span><strong class="frameTit"> Inspeccion</strong>
+														<!-- <div class="checkbox">
+														    <label>
+														      <input type="checkbox"> Check me out
+														    </label>
+													  	</div> -->
+								            		</div>
+								</div> 
+								<div class="panel-body" id="detlail4" style="display: none;">
+									<div class="col-md-12" style="margin:0; color:#555; border: 1px solid #a79a9a; padding:20px 10px 10px 10px;margin-bottom: 10px; border-radius: 5px;">
+										<div class="col-md-12 col-md-12 form-group row">
+											<label  class="col-md-2 form-label">Fecha y Hora en la que se Coordina la Inspección</label>
+											<div class="col-md-2">
+													<div class='input-group date'>
+														<span class="input-group-addon" id="vitacora" data-toggle="modal" data-target="#modal-vitacora"><span class="glyphicon glyphicon-plus"></span></span>
+														<input type="text" class="form-control input-sm" id="fecha_coordinacion_inspeccion" name="fecha_coordinacion_inspeccion" disabled="disabled">
+														<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+													</div>
+											</div>
+
+											<label  class="col-md-2 form-label" >Fecha y Hora para la que se programa la Inspección</label>
+											<div class="col-md-2">
+												<div class='input-group date'>
+													<input type="text" class="form-control input-sm" id="fecha_programada_inspeccion" name="fecha_programada_inspeccion">
+													<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+												</div>
+											</div>
+
+											<label  class="col-md-2 form-label">Direccion de Inspección</label>
+											<div class="col-md-2">
+												<input type="text" class="form-control  input-sm" name="direccion_inspeccion" id="direccion_inspeccion">
+											</div>
+										</div>
+										<div class="col-md-12 col-md-12 form-group row">
+														<label  class="col-md-2 form-label">Referencia de la Dirección</label>
+														<div class="col-md-2">
+															<input type="text" class="form-control  input-sm" name="direccion_referencia" id="direccion_referencia">
+														</div>
+														<label  class="col-md-2 form-label">Persona de Contacto</label>
+														<div class="col-md-2">
+															<input type="text" class="form-control input-sm" name="contact_inspeccion_name" id="contact_inspeccion_name">
+															<input type="hidden" name="contact_inspeccion_id" id="contact_inspeccion_id">
+														</div>
+
+														<label  class="col-md-2 form-label">Teléfono de Contacto</label>
+														<div class="col-md-2">
+															<input type="text" class="form-control input-sm" name="contact_inspeccion_telefono" id="contact_inspeccion_telefono">
+														</div>
+										</div>
+					 
+								 	</div>
+								</div>									
+						</div>	
+				</div>
+				<!-- SUMBIT-->
+				<div class="box-body">
+					<button type="button" name="" class="btn btn-primary" id="registrarSupremo">Registrar</button>
+					<a href="{{url('ListaSiniestros')}}" class="btn btn-default">Cancelar</a>
+				</div>
+				
+			</div>
+		</form>
+		<!-- FIN SUPREMO - REGISTRAR -->
+	</div>
+</div>
+<!-- <div class="example-modal">
+        <div class="modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Default Modal</h4>
+              </div>
+              <div class="modal-body">
+                <p>One fine body…</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+<!-- <div class="modal fade" id="AmpliatorioDetail" tabindex="-1">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4></h4>
+			</div>
+			<div class="modal-body" id="bodamp">
+				<div class="form-group">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th style="width: 55%">Nombre</th>
+								<th style="width: 25%">Descarga</th>
+							</tr>
+						</thead>
+						<tbody id='Ampl'>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="overlay" style="display: nonde;">
+				<div class="cssload-spin-box"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div> -->
+
+<!-- <div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+    	<div class="modal-content">
+       		<div class="modal-header">
+         		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           	<span aria-hidden="true">&times;</span></button>
+        	<h4 class="modal-title">Default Modal</h4>
+       	</div>
+       	<div class="modal-body">
+         		<div class="col-sm-2">
+         			<label>DNI:</label>
+         		</div>
+	         	<div class="col-sm-4">
+	         		<input type="text" name="dni" id="dni" class="form-control input-sm">
+	         	</div>
+	         	<div class="col-sm-6">
+	         		<button class="btn btn-default btn-sm" id="searchDNI">buscar</button>
+	         	</div>
+
+       </div>
+     </div>
+    </div>
+</div> -->
+
+<div class="modal fade" id="modal-default" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Buscar Persona</h4>
+      </div>
+        <div class="modal-body">
+          <form>
+          	{{csrf_field()}}
+            <div class="control-group col-md-12" style="margin: 5px;">
+            	<div class="col-md-3">
+            		<label class="control-label">Dni:</label>
+            	</div>
+            	<div class="col-md-4">
+            		<div class="controls">
+						<input class="form-control input-sm" type="text" name="dni" id="dni">
+            		</div>            		
+            	</div>
+            	<div class="col-md-3">
+            		<div class="controls">
+						<a class="btn btn-default btn-sm" id="searchDNI">Buscar</a>
+            		</div>            		
+            	</div>
+            	<div class="col-md-3">
+            	</div>
+            </div>
+
+            <div class="control-group col-md-12" style="margin: 5px;">
+            	<div class="col-md-4">
+            		<label class="control-label">Nombres:</label>
+            	</div>
+            	<div class="col-md-6">
+            		<div class="controls">
+						<input class="form-control input-sm" type="text" name="nombres" id="nombres">
+            		</div>            		
+            	</div>
+            	<div class="col-md-2">
+            	</div>
+            </div>
+
+            <div class="control-group col-md-12" style="margin: 5px;">
+            	<div class="col-md-4">
+            		<label class="control-label">Apellido Pat:</label>
+            	</div>
+            	<div class="col-md-6">
+            		<div class="controls">
+						<input class="form-control input-sm" type="text" name="apellido_paterno" id="apellido_paterno">
+            		</div>            		
+            	</div>
+            	<div class="col-md-2">
+            	</div>
+            </div>
+
+            <div class="control-group col-md-12" style="margin: 5px;">
+            	<div class="col-md-4">
+            		<label class="control-label">Apellido Mat:</label>
+            	</div>
+            	<div class="col-md-6">
+            		<div class="controls">
+						<input class="form-control input-sm" type="text" name="apellido_materno" id="apellido_materno">
+            		</div>            		
+            	</div>
+            	<div class="col-md-2">
+            	</div>
+            </div>
+
+            <div class="control-group col-md-12" style="margin: 5px;">
+            	<div class="col-md-4">
+            		<label class="control-label">Correo:</label>
+            	</div>
+            	<div class="col-md-6">
+            		<div class="controls">
+						<input class="form-control input-sm" type="text" name="email" id="email">
+            		</div>            		
+            	</div>
+            	<div class="col-md-2">
+            	</div>
+            </div>
+
+
+            <div class="control-group col-md-12" style="margin: 5px;">
+            	<div class="col-md-4">
+            		<label class="control-label">Telefono:</label>
+            	</div>
+            	<div class="col-md-6">
+            		<div class="controls">
+						<input class="form-control input-sm" type="text" name="telefono" id="telefono">
+            		</div>            		
+            	</div>
+            	<div class="col-md-2">
+            	</div>
+            </div>
+
+            <div class="control-group col-md-12" style="margin: 5px;">
+            	<div class="col-md-4">
+            		<label class="control-label">Cargo:</label>
+            	</div>
+            	<div class="col-md-6">
+            		<div class="controls">
+						<input class="form-control input-sm" type="text" name="cargo" id="cargo">
+            		</div>            		
+            	</div>
+            	<div class="col-md-2">
+            	</div>
+            </div>
+            
+
+            <div class="control-group col-md-12" style="margin: 5px;">
+            	<div class="col-md-4">
+            		<label class="control-label">Fecha de Nacimiento:</label>
+            	</div>
+            	<div class="col-md-6">
+            		<div class="controls">
+						<input class="form-control input-sm" type="text" name="fecha_nacimiento" id="fecha_nacimiento">
+            		</div>            		
+            	</div>
+            	<div class="col-md-2">
+            	</div>
+            </div>
+           
+            <div class="control-group">
+                <label class="control-label" for="when"></label> 
+                  <div class="controls controls-row" id="whens">
+                  </div>
+                  <input type="hidden" id="whenss" />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+          <button class="btn btn-primary" id="select_person" type="button">Seleccionar</button>
+        </div>
+    </div>     
+  </div>
+</div>
+
+<!-- MODAL VITACORA  -->
+<div class="modal fade" id="modal-vitacora" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Motivo Llamada</h4>
+      </div>
+        <form action="" method="post">
+        	 
+        	<div class="modal-body">
+	          	{{csrf_field()}}
+	            <div class="nav-tabs-custom">
+		            <!-- Tabs within a box -->
+		            <ul class="nav nav-tabs pull-right ui-sortable-handle">
+		              <li class=""><a href="#revenue-chart" data-toggle="tab" aria-expanded="false">Lista</a></li>
+		              <li class="active"><a href="#sales-chart" data-toggle="tab" aria-expanded="true">Registrar</a></li>
+		              <!-- <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li> -->
+		            </ul>
+			        <div class="tab-content no-padding">
+			            <!-- Registro-->
+					    <div class="chart tab-pane active" id="sales-chart" style="position: relative; height: 390px;">
+								<div class="control-group col-md-12" style="margin: 5px;">
+					            	<div class="col-md-3">
+					            		<label class="control-label">Contacto</label>
+					            	</div>
+					            	<div class="col-md-8">
+										<input type="text" class="form-control input-sm" name="name" id="name">
+					            	</div>
+					            </div>
+					            <div class="control-group col-md-12" style="margin: 5px;">
+					            	<div class="col-md-3">
+					            		<label class="control-label">Fecha y Hora</label>
+					            	</div>
+					            	<div class="col-md-8">
+					            		<div class='input-group date'>
+											<input type="text" class="form-control input-sm" id="fecha_vitacora" name="fecha_vitacora">
+											<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+					            	</div>
+					            </div>
+					            <div class="control-group col-md-12" style="margin: 5px;">
+					            	<div class="col-md-3">
+					            		<label class="control-label">Motivo</label>
+					            	</div>
+					            	<div class="col-md-8">
+										<select class="form-control input-sm" name="motivo_id" id="motivo_id">
+											<option value="0"  selected="selected" >[ELIJA UNO]</option>
+											@foreach($motivo as $key => $value)
+											    <option value="{{$key}}">{{$value}}</option>
+											@endforeach
+										</select>
+					            	</div>
+					            </div>
+					            <div class="control-group col-md-12" style="margin: 5px;">
+					            	<div class="col-md-3">
+					            		<label class="control-label">Comentario</label>
+					            	</div>
+					            	<div class="col-md-8">
+										<textarea name="comentario" id="comentario" class="form-control" placeholder="" rows="3"></textarea>
+					            	</div>
+					            </div>
+						</div>
+			            <!-- Lista-->
+						<div class="chart tab-pane" id="revenue-chart" >
+						<br>
+
+							<div style="overflow-y:auto; height:300px; width:100%;">
+								<table id="table_vitacora" class="table table-hover table-condensed table-striped table-bordered" style="width:100%; ">
+					                <thead>
+					                    <tr style="text-align: center;">
+					                        <td>Contacto</td>
+					                        <td>Fecha</td>
+					                        <td>Motivo</td>
+					                        <td>Comentario</td>
+					                        <td style="display:none;">motivo_id</td>
+					                    </tr>
+					                </thead>
+					                <tbody> 
+							        <tr style="text-align: left;" id='row_1'></tr>
+					                </tbody>
+					            </table>
+							</div>
+
+						</div>
+					</div>
+				</div>
+        	</div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+          <button class="btn btn-primary" id="aceptarVitacora" name="aceptarVitacora" type="button" >Aceptar</button>
+
+        </div>
+        </form>
+    </div>     
+  </div>
+</div>
+<!-- MODAL EQUIPO  -->
+<div class="modal fade" id="modal-equipo" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      	<div class="modal-header">
+        	<button id="closeModalPerson" type="button" class="close" data-dismiss="modal">&times;</button>
+          	<h4 class="modal-title">Equipo</h4>
+      	</div>
+        <div class="modal-body">
+          <form action="/crearEquipo" method="post">
+          	{{csrf_field()}}
+          	@if(count($equipo))
+				<div style="overflow-y:auto; height:300px; width:100%;">
+				<?php $sw = 1; ?>
+					<table id="table_equipo" class="table table-hover table-condensed table-striped table-bordered" style="width:100%; ">
+					       <thead>
+					            <tr style="text-align: center;">
+					                <td style="display:none;">id</td>
+					                <td>Nombre</td>
+					                <td>Apellidos</td>
+					                <td><span class="glyphicon glyphicon-check"></span>
+					                </td>
+					            </tr>
+					        </thead>
+					        <tbody>
+					        @foreach($equipo as $vita)
+					            <tr >
+					                <td style="display:none;">{{$vita->id}}</td>
+					                <td style="text-align: left;">{{$vita->nombres}}</td>
+					                <td style="text-align: left;">{{$vita->apellido_paterno}}</td>
+					                <td style="text-align: center;"><input type="checkbox" name="checkbox_{{$sw}}" id="checkbox_{{$sw}}"></td>
+					            </tr>
+					             <?php $sw++ ?>
+					        @endforeach
+					        </tbody>
+					 </table>
+				</div>
+			@endif
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+          <button class="btn btn-primary" id="aceptarEquipo" type="button" aria-hidden="true" data-dismiss="modal">Asignar</button>
+<!--           <button class="btn btn-primary" id="registrarEquipo" type="button" >Registrar</button> -->
+        </div>
+    </div>     
+  </div>
+</div>
+
+
+
+<script src="{{ asset('plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
+<script src="{{ asset('plugins/jQueryUI/jquery-ui.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+<script src="../../plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="../../plugins/timepicker/bootstrap-datetimepicker.min.js"></script>
+<script src="../../plugins/timepicker/bootstrap-datetimepicker.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/es.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="/plugins/datepicker/locales/bootstrap-datepicker.es.js"></script>
+<script src="https://tecactus-4b42.kxcdn.com/reniec-sunat-js.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#modal-default, #modal-vitacora, #modal-equipo').on('shown.bs.modal', function () {
+    		// $("#txtname").focus();
+    		$('.modal-backdrop').remove();
+		});
+	});
+
+	var arrayTeam = [];
+	var arrayTeamVitacora = [];
+	var con_vitacora  = 1;
+	var person_id_selected = 0;
+  	var person_fn_selected = '';
+  	var person_type = '';
+  	var notifier = [];
+	var confirming_who = [];
+	var ejecutivo_cia = [];
+	var ejecutivo_broker = [];
+	var asegurado = [];
+	var contact_contratante = [];
+	var ajustador_asignado = [];
+	var contact_inspeccion = [];
+	var equipo = [];
+
+
+	$(document).on('click','#aceptarVitacora',function(){
+		var contacto = $('#name').val().toUpperCase();
+		var fecha_vitacora = $('#fecha_vitacora').val();
+		var motivo_id = $('#motivo_id').val();
+		var comentario = $('#comentario').val().toUpperCase();
+		var motivo_text = $("#motivo_id :selected").text(); 
+
+		if (contacto=='' || fecha_vitacora =='' || motivo_id==null || motivo_id=='') {
+			console.log('campos obligatorios');
+		}else{
+			$('#row_'+con_vitacora).html("<td style='padding: 10px;'>"+contacto+"</td><td style='padding: 10px;'>"+fecha_vitacora+"</td>"+ "<td style='padding: 10px;'>"+motivo_text+"</td>"+"</td>"+"<td>"+comentario+"</td>"+"<td  style='display:none;'>"+motivo_id+"</td>"); 
+			$('#table_vitacora').append('<tr style="text-align: left;" id="row_'+(con_vitacora+1)+'"></tr>');
+			arrayTeamVitacora.push({contacto: contacto, fecha_vitacora: fecha_vitacora, motivo_id: motivo_id, comentario:comentario }); 
+			con_vitacora++;
+			$('#name').val(null).focus();
+			$('#fecha_vitacora').val(null);
+			$('#motivo_id').val(null);
+			$('#comentario').val(null);
+			$('#fecha_coordinacion_inspeccion').val(fecha_vitacora);
+		}	    
+	});
+
+	$(document).on('click','#aceptarEquipo',function(){
+ 				var sw  = "";
+  				var con = 0, cad="";
+			    var table = document.getElementById( "table_equipo" );
+				for ( var i = 1; i < table.rows.length; i++ ) {
+					if (document.getElementById("checkbox_"+i).checked){
+						arrayTeam[i-1] = table.rows[i].cells[0].innerHTML;
+					    // arrayTeam.push({
+					        // id: table.rows[i].cells[0].innerHTML,
+					        // nombre: table.rows[i].cells[1].innerHTML,
+					        // apellidos: table.rows[i].cells[2].innerHTML
+					    // });
+					    sw += table.rows[i].cells[1].innerHTML+", "+ table.rows[i].cells[2].innerHTML+'<br>';
+					    con++;
+					    if (con==1){
+					    	cad =  table.rows[i].cells[1].innerHTML+", "+ table.rows[i].cells[2].innerHTML;
+					    }
+					}
+				}
+				if (con>1){
+					$('#equipo').val('VARIOS');
+				}
+				else{
+					$('#equipo').val(cad);
+				}
+
+				if(con!=0){
+			        $('#post_title').tooltip('enable');
+					$('#post_title').attr('title', sw)
+			          .tooltip('fixTitle');
+			          // .tooltip('show');
+		      	}
+		      	else if (con==0){
+			        $('#post_title').tooltip('disable');
+		      	}
+				// console.log(arrayTeam);
+	});
+
+	$(document).on('click','#registrarSupremo', function (){
+		var table_equipo = document.getElementById("table_equipo");
+		var table_vitacora = document.getElementById("table_vitacora");
+		$.ajax({
+			url: '/storeCaso',
+			type: 'POST',
+			data: {
+				'_token': $('input[name=_token]').val(),
+				 arrayTeam: arrayTeam,
+				 arrayTeamVitacora:arrayTeamVitacora,
+				'notifier_type_id':  $("#notifier_type_id").val(),
+				'notifier_name':  $("#notifier_name").val(),
+				'notifier_id':  $("#notifier_id").val(),
+				'notifier_date':  $("#notifier_date").val(),
+				'confirming_who_name':  $("#confirming_who_name").val(),
+				'confirming_who_id':  $("#confirming_who_id").val(),
+				'confirming_position':  $("#confirming_position").val(),
+				'confirming_date':  $("#confirming_date").val(),
+				'contratante_name':  $("#contratante_name").val(),
+				'contratante_id':  $("#contratante_id").val(),
+				'asegurado_name':  $("#asegurado_name").val(),
+				'asegurado_id':  $("#asegurado_id").val(),
+				'fecha_siniestro':  $("#fecha_siniestro").val(),
+				'giro_negocio':  $("#giro_negocio").val(),
+
+				'contact_inspeccion_name':  $("#contact_inspeccion_name").val(),
+				'direccion_referencia':  $("#direccion_referencia").val(),
+				'contact_inspeccion_telefono':  $("#contact_inspeccion_telefono").val(),
+
+				'fecha_coordinacion_inspeccion':  $("#fecha_coordinacion_inspeccion").val(),
+				'fecha_programada_inspeccion':  $("#fecha_programada_inspeccion").val(),
+				'direccion_inspeccion':  $("#direccion_inspeccion").val(),
+				'lugar_siniestro':  $("#lugar_siniestro").val(),
+				'ubigeo_name':  $("#ubigeo_name").val(),
+				'ramo_id':  $("#ramo_id").val(),
+				'tipo_siniestro_id':  $("#tipo_siniestro_id").val(),
+				'contact_contratante_name':  $("#contact_contratante_name").val(),
+				'contact_contratante_id':  $("#contact_contratante_id").val(),
+				'contact_contratante_telefono':  $("#contact_contratante_telefono").val(),
+				'broker_id':  $("#broker_id").val(),
+				'contact_contratante_email':  $("#contact_contratante_email").val(),
+				'descripcion_siniestro':  $("#descripcion_siniestro").val(),
+				'cia_id':  $("#cia_id").val(),
+				'broker_name':  $("#broker_name").val(),
+				'num_poliza':  $("#num_poliza").val(),
+				'ajustador_asignado_id':  $("#ajustador_asignado_id").val(),
+				'ejecutivo_aseguradora_name':  $("#ejecutivo_aseguradora_name").val(),
+				'ejecutivo_aseguradora_id':  $("#ejecutivo_aseguradora_id").val(),
+				'ejecutivo_broker_name':  $("#ejecutivo_broker_name").val(),
+				'tipo_ajuste_id':  $("#tipo_ajuste_id").val(),
+				'ejecutivo_broker_id':  $("#ejecutivo_broker_id").val(),
+				'ejecutivo_aseguradora_telefono':  $("#ejecutivo_aseguradora_telefono").val(),
+				'ejecutivo_broker_telefono':  $("#ejecutivo_broker_telefono").val(),
+				'ejecutivo_aseguradora_correo':  $("#ejecutivo_aseguradora_correo").val(),
+				'ejecutivo_broker_correo':  $("#ejecutivo_broker_correo").val(),
+				'num_siniestro_cia':  $("#num_siniestro_cia").val(),
+				'num_siniestro_broker':  $("#num_siniestro_broker").val(),
+
+				'gestor_ajustador':  $("#gestor_ajustador").val(),
+				'gestor_telefono':  $("#gestor_telefono").val(),
+				'gestor_correo':  $("#gestor_correo").val(),
+				'contact_inspeccion_id':  $("#contact_inspeccion_id").val()
+			},
+				success: function (data) {
+ 					$('#Response').append('<p>'+data+'</p>');
+						window.location="{{URL::to('/ListaSiniestros')}}";
+					}
+		});
+	});
+
+
+	$(function () {
+			$('#datepicker,#confirming_date,#fecha_vitacora ,#notifier_date,#fecha_siniestro,#fecha_coordinacion_inspeccion,#fecha_programada_inspeccion,#fecha_iforme_final,#fecha_realizacion').datetimepicker({
+					format : 'DD/MM/YYYY HH:mm',
+					locale: 'es',
+			});
+	});
+
+
+	$(document).on('change','#notifier_type_id',function(){
+		var quienid = $(this).val();
+		if(quienid==1){
+			$('#notificacion_tab').hide();
+		}
+		else{
+			$('#notificacion_tab').show();
+		}
+	});
+
+	$(document).on('click','#searchPerson',function(){
+		person_type = $(this).attr('data-id');
+		console.log(person_type);
+		var param = [];
+		switch(person_type){ 
+			case '1': param = notifier; break;
+			case '2': param = confirming_who; break;
+			case '3': param = ejecutivo_cia; break;
+			case '4': param = ejecutivo_broker; break;
+			case '5': param = asegurado; break;
+			case '6': param = contact_contratante; break;
+			case '7': param = ajustador_asignado; break;
+			case '8': param = contact_inspeccion; break;
+			case '9': param = equipo; break;
+		}		
+		console.log(param);
+		if(param != ''){
+			$('#nombres').val(param.data.nombres).attr('disabled','disabled');
+			$('#apellido_paterno').val(param.data.apellido_paterno).attr('disabled','disabled');
+			$('#apellido_materno').val(param.data.apellido_materno).attr('disabled','disabled');
+			
+			if(param.data.email!=='' && param.data.email!==null){$('#email').val(param.data.email).attr('disabled','disabled');
+				}else{$('#email').val('').removeAttr('disabled','disabled');}
+			if(param.data.telefono!=='' && param.data.telefono!==null){$('#telefono').val(param.data.telefono).attr('disabled','disabled');
+				}else{$('#telefono').val('').removeAttr('disabled','disabled');}
+			if(param.data.cargo!=='' && param.data.cargo!==null){$('#cargo').val(param.data.cargo).attr('disabled','disabled');
+				}else{$('#cargo').val('').removeAttr('disabled','disabled');}
+			if(param.data.fecha_nacimiento!='' && param.data.fecha_nacimiento!==null){$('#fecha_nacimiento').val(param.data.fecha_nacimiento).attr('disabled','disabled');
+				}else{$('#fecha_nacimiento').val('').removeAttr('disabled','disabled');}
+		}
+		
+		// $('#dni,#nombres,#apellido_paterno,#apellido_materno,#email,#telefono,#cargo,#fecha_nacimiento').val('').removeAttr('disabled','disabled');
+		$('#modal-default').modal('show');
+	});
+
+	$(document).on('click','#closeModalPerson',function(){
+		$('#dni,#nombres,#apellido_paterno,#apellido_materno,#email,#telefono,#cargo,#fecha_nacimiento').val('').removeAttr('disabled','disabled');
+	});
+
+	$(document).on('click','#searchDNI',function(){
+		$('#nombres,#apellido_paterno,#apellido_materno,#email,#telefono,#cargo,#fecha_nacimiento').val('').removeAttr('disabled','disabled');
+
+		var dnival = $('#dni').val();
+		if(dnival.length == 8){
+			$.ajax({
+				type:'post',
+				url: '/searchPers',
+				data: {'_token': $('input[name=_token]').val(),'dni':dnival},
+				success:function(data){
+					// console.log(data);
+					switch(person_type){
+						case '1': notifier = data; break;
+						case '2': confirming_who = data; break;
+						case '3': ejecutivo_cia = data; break;
+						case '4': ejecutivo_broker = data; break;
+						case '5': asegurado = data; break;
+						case '6': contact_contratante = data; break;
+						case '7': ajustador_asignado = data; break;
+						case '8': contact_inspeccion = data; break;
+						case '9': equipo = data; break;
+
+					}
+					// console.log(notifier);
+					$('#nombres').val(data.data.nombres).attr('disabled','disabled');
+					$('#apellido_paterno').val(data.data.apellido_paterno).attr('disabled','disabled');
+					$('#apellido_materno').val(data.data.apellido_materno).attr('disabled','disabled');
+					
+					if(data.data.email!=='' && data.data.email!==null){$('#email').val(data.data.email).attr('disabled','disabled');}
+					if(data.data.telefono!=='' && data.data.telefono!==null){$('#telefono').val(data.data.telefono).attr('disabled','disabled');}
+					if(data.data.cargo!=='' && data.data.cargo!==null){$('#cargo').val(data.data.cargo).attr('disabled','disabled');}
+					if(data.data.fecha_nacimiento!='' && data.data.fecha_nacimiento!==null){$('#fecha_nacimiento').val(data.data.fecha_nacimiento).attr('disabled','disabled');}
+					person_id_selected = data.data.id;
+					person_fn_selected =data.data.search;
+				},
+			}).done(function(){
+	  		}).fail(function(){
+
+	  			var tecactusApi = new TecactusApi("eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjJkMmQxN2EwM2ZmNDlhODg5YzRjMjhiNjQzNDMwNGY4MjkzMTMzZjRmZDI0MWUxZWNlYzQ5MzUyOTRhYzcxMGI2MGI0ZDU5MzFkZjZlOWI0In0.eyJhdWQiOiIxIiwianRpIjoiMmQyZDE3YTAzZmY0OWE4ODljNGMyOGI2NDM0MzA0ZjgyOTMxMzNmNGZkMjQxZTFlY2VjNDkzNTI5NGFjNzEwYjYwYjRkNTkzMWRmNmU5YjQiLCJpYXQiOjE0OTM3NjAwNTUsIm5iZiI6MTQ5Mzc2MDA1NSwiZXhwIjoxODA5MjkyODU1LCJzdWIiOiIyMzciLCJzY29wZXMiOlsidXNlLXJlbmllYyIsInVzZS1zdW5hdCJdfQ.XAuMrb7UeXY3_-y0CyNJ5Kblv-ADhBtkMeqAgYFpDJBYjd4n6m37kBxoMYVTbd-Z1XdXWRqFWBq7YaHYRvFYDtezIe_bGUpIMHmXO469_X62P5JrX6bURx7MqYKNJRdBupPMBIaOqw6qGXubbMhoeV4r4QWTwQnBuzi4D3SnRfPydn-WIuju75zLBSjKF3cJUObhLFXFhbYTevr5RGihPyc1kNDM1JZTV4miAs_N56xnnLvovp2kSdFVwSVzOur35UDhiUUC5tXuTFxYb2yyEHspQmIqMtWbR97u8vRy5_W2-OWSetiim8vAp0SuS2el8tDOSG-np5chiWRQiYM3X1Mah-EFtM_FRt16Y67F0hmEIz3SHvGfyw5K44kh_0ricolwb6gK32Nq30nqn2mVegEi3MzSLDtWguWl8Z8SzILyR3hEbsN2x5uCxbv1eTYAoPd8g6H2vYlpVpaKNEje6fMfBSaYUS68GG18mf_uACqGxwA9ImPplkv_gJdTdxdcaSGp2ZKmn7qNB5HOTm3IwEcSbvUUBHKJ1eYzLuS9o4cTpzGPKq35Bojrif1kbwimcdxDx2dwbygMNDBada2egttyl388abD14eYlWACOcsVcoqRPGDiiXGvJjBmaE6vElVfTfbdqVvuD8c5JEPnDga_Hej5z9xxpPJC1YYURZGQ")
+
+				tecactusApi.Reniec.getDni(dnival)
+	           		.then(function (response) {
+		                // console.log("consulta correcta!")
+		                console.log(response.data)
+						$('#nombres').val(response.data.nombres).attr('disabled','disabled');
+		                $('#apellido_paterno').val(response.data.apellido_paterno).attr('disabled','disabled');
+						$('#apellido_materno').val(response.data.apellido_materno).attr('disabled','disabled');
+						$.ajax({
+							type: 'post',
+							url: '/insertNewPerson',
+							data:{
+								'_token': $('input[name=_token]').val(),
+								'dni' : response.data.dni,
+								'person_type' : person_type,
+								'nombres':response.data.nombres,
+								'apellido_paterno':response.data.apellido_paterno,
+								'apellido_materno':response.data.apellido_materno},
+							success:function(data){
+								console.log('insert ok');
+							},
+						}).done(function(){
+
+						}).fail(function(){
+							console.log('error');
+						});
+	            	})
+	            	.catch(function (response) {
+		                // console.log("algo ocurrió")
+		                console.log("código de error: " + response.code)
+		                console.log("mensaje de respuesta: " + response.status)
+		                console.log(response.data)
+	            	})
+	  		});
+	  	}
+	});
+	$(document).on('click','#select_person',function(){
+		switch(person_type){
+			case '1': 
+				$('#notifier_id').val(person_id_selected);
+				$('#notifier_name').val(person_fn_selected);
+			break;
+			case '2':
+				$('#confirming_who_id').val(person_id_selected);
+				$('#confirming_who_name').val(person_fn_selected);
+			break;
+			case '3':
+				$('#ejecutivo_aseguradora_id').val(person_id_selected);
+				$('#ejecutivo_aseguradora_name').val(person_fn_selected);
+			break;
+		}
+		$('#dni,#nombres,#apellido_paterno,#apellido_materno,#email,#telefono,#cargo,#fecha_nacimiento').val('').removeAttr('disabled','disabled');
+		$('#modal-default').modal('hide');
+	});
+	
+	$(function(){
+		$( "#ubigeo_name" ).autocomplete({
+			source: "/auUbigeo",
+			minLength: 3,
+		  		select: function(event, ui) {
+		  		$('#ubigeo_name').val(ui.item.search);
+		  	}
+		});
+	});
+
+// $('#dni').bind('keydown', function (e) {
+//        if (e.keyCode === 9 || e.keyCode === 13) {
+//            loadDataDNI(false);
+//        }
+//    });
+
+//    function loadDataDNI(advance) {
+	//     var execute = true;
+	//     if ($('#dni').val() == '0002001' && $('#dni').val().length == 8) {
+	//         if (advance == true) {
+	//             if ($('#txtName').val() == '' && $('#txtLastName').val() == '') execute = true;
+	//             else execute = false;
+	//         }
+
+	//         if (execute) {
+	//             $.ajax({
+	//                 data: '{ "strNumDoc":"' + $('#dni').val() + '" }',
+	//                 type: "POST",
+	//                 contentType: "application/json; charset=utf-8",
+	//                 dataType: "json",
+	//                 url: "https://seguros.mapfre.com.pe/Formulario.aspx/getUserData",
+	//                 async: true
+	//             })
+	//             .done(function (data, textStatus, jqXHR) {
+	//                 varUserService = data.d;
+	//                 if(varUserService.NOMBRES == ''){
+	//                     $('#txtLastName').parent().removeClass('hide');
+	//                     $('#txtName').parent().removeClass('hide');
+	//                 }else{
+	//                 	console.log(data);
+	//                     $('#txtName').val(varUserService.NOMBRES);
+	//                     $('#txtLastName').val(varUserService.APE_PATERNO + ' ' + varUserService.APE_MATERNO);
+	//                     $('#hdDepartamento').val(varUserService.DES_DEPARTAMENTO);
+	//                     $('#hdProvincia').val(varUserService.DES_PROVINCIA);
+	//                     $('#hdDistrito').val(varUserService.DES_DISTRITO);
+	//                     $('#hdDireccion').val(varUserService.DES_DISTRITO);
+	//                     $('#hdSexo').val(varUserService.COD_SEXO);
+	//                     $('#txtBirthdate').val(varUserService.FEC_NACIMIENTO);
+
+	//                     $('#txtLastName').parent().addClass('hide');
+	//                     $('#txtName').parent().addClass('hide');
+	//                 }
+	//             })
+	//             .fail(function (jqXHR, textStatus, errorThrown) {
+	//                 if (console && console.log) {
+	//                     console.log("La solicitud a fallado: " + textStatus);
+	//                 }
+	//             });
+	//         }
+	//     } else {
+	//         if ($('#cbTipoDoc').val() == '0002001') {
+	//             $('#txtNroDoc').parent().parent().parent().addClass('has-error').addClass('has-feedback').append('<span class="glyphicon glyphicon-remove form-control-feedback"></span>');
+	//         }
+	//     }
+	// }
+
+
+	$(function () {
+	$(document).on('click', '#data1', function(){$('#icon1').toggleClass('glyphicon-arrow-down glyphicon-arrow-up'); if($('#detlail1').css('display') == 'none'){$('#detlail1').show( "slow" ); }else{$('#detlail1').hide( "slow" ); } });
+	$(document).on('click', '#data2', function(){$('#icon2').toggleClass('glyphicon-arrow-down glyphicon-arrow-up'); if($('#detlail2').css('display') == 'none'){$('#detlail2').show( "slow" ); }else{$('#detlail2').hide( "slow" ); } });
+	$(document).on('click', '#data3', function(){$('#icon3').toggleClass('glyphicon-arrow-down glyphicon-arrow-up'); if($('#detlail3').css('display') == 'none'){$('#detlail3').show( "slow" ); }else{$('#detlail3').hide( "slow" ); } });
+	$(document).on('click', '#data4', function(){$('#icon4').toggleClass('glyphicon-arrow-down glyphicon-arrow-up'); if($('#detlail4').css('display') == 'none'){$('#detlail4').show( "slow" ); }else{$('#detlail4').hide( "slow" ); } });
+	
+	// $('#datepicker, #confirming_date,#notifier_date,#fecha_siniestro,#fecha_coordinacion_inspeccion,#fecha_programada_inspeccion,#fecha_iforme_final,#fecha_realizacion').datepicker({
+ //      			autoclose: true,
+ //      			// timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'
+ //    		});
+	});
+            // var tecactusApi = new TecactusApi("eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjJkMmQxN2EwM2ZmNDlhODg5YzRjMjhiNjQzNDMwNGY4MjkzMTMzZjRmZDI0MWUxZWNlYzQ5MzUyOTRhYzcxMGI2MGI0ZDU5MzFkZjZlOWI0In0.eyJhdWQiOiIxIiwianRpIjoiMmQyZDE3YTAzZmY0OWE4ODljNGMyOGI2NDM0MzA0ZjgyOTMxMzNmNGZkMjQxZTFlY2VjNDkzNTI5NGFjNzEwYjYwYjRkNTkzMWRmNmU5YjQiLCJpYXQiOjE0OTM3NjAwNTUsIm5iZiI6MTQ5Mzc2MDA1NSwiZXhwIjoxODA5MjkyODU1LCJzdWIiOiIyMzciLCJzY29wZXMiOlsidXNlLXJlbmllYyIsInVzZS1zdW5hdCJdfQ.XAuMrb7UeXY3_-y0CyNJ5Kblv-ADhBtkMeqAgYFpDJBYjd4n6m37kBxoMYVTbd-Z1XdXWRqFWBq7YaHYRvFYDtezIe_bGUpIMHmXO469_X62P5JrX6bURx7MqYKNJRdBupPMBIaOqw6qGXubbMhoeV4r4QWTwQnBuzi4D3SnRfPydn-WIuju75zLBSjKF3cJUObhLFXFhbYTevr5RGihPyc1kNDM1JZTV4miAs_N56xnnLvovp2kSdFVwSVzOur35UDhiUUC5tXuTFxYb2yyEHspQmIqMtWbR97u8vRy5_W2-OWSetiim8vAp0SuS2el8tDOSG-np5chiWRQiYM3X1Mah-EFtM_FRt16Y67F0hmEIz3SHvGfyw5K44kh_0ricolwb6gK32Nq30nqn2mVegEi3MzSLDtWguWl8Z8SzILyR3hEbsN2x5uCxbv1eTYAoPd8g6H2vYlpVpaKNEje6fMfBSaYUS68GG18mf_uACqGxwA9ImPplkv_gJdTdxdcaSGp2ZKmn7qNB5HOTm3IwEcSbvUUBHKJ1eYzLuS9o4cTpzGPKq35Bojrif1kbwimcdxDx2dwbygMNDBada2egttyl388abD14eYlWACOcsVcoqRPGDiiXGvJjBmaE6vElVfTfbdqVvuD8c5JEPnDga_Hej5z9xxpPJC1YYURZGQ")
+
+
+            // tecactusApi.Sunat.getByRuc("20521015226")
+            //     .then(function (response) {
+            //         console.log("consulta correcta!")
+            //         console.log(response.data)
+            //     })
+            //     .catch(function (response) {
+            //         console.log("algo ocurrió")
+            //         console.log("código de error: " + response.code)
+            //         console.log("mensaje de respuesta: " + response.status)
+            //         console.log(response.data)
+            //     })
+
+
+
+            // tecactusApi.Reniec.getDni("45624986")
+            //     .then(function (response) {
+            //         console.log("consulta correcta!")
+            //         console.log(response.data)
+            //     })
+            //     .catch(function (response) {
+            //         console.log("algo ocurrió")
+            //         console.log("código de error: " + response.code)
+            //         console.log("mensaje de respuesta: " + response.status)
+            //         console.log(response.data)
+            //     })
+
+        // direccion : "CAL.LOS SAUCES NRO. 325 URB. EL ROSARIO LIMA - LIMA - SAN ISIDRO"
+        // estado_contribuyente : "ACTIVO"
+        // nombre_comercial : "-"
+        // razon_social : "ACME-TIC SAC"
+        // ruc : 20521015226 
+
+        // actividad_comercio_exterior : "SIN ACTIVIDAD"
+        // condicion_contribuyente : "HABIDO"
+        // fecha_inicio_actividades : "17-02-2009"
+        // fecha_inscripcion : "17-02-2009"        
+        // sistema_contabilidad : "COMPUTARIZADO"
+        // sistema_emision_comprobante : "MANUAL"
+        // tipo_contribuyente : "SOCIEDAD ANONIMA CERRADA"
+
+
+        // apellido_materno: "LOAYZA"
+        // apellido_paterno : "SEVILLA"
+        // caracter_verificacion : "3"
+        // caracter_verificacion_anterior : "H"
+        // dni : "45624986"
+        // nombres : "CRISTHIAN GIANCARLO JESUS"
+
+</script> 	
+
+
+
+@endsection
+
+ 	

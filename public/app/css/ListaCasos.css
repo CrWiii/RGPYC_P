@@ -135,3 +135,7 @@ table > tbody > tr > td {
     border-color: #dedede;
     color: #000000;
 }
+
+.navbar.navbar-inverse.navbar-fixed-top .nav-header {
+    height: 85px !important;
+}

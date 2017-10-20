@@ -288,8 +288,8 @@ select{
 	background: #f6f6f6 !important;
 }
 
-.btn, a{
-	height: 22px !important;
+.btn, .actions > ul > li > a{
+	/*height: 22px !important;*/
 	/*font-family: 'ABeeZee',Arial,Helvetica,sans-serif;*/
 	border-radius: 3px !important;
     font-size: 11.5px !important;
@@ -327,4 +327,15 @@ select{
 }
 .input-group-addon {
     padding: 2px 8px;
+}
+
+.wizard .steps ul > li.current {
+    background: #f6f6f6 !important;
+}
+.wizard .steps ul > li.done {
+    background: #f6f6f6 !important;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top .nav-header {
+    height: 85px;
 }

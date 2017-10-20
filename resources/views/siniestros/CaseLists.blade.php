@@ -4,14 +4,13 @@
 	SR2 - Lista de Casos
 @endsection
 
-
-@section('main-content')
-
 @section('styles')
     <link href="{{ asset('/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>   
     <link href="{{ asset('/dist/css/style.css') }}" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="{{ asset('app/css/ListaCasos.css') }}">
 @endsection
+
+@section('main-content')
 
 <div class="col-sm-12 fix-panel">
 	<div class="panel panel-default card-view">
@@ -121,7 +120,7 @@
 <script src="{{ asset('plugins/jQueryUI/jquery-ui.min.js') }}"></script>
 <script src="{{asset('js/colResizable-1.6.min.js')}}"></script> -->
 @section('scripts2')
-<script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
+	<script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
 	<script src="{{ asset('dist/js/dataTables-data.js') }}"></script>

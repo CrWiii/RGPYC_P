@@ -15,7 +15,7 @@
         }
         .page-wrapper {
             margin-left: 0px !important;
-            background: #ffffff !important;
+            /*background: #ffffff !important;*/
         }
         .brand-img-f{
             height: 80px !important;
