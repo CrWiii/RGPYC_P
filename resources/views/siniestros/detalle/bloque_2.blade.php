@@ -1,14 +1,5 @@
-<div class="box-body">
-	<div class="panel panel-default">
-		<div class="panel-heading" id="data2">	
-			<div class="panel-title"> 
-				<!-- <a id="data2" class="btn btn-default btn-xs btnarrw">
-					<span id="icon2" class="glyphicon glyphicon-arrow-down"></span>
-				</a> -->
-				<span class="numlist">&#9313;</span><strong class="frameTit">DATOS COMPLEMENTARIOS</strong>
-			</div>
-		</div>  
-		<div class="panel-body" id="detlail2" style="display: none;">
+
+		<div class="panel-body" id="detlail2">
 			<form method="post" id="form-complementarios">
 				{{csrf_field()}}
 				<input type="hidden" name="id" value="{{$caso->id}}">
@@ -597,5 +588,3 @@
 						<button type="button" name="" class="btn btn-primary" id="registrar_complementarios">Registrar</button>
 			</form>
 		</div>
-	</div>
-</div>

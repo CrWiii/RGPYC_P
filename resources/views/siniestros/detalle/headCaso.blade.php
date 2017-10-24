@@ -1,6 +1,4 @@
-
-<header class="headcaso">
-    <nav style="background-color: #ffffff !important;">
+	<nav style="background-color: #ffffff !important;">
         <div class="navbar-custom-menu">
         	<div class="col-md-12">
 				<div style="float: left;padding-top: 2% !important;">
@@ -70,14 +68,14 @@
 				<div style="float: right;padding-top: 3px !important;padding-bottom: 3px !important;">
 				<button type="button" class="btn btn-default btn-sm" id="vitacora" data-toggle="modal" data-target="#modal-rechazar" title="Rechazar Caso" style="margin-left: -5px; font-size: 20px;"><i class="fa fa-cloud"></i><p style="font-size: 10px; margin: 0px !important;">Rechazar</p></button>
 				<button type="button" class="btn btn-default btn-sm" id="vitacora" data-toggle="modal" data-target="#modal-anular" title="Anular Caso" style="margin-left: -5px; font-size: 20px;"><i class="fa fa-cube"></i><p style="font-size: 10px; margin: 0px !important;">Anular </p></button>
-		        	<button type="button" class="btn btn-default btn-sm" id="vitacora" data-toggle="modal" data-target="#modal-vitacora" title="Vitácora Gastos" style="margin-left: -5px; font-size: 20px;"><i class="fa fa-dollar"></i><p style="font-size: 10px; margin: 0px !important;">Bitacora</p></button>
+		        <button type="button" class="btn btn-default btn-sm" id="vitacora" data-toggle="modal" data-target="#modal-vitacora" title="Vitácora Gastos" style="margin-left: -5px; font-size: 20px;"><i class="fa fa-dollar"></i><p style="font-size: 10px; margin: 0px !important;">Bitacora</p></button>
 
 		        	<a href="{{url('caratula',array($caso->id))}}" target="_blank" class="btn btn-default btn-sm" style="margin-left: -5px; font-size: 20px;"  title="Carátula" ><i class="fa fa-book" ></i><p style="font-size: 10px; margin: 0px !important;">Carátula</p></a>
-		        	<button type="button" class="btn btn-default btn-sm" id="informs" data-toggle="modal" data-target="#modal-pdfsInforms" title="Lista de PDFs" style="margin-left: -5px; font-size: 20px;"><i class="fa fa-file-pdf-o"></i><p style="font-size: 10px; margin: 0px !important;">Informes</p></button>
-		        	<button type="button" class="btn btn-default btn-sm" id="informss" data-toggle="modal" data-target="#modal-pdfsInformsSol" title="Documentos Solicitados" style="margin-left: -5px; font-size: 20px;"><i class="fa fa-folder-open-o"></i><p style="font-size: 10px; margin: 0px !important;">Documentos</p></button>
+		        <button type="button" class="btn btn-default btn-sm" id="informs" data-toggle="modal" data-target="#modal-pdfsInforms" title="Lista de PDFs" style="margin-left: -5px; font-size: 20px;"><i class="fa fa-file-pdf-o"></i><p style="font-size: 10px; margin: 0px !important;">Informes</p></button>
+		        <button type="button" class="btn btn-default btn-sm" id="informss" data-toggle="modal" data-target="#modal-pdfsInformsSol" title="Documentos Solicitados" style="margin-left: -5px; font-size: 20px;"><i class="fa fa-folder-open-o"></i><p style="font-size: 10px; margin: 0px !important;">Documentos</p></button>
 		        		<a href="{{url('ListaSiniestros')}}" style="font-size: 18px !important; padding-left: 15px;">Volver /</a> <label style="font-size: 18px !important;     color: #777777;">Detalle del caso</label>
 		        </div>
 			</div>
         </div>
     </nav>
-</header>
+

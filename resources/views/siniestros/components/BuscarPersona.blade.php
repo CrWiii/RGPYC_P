@@ -113,7 +113,7 @@
             	<div class="col-md-4">
             		<label class="control-label">Cargo:</label>
             	</div>
-            	<div class="col-md-6">
+            	<div class="col-md-8">
             		<div class="controls">
 						<input class="form-control input-sm" type="text" name="cargo" id="cargo">
             		</div>            		

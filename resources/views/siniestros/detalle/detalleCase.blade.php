@@ -6,8 +6,8 @@
 
 @section('styles')
 	<link href="{{ asset('/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>   
-	<!-- <link rel="stylesheet" href="vendors/bower_components/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.css" /> -->
-    <link href="{{ asset('/dist/css/style.css') }}" rel="stylesheet" type="text/css">
+	<link href="{{ asset('/dist/css/style.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('plugins/jQueryUI/jquery-ui.css') }}">
 	<!-- <link rel="stylesheet" href="{{ asset('app/css/ListaCasos.css') }}"> -->
 	<style type="text/css">
     	.navbar.navbar-inverse.navbar-fixed-top .nav-header {
@@ -16,6 +16,308 @@
 		/*.container-fluid{
 	    	padding-top: 20px !important;
 		}*/
+		.page-wrapper {
+    		padding: 90px 20px !important;
+    	}
+
+		.custom-tab-2 .nav-tabs > li.active > a, .custom-tab-2 .nav-tabs > li.open > a {
+    		color: #878787 !important;
+    		/*background: #ad6262;*/
+    	}
+    	.custom-tab-2 .nav-tabs > li > a:active, .custom-tab-2 .nav-tabs > li > a:focus, .custom-tab-2 .nav-tabs > li > a:hover {
+    		color: #878787 !important;
+    	}
+
+
+
+input{
+	height: 30px !important;
+}
+div.clearfix > ul > li > a {
+    padding: 3px 5px !important;
+}
+#searchPerson{
+	padding: 2px 15px !important;
+}
+/*.page-wrapper {
+	padding: 45px 0px !important;
+}*/
+.btn-fix-call-modal{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+/*.page-wrapper {
+    margin-left: 0px !important;
+    padding: 35px 0px;
+}*/
+.fix-panel{
+	padding-right: 0px !important;
+	padding-left: 0px !important;
+}
+.container-fluid{
+	padding-right: 8px !important;
+	padding-left: 8px !important;
+}
+.framn{
+	margin-left: 0px;padding: 0px;
+}
+.bhty{
+	width:100%;padding: 5px;
+}
+.title-reg{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.box-title{
+	font-size: 20px !important;
+	color:#505c62 !important;
+}
+.ui-autocomplete {
+    z-index: 5000;
+}
+
+.block_border{
+	margin:0; color:#555; border: 1px solid #a79a9a; padding:20px 10px 10px 10px; border-radius: 5px;
+}
+.la-red{
+	color: #FF0000;
+}
+.select2-selection {
+    font-size: 12px !important;
+}
+
+.select2-results__options{
+    font-size: 12px !important;
+}
+
+.select2-results__option{
+	text-transform: uppercase !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+	line-height: 22px !important;
+}
+.ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+ }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+* html .ui-autocomplete {
+    height: 100px;
+}
+
+.btnarrw{
+		margin-top: 0px;
+		float: right;
+	}
+.btninf{
+	font-size: 0.8em !important;float: right;padding-top: 1px !important; padding-bottom: 1px !important; margin-right: 10px;margin-top: 2px !important;
+}
+.modal-backdrop.in {
+    opacity: 0 !important;
+}
+.box-body{
+	padding: 5px !important;
+}
+.panel-default{
+	margin-bottom: 0px !important;
+}
+.panel-heading{
+	padding: 5px !important;
+}
+.glyphicon{
+	color:#9ba7ad !important;
+}
+.numlist{
+	font-size: 100%;
+	color:#9ba7ad;
+}
+.frameTit{
+	vertical-align: middle;
+	padding-left: 10px !important; 
+	font-size: 0.95em !important;
+	color:#9ba7ad !important;
+}
+.gg{
+	margin-left: 0px;padding: 0px;
+}
+.ggt > tbody > tr > th {
+	padding-top: 4px !important;
+	background-color: #f5f5f5 !important;
+}
+
+.form-control{
+		color:#000000;
+}
+ .collapsedBorder {
+ 	margin-bottom: 10px;
+ }
+.row{
+	font-size: 1em !important;
+}
+.form-label{
+	padding-top: 5px;
+ 	padding-bottom: 3px;
+ 	padding-right: 0px;
+}
+.form-group{
+	margin-bottom: 0px;
+}
+.sizePadding{
+	padding-right: 4px;
+	margin-bottom: 0px;
+ /* height: 35px; */
+
+	/*padding-left: 5px;*/
+}
+.form-control{
+	color:#000000;
+}
+input, textarea{
+	text-transform: uppercase;
+} 
+input[type=submit] {
+	text-transform: capitalize;
+}
+input[type=email] {
+	text-transform: lowercase;
+}
+select.input-sm {
+ 	height: 25px;
+ 	line-height: 15px;
+}
+.input-sm {
+    padding: 2px 10px;
+}
+.collapsedBorder{
+	border:1px solid #a79a9a;
+}
+.glyphicon {
+	color: #484646 !important;
+}
+.tooltip-inner {
+	font-size: 0.9em !important;
+    max-width: 250px;
+    /* If max-width does not work, try using width instead */
+    width: 250px; 
+}
+.modal-lg {
+    height:   500px;
+}
+.removeValid{
+	border: 1px solid #ccc !important;
+}
+.addValid{
+	border: 2.5px solid #f90000 !important;
+}
+.fix-size-for-all .panel-body{
+    padding: 5px !important;
+}
+.fix-size-for-all .block_border {
+	padding: 10px !important;
+}
+input[type="radio"], input[type="checkbox"] {
+    margin: 0 !important;
+}
+label{
+	font-size: 0.9em !important;
+}
+
+.wizard > .actions {
+    padding-right: 35px !important;
+}
+.content{
+	margin-bottom: 0px !important;
+}
+
+.wizard .content > .body {
+    padding: 10px !important;
+}
+
+body{
+	font-size: 11.5px !important;
+}
+
+input{
+	height: 23px !important;
+	line-height: normal;
+	border-radius: 3px !important;
+	padding: 3px 6px !important;
+    font-size: 11.5px !important;
+    border: 1px solid #dedede !important;
+    /*background: #f6f6f6 !important;*/
+    color: #868686 !important;
+}
+
+select{
+    height: 22px !important;
+    line-height: normal;
+    border-radius: 3px !important;
+    padding: 3px 6px !important;
+    font-size: 11.5px !important;
+    border: 1px solid #dedede !important;
+    /*background: #f6f6f6 !important;*/
+    color: #868686 !important;
+}
+#notifier_name, #confirming_who_name{
+	background: #f6f6f6 !important;
+}
+
+.btn, .actions > ul > li > a{
+	/*height: 22px !important;*/
+	/*font-family: 'ABeeZee',Arial,Helvetica,sans-serif;*/
+	border-radius: 3px !important;
+    font-size: 11.5px !important;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: normal;
+    padding: 3px 6px !important;
+    border: 1px solid #dedede !important;
+    background: #f6f6f6 !important;
+    color: #868686 !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#efefef));
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.content{
+	margin-bottom: 0px !important;
+}
+
+.wizard .steps ul > li span.number {
+	width: 20px !important;
+    height: 20px !important;
+    padding-top: 0px !important;
+}
+.wizard .steps .number {
+	font-size: 10px !important;
+}
+.input-group-addon {
+    padding: 2px 8px;
+}
+
+.wizard .steps ul > li.current {
+    background: #f6f6f6 !important;
+}
+.wizard .steps ul > li.done {
+    background: #f6f6f6 !important;
+}
+
 	</style>
 
 @endsection
@@ -23,468 +325,71 @@
 @section('main-content')
 
 
-@include('siniestros.detalle.headCaso')
-	
 
-	<div class="container-fluid pt-25">
-				<!-- Row -->
-				<div class="row">
-					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-						<div class="panel panel-default card-view pa-0">
-							<div class="panel-wrapper collapse in">
-								<div class="panel-body pa-0">
-									<div class="sm-data-box">
-										<div class="container-fluid">
-											<div class="row">
-												<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-													<span class="txt-dark block counter"><span class="counter-anim">914,001</span></span>
-													<span class="weight-500 uppercase-font block font-13">visits</span>
-												</div>
-												<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
-													<i class="icon-user-following data-right-rep-icon txt-light-grey"></i>
-												</div>
-											</div>	
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-						<div class="panel panel-default card-view pa-0">
-							<div class="panel-wrapper collapse in">
-								<div class="panel-body pa-0">
-									<div class="sm-data-box">
-										<div class="container-fluid">
-											<div class="row">
-												<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-													<span class="txt-dark block counter"><span class="counter-anim">46.41</span>%</span>
-													<span class="weight-500 uppercase-font block">bounce rate</span>
-												</div>
-												<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
-													<i class="icon-control-rewind data-right-rep-icon txt-light-grey"></i>
-												</div>
-											</div>	
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-						<div class="panel panel-default card-view pa-0">
-							<div class="panel-wrapper collapse in">
-								<div class="panel-body pa-0">
-									<div class="sm-data-box">
-										<div class="container-fluid">
-											<div class="row">
-												<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-													<span class="txt-dark block counter"><span class="counter-anim">4,054,876</span></span>
-													<span class="weight-500 uppercase-font block">pageviews</span>
-												</div>
-												<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
-													<i class="icon-layers data-right-rep-icon txt-light-grey"></i>
-												</div>
-											</div>	
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-						<div class="panel panel-default card-view pa-0">
-							<div class="panel-wrapper collapse in">
-								<div class="panel-body pa-0">
-									<div class="sm-data-box">
-										<div class="container-fluid">
-											<div class="row">
-												<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-													<span class="txt-dark block counter"><span class="counter-anim">46.43</span>%</span>
-													<span class="weight-500 uppercase-font block">growth rate</span>
-												</div>
-												<div class="col-xs-6 text-center  pl-0 pr-0 pt-25  data-wrap-right">
-													<div id="sparkline_4" style="width: 100px; overflow: hidden; margin: 0px auto;"><canvas width="115" height="50" style="display: inline-block; width: 115px; height: 50px; vertical-align: top;"></canvas></div>
-												</div>
-											</div>	
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /Row -->
-				
-				<!-- Row -->
-				<div class="row">
-						<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                        <div class="panel panel-default card-view">
-							<div class="panel-heading">
-								<div class="pull-left">
-									<h6 class="panel-title txt-dark">user statistics</h6>
-								</div>
-								<div class="pull-right">
-									<span class="no-margin-switcher">
-										<input type="checkbox" checked="" id="morris_switch" class="js-switch" data-color="#2ecd99" data-secondary-color="#dedede" data-size="small" data-switchery="true" style="display: none;"><span class="switchery switchery-small" style="background-color: rgb(46, 205, 153); border-color: rgb(46, 205, 153); box-shadow: rgb(46, 205, 153) 0px 0px 0px 11px inset; transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;"><small style="left: 13px; background-color: rgb(255, 255, 255); transition: background-color 0.4s, left 0.2s;"></small></span>	
-									</span>	
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="panel-wrapper collapse in">
-                                <div class="panel-body">
-									<div id="area_chart" class="morris-chart" style="height: 293px; position: relative; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg height="293" version="1.1" width="529" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.2.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><text x="34.296875" y="251" text-anchor="end" font-family="Poppins" font-size="12px" stroke="none" fill="#878787" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: Poppins; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><text x="34.296875" y="194.5" text-anchor="end" font-family="Poppins" font-size="12px" stroke="none" fill="#878787" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: Poppins; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">75</tspan></text><text x="34.296875" y="138" text-anchor="end" font-family="Poppins" font-size="12px" stroke="none" fill="#878787" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: Poppins; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">150</tspan></text><text x="34.296875" y="81.5" text-anchor="end" font-family="Poppins" font-size="12px" stroke="none" fill="#878787" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: Poppins; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">225</tspan></text><text x="34.296875" y="25" text-anchor="end" font-family="Poppins" font-size="12px" stroke="none" fill="#878787" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: Poppins; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">300</tspan></text><text x="504" y="263.5" text-anchor="middle" font-family="Poppins" font-size="12px" stroke="none" fill="#878787" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Poppins; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,8.5)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Sat</tspan></text><text x="427.79947916666663" y="263.5" text-anchor="middle" font-family="Poppins" font-size="12px" stroke="none" fill="#878787" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Poppins; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,8.5)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Fri</tspan></text><text x="351.5989583333333" y="263.5" text-anchor="middle" font-family="Poppins" font-size="12px" stroke="none" fill="#878787" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Poppins; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,8.5)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Thu</tspan></text><text x="275.3984375" y="263.5" text-anchor="middle" font-family="Poppins" font-size="12px" stroke="none" fill="#878787" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Poppins; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,8.5)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Wed</tspan></text><text x="199.19791666666666" y="263.5" text-anchor="middle" font-family="Poppins" font-size="12px" stroke="none" fill="#878787" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Poppins; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,8.5)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Tue</tspan></text><text x="122.99739583333333" y="263.5" text-anchor="middle" font-family="Poppins" font-size="12px" stroke="none" fill="#878787" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Poppins; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,8.5)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Mon</tspan></text><text x="46.796875" y="263.5" text-anchor="middle" font-family="Poppins" font-size="12px" stroke="none" fill="#878787" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Poppins; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,8.5)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Son</tspan></text><path fill="#5bd2ab" stroke="none" d="M46.796875,243.46666666666667C65.84700520833333,220.86666666666667,103.947265625,159.65833333333333,122.99739583333333,153.06666666666666C142.04752604166666,146.475,180.14778645833331,185.08333333333334,199.19791666666666,190.73333333333335C218.248046875,196.38333333333335,256.3483072916667,207.6833333333333,275.3984375,198.26666666666665C294.4485677083333,188.85,332.548828125,118.69583333333334,351.5989583333333,115.4C370.64908854166663,112.10416666666667,408.7493489583333,178.49166666666667,427.79947916666663,171.9C446.849609375,165.30833333333334,484.94986979166663,89.97500000000002,504,62.666666666666686L504,251L46.796875,251Z" fill-opacity="0.6" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.6;"></path><path fill="none" stroke="#2ecd99" d="M46.796875,243.46666666666667C65.84700520833333,220.86666666666667,103.947265625,159.65833333333333,122.99739583333333,153.06666666666666C142.04752604166666,146.475,180.14778645833331,185.08333333333334,199.19791666666666,190.73333333333335C218.248046875,196.38333333333335,256.3483072916667,207.6833333333333,275.3984375,198.26666666666665C294.4485677083333,188.85,332.548828125,118.69583333333334,351.5989583333333,115.4C370.64908854166663,112.10416666666667,408.7493489583333,178.49166666666667,427.79947916666663,171.9C446.849609375,165.30833333333334,484.94986979166663,89.97500000000002,504,62.666666666666686" stroke-width="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="46.796875" cy="243.46666666666667" r="0" fill="#2ecd99" stroke="#2ecd99" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="122.99739583333333" cy="153.06666666666666" r="0" fill="#2ecd99" stroke="#2ecd99" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="199.19791666666666" cy="190.73333333333335" r="0" fill="#2ecd99" stroke="#2ecd99" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="275.3984375" cy="198.26666666666665" r="0" fill="#2ecd99" stroke="#2ecd99" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="351.5989583333333" cy="115.4" r="0" fill="#2ecd99" stroke="#2ecd99" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="427.79947916666663" cy="171.9" r="0" fill="#2ecd99" stroke="#2ecd99" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="504" cy="62.666666666666686" r="0" fill="#2ecd99" stroke="#2ecd99" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><path fill="#89bbe8" stroke="none" d="M46.796875,190.73333333333335C65.84700520833333,186.9666666666667,103.947265625,170.95833333333334,122.99739583333333,175.66666666666669C142.04752604166666,180.37500000000003,180.14778645833331,237.81666666666666,199.19791666666666,228.4C218.248046875,218.98333333333335,256.3483072916667,102.21666666666668,275.3984375,100.33333333333334C294.4485677083333,98.45000000000002,332.548828125,210.50833333333335,351.5989583333333,213.33333333333334C370.64908854166663,216.15833333333333,408.7493489583333,132.35,427.79947916666663,122.93333333333334C446.849609375,113.51666666666667,484.94986979166663,134.23333333333335,504,138L504,251L46.796875,251Z" fill-opacity="0.6" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.6;"></path><path fill="none" stroke="#4e9de6" d="M46.796875,190.73333333333335C65.84700520833333,186.9666666666667,103.947265625,170.95833333333334,122.99739583333333,175.66666666666669C142.04752604166666,180.37500000000003,180.14778645833331,237.81666666666666,199.19791666666666,228.4C218.248046875,218.98333333333335,256.3483072916667,102.21666666666668,275.3984375,100.33333333333334C294.4485677083333,98.45000000000002,332.548828125,210.50833333333335,351.5989583333333,213.33333333333334C370.64908854166663,216.15833333333333,408.7493489583333,132.35,427.79947916666663,122.93333333333334C446.849609375,113.51666666666667,484.94986979166663,134.23333333333335,504,138" stroke-width="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="46.796875" cy="190.73333333333335" r="0" fill="#4e9de6" stroke="#4e9de6" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="122.99739583333333" cy="175.66666666666669" r="0" fill="#4e9de6" stroke="#4e9de6" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="199.19791666666666" cy="228.4" r="0" fill="#4e9de6" stroke="#4e9de6" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="275.3984375" cy="100.33333333333334" r="0" fill="#4e9de6" stroke="#4e9de6" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="351.5989583333333" cy="213.33333333333334" r="0" fill="#4e9de6" stroke="#4e9de6" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="427.79947916666663" cy="122.93333333333334" r="0" fill="#4e9de6" stroke="#4e9de6" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="504" cy="138" r="0" fill="#4e9de6" stroke="#4e9de6" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><path fill="#eed380" stroke="none" d="M46.796875,235.93333333333334C65.84700520833333,224.63333333333333,103.947265625,195.4416666666667,122.99739583333333,190.73333333333335C142.04752604166666,186.025,180.14778645833331,203.91666666666666,199.19791666666666,198.26666666666665C218.248046875,192.61666666666665,256.3483072916667,152.125,275.3984375,145.53333333333333C294.4485677083333,138.94166666666666,332.548828125,139.88333333333333,351.5989583333333,145.53333333333333C370.64908854166663,151.18333333333334,408.7493489583333,196.38333333333335,427.79947916666663,190.73333333333335C446.849609375,185.08333333333334,484.94986979166663,122.93333333333334,504,100.33333333333334L504,251L46.796875,251Z" fill-opacity="0.6" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0.6;"></path><path fill="none" stroke="#f0c541" d="M46.796875,235.93333333333334C65.84700520833333,224.63333333333333,103.947265625,195.4416666666667,122.99739583333333,190.73333333333335C142.04752604166666,186.025,180.14778645833331,203.91666666666666,199.19791666666666,198.26666666666665C218.248046875,192.61666666666665,256.3483072916667,152.125,275.3984375,145.53333333333333C294.4485677083333,138.94166666666666,332.548828125,139.88333333333333,351.5989583333333,145.53333333333333C370.64908854166663,151.18333333333334,408.7493489583333,196.38333333333335,427.79947916666663,190.73333333333335C446.849609375,185.08333333333334,484.94986979166663,122.93333333333334,504,100.33333333333334" stroke-width="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="46.796875" cy="235.93333333333334" r="0" fill="#f0c541" stroke="#f0c541" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="122.99739583333333" cy="190.73333333333335" r="0" fill="#f0c541" stroke="#f0c541" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="199.19791666666666" cy="198.26666666666665" r="0" fill="#f0c541" stroke="#f0c541" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="275.3984375" cy="145.53333333333333" r="0" fill="#f0c541" stroke="#f0c541" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="351.5989583333333" cy="145.53333333333333" r="0" fill="#f0c541" stroke="#f0c541" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="427.79947916666663" cy="190.73333333333335" r="0" fill="#f0c541" stroke="#f0c541" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="504" cy="100.33333333333334" r="0" fill="#f0c541" stroke="#f0c541" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle></svg><div class="morris-hover morris-default-style" style="left: 449px; top: 34px; display: none;"><div class="morris-hover-row-label">Sat</div><div class="morris-hover-point" style="color: #2ecd99">
-  iphone:
-  250
-</div><div class="morris-hover-point" style="color: #4e9de6">
-  ipad:
-  150
-</div><div class="morris-hover-point" style="color: #f0c541">
-  itouch:
-  200
-</div></div></div>
-									<ul class="flex-stat mt-40">
-										<li>
-											<span class="block">Weekly Users</span>
-											<span class="block txt-dark weight-500 font-18"><span class="counter-anim">324,222</span></span>
-										</li>
-										<li>
-											<span class="block">Monthly Users</span>
-											<span class="block txt-dark weight-500 font-18"><span class="counter-anim">123,432</span></span>
-										</li>
-										<li>
-											<span class="block">Trend</span>
-											<span class="block">
-												<i class="zmdi zmdi-trending-up txt-success font-24"></i>
-											</span>
-										</li>
-									</ul>
-								</div>
-							</div>
-                        </div>
-                    </div>
-						<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-						<div class="panel panel-default card-view">
-							<div class="panel-wrapper collapse in">
-                                <div class="panel-body sm-data-box-1">
-									<span class="uppercase-font weight-500 font-14 block text-center txt-dark">customer satisfaction</span>	
-									<div class="cus-sat-stat weight-500 txt-success text-center mt-5">
-										<span class="counter-anim">93.13</span><span>%</span>
-									</div>
-									<div class="progress-anim mt-20">
-										<div class="progress">
-											<div class="progress-bar progress-bar-success wow animated progress-animated" role="progressbar" aria-valuenow="93.12" aria-valuemin="0" aria-valuemax="100" style="width: 93.12%;"></div>
-										</div>
-									</div>
-									<ul class="flex-stat mt-5">
-										<li>
-											<span class="block">Previous</span>
-											<span class="block txt-dark weight-500 font-15">79.82</span>
-										</li>
-										<li>
-											<span class="block">% Change</span>
-											<span class="block txt-dark weight-500 font-15">+14.29</span>
-										</li>
-										<li>
-											<span class="block">Trend</span>
-											<span class="block">
-												<i class="zmdi zmdi-trending-up txt-success font-20"></i>
-											</span>
-										</li>
-									</ul>
-								</div>
-                            </div>
-                        </div>
-						<div class="panel panel-default card-view">
-							<div class="panel-heading">
-								<div class="pull-left">
-									<h6 class="panel-title txt-dark">browser stats</h6>
-								</div>
-								<div class="pull-right">
-									<a href="#" class="pull-left inline-block mr-15">
-										<i class="zmdi zmdi-download"></i>
-									</a>
-									<a href="#" class="pull-left inline-block close-panel" data-effect="fadeOut">
-										<i class="zmdi zmdi-close"></i>
-									</a>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="panel-wrapper collapse in">
-								<div class="panel-body">
-									<div>
-										<span class="pull-left inline-block capitalize-font txt-dark">
-											google chrome
-										</span>
-										<span class="label label-warning pull-right">50%</span>
-										<div class="clearfix"></div>
-										<hr class="light-grey-hr row mt-10 mb-10">
-										<span class="pull-left inline-block capitalize-font txt-dark">
-											mozila firefox
-										</span>
-										<span class="label label-danger pull-right">10%</span>
-										<div class="clearfix"></div>
-										<hr class="light-grey-hr row mt-10 mb-10">
-										<span class="pull-left inline-block capitalize-font txt-dark">
-											Internet explorer
-										</span>
-										<span class="label label-success pull-right">30%</span>
-										<div class="clearfix"></div>
-										<hr class="light-grey-hr row mt-10 mb-10">
-										<span class="pull-left inline-block capitalize-font txt-dark">
-											safari
-										</span>
-										<span class="label label-primary pull-right">10%</span>
-										<div class="clearfix"></div>
-									</div>
-								</div>	
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                       <div class="panel panel-default card-view panel-refresh">
-							<div class="refresh-container">
-								<div class="la-anim-1"></div>
-							</div>
-							<div class="panel-heading">
-								<div class="pull-left">
-									<h6 class="panel-title txt-dark">Visit by Traffic Types</h6>
-								</div>
-								<div class="pull-right">
-									<a href="#" class="pull-left inline-block refresh mr-15">
-										<i class="zmdi zmdi-replay"></i>
-									</a>
-									<div class="pull-left inline-block dropdown">
-										<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert"></i></a>
-										<ul class="dropdown-menu bullet dropdown-menu-right" role="menu">
-											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>Devices</a></li>
-											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>General</a></li>
-											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>Referral</a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="panel-wrapper collapse in">
-								<div class="panel-body">
-									<div><iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
-										<canvas id="chart_6" height="191" width="240" style="display: block; width: 240px; height: 191px;"></canvas>
-									</div>	
-									<hr class="light-grey-hr row mt-10 mb-15">
-									<div class="label-chatrs">
-										<div class="">
-											<span class="clabels clabels-lg inline-block bg-blue mr-10 pull-left"></span>
-											<span class="clabels-text font-12 inline-block txt-dark capitalize-font pull-left"><span class="block font-15 weight-500 mb-5">44.46% organic</span><span class="block txt-grey">356 visits</span></span>
-											<div id="sparkline_1" class="pull-right" style="width: 100px; overflow: hidden; margin: 0px auto;"><canvas width="100" height="35" style="display: inline-block; width: 100px; height: 35px; vertical-align: top;"></canvas></div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-									<hr class="light-grey-hr row mt-10 mb-15">
-									<div class="label-chatrs">
-										<div class="">
-											<span class="clabels clabels-lg inline-block bg-green mr-10 pull-left"></span>
-											<span class="clabels-text font-12 inline-block txt-dark capitalize-font pull-left"><span class="block font-15 weight-500 mb-5">5.54% Refrral</span><span class="block txt-grey">36 visits</span></span>
-											<div id="sparkline_2" class="pull-right" style="width: 100px; overflow: hidden; margin: 0px auto;"><canvas width="100" height="35" style="display: inline-block; width: 100px; height: 35px; vertical-align: top;"></canvas></div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-									<hr class="light-grey-hr row mt-10 mb-15">
-									<div class="label-chatrs">
-										<div class="">
-											<span class="clabels clabels-lg inline-block bg-yellow mr-10 pull-left"></span>
-											<span class="clabels-text font-12 inline-block txt-dark capitalize-font pull-left"><span class="block font-15 weight-500 mb-5">50% Other</span><span class="block txt-grey">245 visits</span></span>
-											<div id="sparkline_3" class="pull-right" style="width: 100px; overflow: hidden; margin: 0px auto;"><canvas width="100" height="35" style="display: inline-block; width: 100px; height: 35px; vertical-align: top;"></canvas></div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>	
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /Row -->
-				
-				<!-- Row -->
-				<div class="row">
-					<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
-						<div class="panel panel-default card-view panel-refresh">
-							<div class="refresh-container">
-								<div class="la-anim-1"></div>
-							</div>
-							<div class="panel-heading">
-								<div class="pull-left">
-									<h6 class="panel-title txt-dark">social campaigns</h6>
-								</div>
-								<div class="pull-right">
-									<a href="#" class="pull-left inline-block refresh mr-15">
-										<i class="zmdi zmdi-replay"></i>
-									</a>
-									<a href="#" class="pull-left inline-block full-screen mr-15">
-										<i class="zmdi zmdi-fullscreen"></i>
-									</a>
-									<div class="pull-left inline-block dropdown">
-										<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert"></i></a>
-										<ul class="dropdown-menu bullet dropdown-menu-right" role="menu">
-											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>Edit</a></li>
-											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>Delete</a></li>
-											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>New</a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="panel-wrapper collapse in">
-								<div class="panel-body row pa-0">
-									<div class="table-wrap">
-										<div class="table-responsive">
-											<table class="table table-hover mb-0">
-												<thead>
-													<tr>
-														<th>Campaign</th>
-														<th>Client</th>
-														<th>Changes</th>
-														<th>Budget</th>
-														<th>Status</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td><span class="txt-dark weight-500">Facebook</span></td>
-														<td>Beavis</td>
-														<td><span class="txt-success"><i class="zmdi zmdi-caret-up mr-10 font-20"></i><span>2.43%</span></span></td>
-														<td>
-															<span class="txt-dark weight-500">$1478</span>
-														</td>
-														<td>
-															<span class="label label-primary">Active</span>
-														</td>
-													</tr>
-													<tr>
-														<td><span class="txt-dark weight-500">Youtube</span></td>
-														<td>Felix</td>
-														<td><span class="txt-success"><i class="zmdi zmdi-caret-up mr-10 font-20"></i><span>1.43%</span></span></td>
-														<td>
-															<span class="txt-dark weight-500">$951</span>
-														</td>
-														<td>
-															<span class="label label-danger">Closed</span>
-														</td>
-													</tr>
-													<tr>
-														<td><span class="txt-dark weight-500">Twitter</span></td>
-														<td>Cannibus</td>
-														<td><span class="txt-danger"><i class="zmdi zmdi-caret-down mr-10 font-20"></i><span>-8.43%</span></span></td>
-														<td>
-															<span class="txt-dark weight-500">$632</span>
-														</td>
-														<td>
-															<span class="label label-default">Hold</span>
-														</td>
-													</tr>
-													<tr>
-														<td><span class="txt-dark weight-500">Spotify</span></td>
-														<td>Neosoft</td>
-														<td><span class="txt-success"><i class="zmdi zmdi-caret-up mr-10 font-20"></i><span>7.43%</span></span></td>
-														<td>
-															<span class="txt-dark weight-500">$325</span>
-														</td>
-														<td>
-															<span class="label label-default">Hold</span>
-														</td>
-													</tr>
-													<tr>
-														<td><span class="txt-dark weight-500">Instagram</span></td>
-														<td>Hencework</td>
-														<td><span class="txt-success"><i class="zmdi zmdi-caret-up mr-10 font-20"></i><span>9.43%</span></span></td>
-														<td>
-															<span class="txt-dark weight-500">$258</span>
-														</td>
-														<td>
-															<span class="label label-primary">Active</span>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>	
-								</div>	
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
-						<div class="panel panel-default card-view panel-refresh">
-							<div class="refresh-container">
-								<div class="la-anim-1"></div>
-							</div>
-							<div class="panel-heading">
-								<div class="pull-left">
-									<h6 class="panel-title txt-dark">Advertising &amp; Promotions</h6>
-								</div>
-								<div class="pull-right">
-									<a href="#" class="pull-left inline-block refresh mr-15">
-										<i class="zmdi zmdi-replay"></i>
-									</a>
-									<div class="pull-left inline-block dropdown">
-										<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert"></i></a>
-										<ul class="dropdown-menu bullet dropdown-menu-right" role="menu">
-											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>option 1</a></li>
-											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>option 2</a></li>
-											<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>option 3</a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="panel-wrapper collapse in">
-								<div class="panel-body">
-									<div><iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
-										<canvas id="chart_2" height="253" width="336" style="display: block; width: 336px; height: 253px;"></canvas>
-									</div>	
-									<div class="label-chatrs mt-30">
-										<div class="inline-block mr-15">
-											<span class="clabels inline-block bg-yellow mr-5"></span>
-											<span class="clabels-text font-12 inline-block txt-dark capitalize-font">Active</span>
-										</div>
-										<div class="inline-block mr-15">
-											<span class="clabels inline-block bg-blue mr-5"></span>
-											<span class="clabels-text font-12 inline-block txt-dark capitalize-font">Closed</span>
-										</div>	
-										<div class="inline-block">
-											<span class="clabels inline-block bg-green mr-5"></span>
-											<span class="clabels-text font-12 inline-block txt-dark capitalize-font">Hold</span>
-										</div>											
-									</div>
-								</div>
-							</div>	
-						</div>	
-					</div>	
-				</div>	
-				<!-- Row -->
-			</div>
 
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="box">
 					<div class="box-header with-border" style="width:100%;">
-		            	
-					    <!-- BLOQUE 1 -->
-						@include('siniestros.detalle.bloque_1')
-						 
-						<!-- BLOQUE 2 -->
-						@include('siniestros.detalle.bloque_2')
+
+						<div class="row">
+							<div class="col-lg-12 col-sm-12">
+								<div class="panel panel-default card-view">
+									<div class="panel-heading">
+										<div class="pull-left">
+											<h6 class="panel-title txt-dark"></h6>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="panel-wrapper collapse in">
+										<div class="panel-body">
+											<p class="text-muted"> </p>
+											<div  class="tab-struct custom-tab-2">
+												<ul role="tablist" class="nav nav-tabs" id="myTabs_15">
+													<li class="active" role="presentation"><a aria-expanded="true"  data-toggle="tab" role="tab" id="home_tab_15" href="#home_15">REGISTRO BÁSICO</a></li>
+													<li role="presentation" class=""><a  data-toggle="tab" id="profile_tab_15" role="tab" href="#profile_15" aria-expanded="false">DATOS COMPLEMENTARIOS</a></li>
+													<!-- <li role="presentation" class=""><a  data-toggle="tab" id="profile_tab_15" role="tab" href="#profile_16" aria-expanded="false">DATOS COMPLEMENTARIOS</a></li> -->
+													<!-- <li class="dropdown" role="presentation">
+														<a data-toggle="dropdown" class="dropdown-toggle" id="myTabDrop_15" href="#" aria-expanded="false">Dropdown <span class="caret"></span></a>
+														<ul id="myTabDrop_15_contents"  class="dropdown-menu">
+															<li class=""><a data-toggle="tab" id="dropdown_29_tab" role="tab" href="#dropdown_29" aria-expanded="true">@fat</a></li>
+															<li class=""><a data-toggle="tab" id="dropdown_30_tab" role="tab" href="#dropdown_30" aria-expanded="false">@mdo</a></li>
+														</ul>
+													</li> -->
+												</ul>
+												<div class="tab-content" id="myTabContent_15">
+													<div  id="home_15" class="tab-pane fade active in" role="tabpanel">
+														@include('siniestros.detalle.bloque_1')
+													</div>
+													<div  id="profile_15" class="tab-pane fade" role="tabpanel">
+														@include('siniestros.detalle.bloque_2')
+													</div>
+													<!-- <div  id="profile_16" class="tab-pane fade" role="tabpanel">
+														
+													</div> -->
+													<!-- <div  id="dropdown_29" class="tab-pane fade " role="tabpanel">
+														<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo  retro fanny pack lo-fi farm-to-table readymade.</p>
+													</div>
+													<div  id="dropdown_30" class="tab-pane fade" role="tabpanel">
+														<p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater.</p>
+													</div> -->
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
 						
-						<!-- BLOQUE 3 -->
-						@include('siniestros.detalle.bloque_3')
-						 
-						<!-- BLOQUE 4 -->
-						@include('siniestros.detalle.bloque_4')
+
 						 	
 
 						 
 					</div>
 				</div>
-			</div>			
+			</div>
 		</div>
 	</div>
 
@@ -503,9 +408,11 @@
 	<script src="{{ asset('vendors/bower_components/switchery/dist/switchery.min.js') }}"></script>
 	<script src="{{ asset('dist/js/dropdown-bootstrap-extended.js') }}"></script>
 	<script src="{{ asset('dist/js/init.js') }}"></script>
-<!-- 	<script src="{{ asset('plugins/ckeditor/ckeditor.js') }}"></script>
+	<script src="{{ asset('plugins/ckeditor/ckeditor.js') }}"></script>
 	<script src="{{ asset('plugins/ckeditor/adapters/jquery.js') }}"></script>
-	<script src="https://tecactus-4b42.kxcdn.com/reniec-sunat-js.min.js"></script> -->
+	<script src="{{ asset('app/js/BuscarPersona.js') }}"></script>
+	<script src="{{ asset('plugins/jQueryUI/jquery-ui.min.js') }}"></script>
+	<!-- <script src="https://tecactus-4b42.kxcdn.com/reniec-sunat-js.min.js"></script> -->
 
 
 	<!-- <script src="vendors/bower_components/wysihtml5x/dist/wysihtml5x.min.js"></script> -->
@@ -753,7 +660,6 @@
 			}
 		});
     });
-
 	$(document).on('click','.addBtnRemove',function(){
 
         $(this).closest('tr').remove();  
@@ -813,7 +719,6 @@
 			}
 		 }	
 	}); 
-	
 	$(document).on('change','#tipo_informe',function(){
 		
 		var tipo = $(this).val();
@@ -831,129 +736,6 @@
 
 		tipo_inicial(tipo);
 	});
-	
-	function tipo_inicial(tipo) {
-	
-	 	switch(tipo){
-			case "1": 
-					 $('#pdf_informe').attr('disabled','disabled');
-					$('#pdf_informe_ver').removeAttr('disabled');// [+]
-					$('#store_imgs').removeAttr('disabled');
-					$('#pdf_informe_ver').attr('href', "{{URL::to('generarTipoInforme',array('id'=>$caso->id,'tipo'=>1))}}");
-					
-					$('#div_basicos').show();
-					$('#div_preliminar').hide();
-					$('#div_final').hide();
-					$('#div_complementario').hide();
-
-					getContents("{{$caso->Informe()->where('tipo_informe_id',1)->first()->id}}",tipo);
-					getImages("{{$caso->Informe()->where('tipo_informe_id',1)->first()->id}}");
-					break;
-			case "2":
-					if($('#exs_ip').val().length==0){ // si NO existe el informe en tabla
-						$('#pdf_informe').attr('disabled','disabled');
-						$('#pdf_informe_ver').attr('disabled','disabled');
-						$('#store_imgs').attr('disabled','disabled');
-					}
-					else{
-						if($('#exs_ip').attr("data-id")==1 ){  // cuando ya se generó ..._at
-							$('#pdf_informe').attr('disabled','disabled'); // inactivo Boton Generar
-						}else{
-							$('#pdf_informe').removeAttr('disabled');
-						}
-						informe_id_fi = $('#exs_ip').val();
-					}
-					$('#div_basicos').hide();					
-					$('#div_preliminar').show();
-					$('#div_final').hide();
-					$('#div_complementario').hide();
-
-					$('#pdf_informe_ver').attr('href', "{{URL::to('generarTipoInforme',array('id'=>$caso->id,'tipo'=>2))}}");
-
-					if($('#exs_ip').val().length==0){
-						$('#modal-Confirmacion').modal();
-					}
-					getContents($('#exs_ip').val(),tipo);
-					getImages($('#exs_ip').val());
-					break;
-			case "3":
-					$('#otro_informe').removeAttr('disabled');
-
-					if($('#exs_if').val().length==0){ // si NO existe el informe en tabla
-						$('#pdf_informe').attr('disabled','disabled');
-						$('#pdf_informe_ver').attr('disabled','disabled');
-						$('#store_imgs').attr('disabled','disabled');
-					}
-					else{
-						if($('#exs_if').attr("data-id")==1 ){  // cuando ya se generó ..._at
-							$('#pdf_informe').attr('disabled','disabled'); // inactivo Boton Generar
-						}else{
-							$('#pdf_informe').removeAttr('disabled');
-						}
-						$('#div_relacion').hide();
-						informe_id_fi = $('#exs_if').val();
-
-					}
-					$('#div_basicos').hide();
-					$('#div_preliminar').hide();
-					$('#div_final').show();
-					$('#div_complementario').hide();
-					$('#pdf_informe_ver').attr('href', "{{URL::to('generarTipoInforme',array('id'=>$caso->id,'tipo'=>3))}}");
-					if($('#exs_if').val().length==0){
-						$('#modal-Confirmacion').modal();
-					}
-					getContents($('#exs_if').val(),tipo);
-					getImages($('#exs_if').val());
-
-					break;
-
-			case "4": 
-					if($('#exs_ic').val().length==0){ // si NO existe el informe en tabla
-						$('#pdf_informe').attr('disabled','disabled');
-						$('#pdf_informe_ver').attr('disabled','disabled');
-						$('#store_imgs').attr('disabled','disabled');
-					}
-					else{
-						if($('#exs_ic').attr("data-id")==1 ){  // cuando ya se generó ..._at
-							$('#pdf_informe').attr('disabled','disabled'); // inactivo Boton Generar
-						}else{
-							$('#pdf_informe').removeAttr('disabled');
-						}
-						informe_id_fi = $('#exs_ic').val();
-
-					}
-					$('#div_basicos').hide();
-					$('#div_preliminar').hide();
-					$('#div_final').hide();
-					$('#div_complementario').show();
-					$('#pdf_informe_ver').attr('href', "{{URL::to('generarTipoInforme',array('id'=>$caso->id,'tipo'=>4))}}");
-					if($('#exs_ic').val().length==0){
-						$('#modal-Confirmacion').modal();
-					}
-					getContents($('#exs_ic').val(),tipo);
-					getImages($('#exs_ic').val());
-
-					break;
-
-			case "5": 
-					$('#modal-convenioAjuste').modal(); break;
-		}
-		var cadena = "";
-	 	
-		if(tipo==1){
-			$('#informe_id').attr('value',"{{ $caso->Informe()->where('tipo_informe_id', '1')->first()->id }}");
-		}else if(tipo==2 && $('#exs_ip').val().length>0){
-	 		cadena = $('#exs_ip').val();
-			$('#informe_id').attr('value',cadena);
-	 	}else if(tipo==3 && $('#exs_if').val().length>0){
-	 		cadena = $('#exs_if').val();
-			$('#informe_id').attr('value',cadena);
-	 	}else if(tipo==4 && $('#exs_ic').val().length>0){
-	 		cadena = $('#exs_ic').val();
-			$('#informe_id').attr('value',cadena);
-	 	}
-	}
-
 	$(document).on('click','#addBtn_0', function(){
         //var trID;
         //trID = $(this).closest('tr'); // table row ID 
@@ -1055,7 +837,6 @@
 					window.location.reload();
 		 		}
 			});
-		
 	});
 	$(document).on('click','#pdf_informe', function(){
 		functionSaveFirmas();
@@ -1162,38 +943,14 @@
 			$('#fecha_coordinacion_inspeccion').attr('value', fecha_vitacora);
 		}
 	});
-	$(document).on('click','#add_porconfir1',function(){
-
-		$('#num_poliza').val('POR CONFIRMAR');
-	});
-	$(document).on('click','#add_porconfir2',function(){
-
-		$('#ejecutivo_aseguradora_name').val('POR CONFIRMAR');
-	});
-	$(document).on('click','#add_porconfir3',function(){
-
-		$('#ejecutivo_broker_name').val('POR CONFIRMAR');
-	});
-	$(document).on('click','#add_porconfir4',function(){
-
-		$('#num_siniestro_cia').val('POR CONFIRMAR');
-	});
-	$(document).on('click','#add_porconfir5',function(){
-
-		$('#num_siniestro_broker').val('POR CONFIRMAR');
-	});
-	$(document).on('click','#add_porconfirCantTerr',function(){
-
-		$('#cantidad_terr').val('POR CONFIRMAR');
-	});
-	$(document).on('click','#add_porconfirCantMar',function(){
-
-		$('#cantidad_mar').val('POR CONFIRMAR');
-	});
-	$(document).on('click','#add_porconfirCantAera',function(){
-
-		$('#cantidad_area').val('POR CONFIRMAR');
-	});
+	$(document).on('click','#add_porconfir1',function(){$('#num_poliza').val('POR CONFIRMAR');});
+	$(document).on('click','#add_porconfir2',function(){$('#ejecutivo_aseguradora_name').val('POR CONFIRMAR');});
+	$(document).on('click','#add_porconfir3',function(){$('#ejecutivo_broker_name').val('POR CONFIRMAR');});
+	$(document).on('click','#add_porconfir4',function(){$('#num_siniestro_cia').val('POR CONFIRMAR');});
+	$(document).on('click','#add_porconfir5',function(){$('#num_siniestro_broker').val('POR CONFIRMAR');});
+	$(document).on('click','#add_porconfirCantTerr',function(){$('#cantidad_terr').val('POR CONFIRMAR');});
+	$(document).on('click','#add_porconfirCantMar',function(){$('#cantidad_mar').val('POR CONFIRMAR');});
+	$(document).on('click','#add_porconfirCantAera',function(){$('#cantidad_area').val('POR CONFIRMAR');});
 	$(document).on('click','#aceptarVitacora_gasto', function(){
 		var fecha_vitacora = $('#newFecha_Vitacora').val();
 		var concepto_vitacora = $('#newConcepto').val().toUpperCase();
@@ -1849,7 +1606,6 @@
 			$('#detlail5').hide(); 
 		} 
 	});
-
 	$(document).on('click','#btnbb',function(){
 		inf_tab_id = $(this).attr('data-id');
 		model_i_id = $(this).attr('data-dd');
@@ -2190,12 +1946,10 @@
 		// 	console.log(data);
 		// });
     });
-
     $(document).on('click','#remove_title_btn',function(){
 		$('#remove_title').attr('data-dd',$(this).attr('data-dd'));
 		$('#modal-ConfRemoveTitle').modal();
 	});
-
 	$(document).on('click','#remove_title',function(){
 		var content_id = $(this).attr('data-dd');
 
@@ -2217,11 +1971,7 @@
 		}
 		);
 	});
-
-    $(document).on('click','#generar_documento', function(){
-		$('#generar_documento').attr('href', "{{URL::to('DocumentoSolicitud',array('id'=>$caso->id))}}");
-    });
-
+    $(document).on('click','#generar_documento', function(){$('#generar_documento').attr('href', "{{URL::to('DocumentoSolicitud',array('id'=>$caso->id))}}");});
     $(document).on('click','#enviar_documento', function(){
 		$('#modal-descargoDoc').modal('hide');
 
@@ -2261,17 +2011,14 @@
 		);
 		// $('#enviar_documento').attr('href', "{{URL::to('EnviarDocumento',array('id'=>$caso->id))}}");
     });
-
     $(document).on('click','#conf_documento', function(){
 		$('#modal-CorreoDocSol').modal();
 		$('#modal-descargoDoc').modal('hide');
     });
-
     $(document).on('click','#add_dateConvModal', function(){
 		$('#modal-dateConvFirma').modal();
 		$('#modal-convenioAjuste').modal('hide');
     });
-
     $(document).on('click','#ingresar_fechaConvFir', function(){
  		$.ajax({
 			url: '/insertDateConvenio',
@@ -2291,10 +2038,7 @@
 			}
 		});
     });
-
-    $(document).on('click','#generar_convenio', function(){
-		$('#generar_convenio').attr('href', "{{URL::to('InformeConvenio',array('id'=>$caso->id))}}");
-    });
+    $(document).on('click','#generar_convenio', function(){$('#generar_convenio').attr('href', "{{URL::to('InformeConvenio',array('id'=>$caso->id))}}");});
     $(document).on('click','#enviar_rel_documento', function(){
 		$('#modal-Confirmacion').modal('hide');
     	$.ajax({
@@ -2444,7 +2188,6 @@
 		$('#newLimite').val(cobLim);
 		$('#newDeducible').val(cobded);
 		$('#newIDCob').val(idCob);
-
 	});
     $(document).on('click','#correo_convenio', function(){
     	$(".modal-header #conf-title").text("Confirmar");
@@ -2550,14 +2293,8 @@
 			$('#modal-motivo').modal('hide');
  		}
 	});
-
-	$(document).on('change','#monto_text2',function(){
-		$("#monto_text").val($("#monto_text2").val());
-	})
-	$(document).on('change','#monto_text',function(){
-		$("#monto_text2").val($("#monto_text").val());
-	});
-
+	$(document).on('change','#monto_text2',function(){$("#monto_text").val($("#monto_text2").val());});
+	$(document).on('change','#monto_text',function(){$("#monto_text2").val($("#monto_text").val());});
 	$(document).on('click','#rechazar_caso',function(){
 		 
 		$.ajax({
@@ -2572,9 +2309,7 @@
 				console.log(data['status']);
 			}
 		});
-
 	});
-
 	$(document).on('click','#anular_caso',function(){
 		 
 		$.ajax({
@@ -2590,7 +2325,6 @@
 			}
 		});
 	});
-
 	$(document).on('click','#check_vigencia',function(){
 		 
 		if($(this).is(':checked')){
@@ -2603,9 +2337,129 @@
 			$("#hide_dateVigencia").css("display", "none");
 
 		}
-
 	});
 
+	function tipo_inicial(tipo) {
+	
+	 	switch(tipo){
+			case "1": 
+					 $('#pdf_informe').attr('disabled','disabled');
+					$('#pdf_informe_ver').removeAttr('disabled');// [+]
+					$('#store_imgs').removeAttr('disabled');
+					$('#pdf_informe_ver').attr('href', "{{URL::to('generarTipoInforme',array('id'=>$caso->id,'tipo'=>1))}}");
+					
+					$('#div_basicos').show();
+					$('#div_preliminar').hide();
+					$('#div_final').hide();
+					$('#div_complementario').hide();
+
+					getContents("{{$caso->Informe()->where('tipo_informe_id',1)->first()->id}}",tipo);
+					getImages("{{$caso->Informe()->where('tipo_informe_id',1)->first()->id}}");
+					break;
+			case "2":
+					if($('#exs_ip').val().length==0){ // si NO existe el informe en tabla
+						$('#pdf_informe').attr('disabled','disabled');
+						$('#pdf_informe_ver').attr('disabled','disabled');
+						$('#store_imgs').attr('disabled','disabled');
+					}
+					else{
+						if($('#exs_ip').attr("data-id")==1 ){  // cuando ya se generó ..._at
+							$('#pdf_informe').attr('disabled','disabled'); // inactivo Boton Generar
+						}else{
+							$('#pdf_informe').removeAttr('disabled');
+						}
+						informe_id_fi = $('#exs_ip').val();
+					}
+					$('#div_basicos').hide();					
+					$('#div_preliminar').show();
+					$('#div_final').hide();
+					$('#div_complementario').hide();
+
+					$('#pdf_informe_ver').attr('href', "{{URL::to('generarTipoInforme',array('id'=>$caso->id,'tipo'=>2))}}");
+
+					if($('#exs_ip').val().length==0){
+						$('#modal-Confirmacion').modal();
+					}
+					getContents($('#exs_ip').val(),tipo);
+					getImages($('#exs_ip').val());
+					break;
+			case "3":
+					$('#otro_informe').removeAttr('disabled');
+
+					if($('#exs_if').val().length==0){ // si NO existe el informe en tabla
+						$('#pdf_informe').attr('disabled','disabled');
+						$('#pdf_informe_ver').attr('disabled','disabled');
+						$('#store_imgs').attr('disabled','disabled');
+					}
+					else{
+						if($('#exs_if').attr("data-id")==1 ){  // cuando ya se generó ..._at
+							$('#pdf_informe').attr('disabled','disabled'); // inactivo Boton Generar
+						}else{
+							$('#pdf_informe').removeAttr('disabled');
+						}
+						$('#div_relacion').hide();
+						informe_id_fi = $('#exs_if').val();
+
+					}
+					$('#div_basicos').hide();
+					$('#div_preliminar').hide();
+					$('#div_final').show();
+					$('#div_complementario').hide();
+					$('#pdf_informe_ver').attr('href', "{{URL::to('generarTipoInforme',array('id'=>$caso->id,'tipo'=>3))}}");
+					if($('#exs_if').val().length==0){
+						$('#modal-Confirmacion').modal();
+					}
+					getContents($('#exs_if').val(),tipo);
+					getImages($('#exs_if').val());
+
+					break;
+
+			case "4": 
+					if($('#exs_ic').val().length==0){ // si NO existe el informe en tabla
+						$('#pdf_informe').attr('disabled','disabled');
+						$('#pdf_informe_ver').attr('disabled','disabled');
+						$('#store_imgs').attr('disabled','disabled');
+					}
+					else{
+						if($('#exs_ic').attr("data-id")==1 ){  // cuando ya se generó ..._at
+							$('#pdf_informe').attr('disabled','disabled'); // inactivo Boton Generar
+						}else{
+							$('#pdf_informe').removeAttr('disabled');
+						}
+						informe_id_fi = $('#exs_ic').val();
+
+					}
+					$('#div_basicos').hide();
+					$('#div_preliminar').hide();
+					$('#div_final').hide();
+					$('#div_complementario').show();
+					$('#pdf_informe_ver').attr('href', "{{URL::to('generarTipoInforme',array('id'=>$caso->id,'tipo'=>4))}}");
+					if($('#exs_ic').val().length==0){
+						$('#modal-Confirmacion').modal();
+					}
+					getContents($('#exs_ic').val(),tipo);
+					getImages($('#exs_ic').val());
+
+					break;
+
+			case "5": 
+					$('#modal-convenioAjuste').modal(); break;
+		}
+		var cadena = "";
+	 	
+		if(tipo==1){
+			$('#informe_id').attr('value',"{{ $caso->Informe()->where('tipo_informe_id', '1')->first()->id }}");
+		}else if(tipo==2 && $('#exs_ip').val().length>0){
+	 		cadena = $('#exs_ip').val();
+			$('#informe_id').attr('value',cadena);
+	 	}else if(tipo==3 && $('#exs_if').val().length>0){
+	 		cadena = $('#exs_if').val();
+			$('#informe_id').attr('value',cadena);
+	 	}else if(tipo==4 && $('#exs_ic').val().length>0){
+	 		cadena = $('#exs_ic').val();
+			$('#informe_id').attr('value',cadena);
+	 	}
+	}
 	function actualizarCaso(){
     	$.ajax({
     		url: '/updateCaso',
@@ -2851,16 +2705,6 @@
     	    $('#doc_ids').val(doc_ids);
 		}
 	}
-	// function isNumberKey(key) {
-	//       //getting key code of pressed key
-	// 	    var keycode = (key.which) ? key.which : key.keyCode;
-	// 	    //comparing pressed keycodes
-		 
-	// 	    if (keycode > 31 && (keycode < 48 || keycode > 57) && keycode != 47) {
-	// 	        return false;
-	// 	    }
-	// 	    else return true;
-	// }
 	function isNumberKey(evt){
         var charCode = (evt.which) ? evt.which : evt.keyCode;
         if (charCode != 44 && charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 58))
@@ -3070,7 +2914,6 @@
 		else
 			return Millones(data.enteros) + " " + data.letrasMonedaPlural + " " + data.letrasCentavos;
 	}//NumeroALetras()
-
 	function getContentsinhn(informe_id, tipo_informe) {
 		var model_content = "{{count($model_content)}}";
     	$.ajax({
@@ -3099,7 +2942,6 @@
 		      } 
 		});
     }
-
     function  getContents(informe_id, tipo_informe) {
 		$.ajax({
 			url: '/getContents',
@@ -3129,7 +2971,6 @@
 			// $(".overlay").css("display", "none");
 		});
 	}
-
 	function getImages(informe_id) {
 		$.ajax({
 			url: '/getImages',
@@ -3158,6 +2999,5 @@
 			console.log('No response from server '+thrownError);
 		});
 	}
-
 </script>
 @endsection

@@ -37,6 +37,7 @@
 		$('#persona_id_selected_,#nombres,#apellido_paterno,#apellido_materno,#dni,#email,#telefono,#cargo').val('').removeAttr('disabled','disabled');
 
 		if(data){
+			$('#FormRegistrarPersona').show();
 			$('#persona_id_selected_').val(data.id);
 			$('#nombres').val(data.nombres).attr('disabled','disabled');
 			$('#apellido_paterno').val(data.apellido_paterno).attr('disabled','disabled');
