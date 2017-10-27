@@ -16,7 +16,8 @@
 	padding: 0px !important;
 }
 .page-wrapper {
-	padding: 85px 0px !important;
+	padding: 85px 0px 0px 0px !important;
+    background: #ffffff !important;
 }
 
 body{

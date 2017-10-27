@@ -32,6 +32,26 @@
     cursor: pointer;
     overflow: visible;
 }
+
+.login-box-body{
+    border: 2px solid #3c8dbc;
+    border-radius: 10px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 360px;
+    margin: 7% auto;
+}
+input{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    height: 30px !important;
+}
+.login-box-msg{
+    margin: 0 !important;
+    text-align: center !important;
+    padding: 0 20px 20px 20px !important;
+}
 </style>
 @endsection
 
@@ -48,7 +68,6 @@
                                     <h3 class="text-center txt-dark mb-10"><div id="logoo"><img id="logo" src="{{url('/img/pyc.png')}}" width="360" style="padding-left: 20px;"></div></h3>
                                     <h6 class="text-center nonecase-font txt-grey"></h6>
                                 </div>  
-                                <div class="form-wrap">
                                     @if (count($errors) > 0)
                                         <div class="alert alert-danger">
                                              {{ trans('message.someproblems') }}<br>
@@ -62,30 +81,35 @@
                                             </ul>
                                         </div>
                                     @endif
-                                    <form action="{{ url('/login') }}" method="post">
-                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                        <div class="form-group">
-                                            <label class="control-label mb-10" for="exampleInputEmail_2">Email</label>
-                                            <input type="email" class="form-control" required="" id="email" name="email" placeholder="{{ trans('message.email') }}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="pull-left control-label mb-10" for="exampleInputpwd_2">Password</label>
-                                            <a class="capitalize-font txt-primary block mb-10 pull-right font-12" href="{{ url('/password/reset') }}">{{ trans('message.forgotpassword') }}</a>
-                                            <div class="clearfix"></div>
-                                            <input type="password" class="form-control" required="" id="password" placeholder="{{ trans('message.password') }}" name="password">
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <div class="checkbox checkbox-primary pr-10 pull-left">
-                                                <input type="checkbox" id="checkbox_2" name="remember"> 
-                                                <label for="checkbox_2"> {{ trans('message.remember') }}</label>
+                                <div class="login-box-body">
+                                    <div class="form-wrap">
+                                        <p class="login-box-msg"> Ingrese sus datos para acceder </p>
+                                        <form action="{{ url('/login') }}" method="post">
+                                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                            <div class="form-group">
+                                                <!-- <label class="control-label mb-10" for="exampleInputEmail_2">Email</label> -->
+                                                <input type="email" class="form-control" required="" id="email" name="email" placeholder="{{ trans('message.email') }}">
                                             </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="form-group text-center">
-                                            <button type="submit" class="btnn">Ingresar</button>
-                                        </div>
-                                    </form>
+                                            <div class="form-group">
+                                                <!-- <label class="pull-left control-label mb-10" for="exampleInputpwd_2">Password</label> -->
+                                                
+                                                <div class="clearfix"></div>
+                                                <input type="password" class="form-control" required="" id="password" placeholder="{{ trans('message.password') }}" name="password">
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <div class="checkbox checkbox-primary pr-10 pull-left">
+                                                    <input type="checkbox" id="checkbox_2" name="remember"> 
+                                                    <label for="checkbox_2"> {{ trans('message.remember') }}</label>
+                                                </div>
+                                                <a class="txt-primary pull-right" href="{{ url('/password/reset') }}">{{ trans('message.forgotpassword') }}</a>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="form-group text-center">
+                                                <button type="submit" class="btnn">Ingresar</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>  
                         </div>

@@ -8,28 +8,26 @@
 	<link href="{{ asset('/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>   
 	<link href="{{ asset('/dist/css/style.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ asset('plugins/jQueryUI/jquery-ui.css') }}">
-	<!-- <link rel="stylesheet" href="{{ asset('app/css/ListaCasos.css') }}"> -->
+	<link rel="stylesheet" href="{{ asset('app/css/DetalleCaso.css') }}">
 	<style type="text/css">
-    	.navbar.navbar-inverse.navbar-fixed-top .nav-header {
- 		   height: 85px !important;
-		}
-		/*.container-fluid{
-	    	padding-top: 20px !important;
-		}*/
-		.page-wrapper {
-    		padding: 90px 20px !important;
-    	}
+.navbar.navbar-inverse.navbar-fixed-top .nav-header{
+   height: 85px !important;
+}
+/*.container-fluid{
+	padding-top: 20px !important;
+}*/
+.page-wrapper{
+	padding: 85px 0px 0px 0px !important;
+	background: #ffffff !important;
+}
 
-		.custom-tab-2 .nav-tabs > li.active > a, .custom-tab-2 .nav-tabs > li.open > a {
-    		color: #878787 !important;
-    		/*background: #ad6262;*/
-    	}
-    	.custom-tab-2 .nav-tabs > li > a:active, .custom-tab-2 .nav-tabs > li > a:focus, .custom-tab-2 .nav-tabs > li > a:hover {
-    		color: #878787 !important;
-    	}
-
-
-
+.custom-tab-2 .nav-tabs > li.active > a, .custom-tab-2 .nav-tabs > li.open > a {
+	color: #878787 !important;
+	/*background: #ad6262;*/
+}
+.custom-tab-2 .nav-tabs > li > a:active, .custom-tab-2 .nav-tabs > li > a:focus, .custom-tab-2 .nav-tabs > li > a:hover {
+	color: #878787 !important;
+}
 input{
 	height: 30px !important;
 }
@@ -57,8 +55,8 @@ div.clearfix > ul > li > a {
 	padding-left: 0px !important;
 }
 .container-fluid{
-	padding-right: 8px !important;
-	padding-left: 8px !important;
+	padding-right: 0px !important;
+	padding-left: 0px !important;
 }
 .framn{
 	margin-left: 0px;padding: 0px;
@@ -317,77 +315,87 @@ select{
 .wizard .steps ul > li.done {
     background: #f6f6f6 !important;
 }
+.headercaso{
 
-	</style>
+}
+.flex-stat{
+	padding-top: 15px !important;
+	margin: auto !important;
+    width: 360px !important;
+}
+    
+.flex-stat li{
+	width: auto !important;
+}
+
+.n-fixed-top{
+    position: fixed;
+    top:90;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background: #ffffff !important;
+    padding-bottom: 15px !important;
+}
+.card-view{
+	padding-top: 90px !important;
+}
+
+@media (max-width: 1024px){
+	.mobile-nav-open .navbar.navbar-inverse.navbar-fixed-top .mobile-only-nav {
+	    top: 90px;
+	}
+}
+
+</style>
+
 
 @endsection
 
 @section('main-content')
-
-
-
-
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="box">
-					<div class="box-header with-border" style="width:100%;">
-
+					<div class="box-header with-border n-fixed-top" style="width:100%;">
+						@include('siniestros.detalle.headCaso')
+					</div>
 						<div class="row">
 							<div class="col-lg-12 col-sm-12">
 								<div class="panel panel-default card-view">
-									<div class="panel-heading">
-										<div class="pull-left">
-											<h6 class="panel-title txt-dark"></h6>
-										</div>
-										<div class="clearfix"></div>
-									</div>
-									<div class="panel-wrapper collapse in">
+									<div class="panel-wrapper">
 										<div class="panel-body">
 											<p class="text-muted"> </p>
 											<div  class="tab-struct custom-tab-2">
 												<ul role="tablist" class="nav nav-tabs" id="myTabs_15">
-													<li class="active" role="presentation"><a aria-expanded="true"  data-toggle="tab" role="tab" id="home_tab_15" href="#home_15">REGISTRO BÁSICO</a></li>
-													<li role="presentation" class=""><a  data-toggle="tab" id="profile_tab_15" role="tab" href="#profile_15" aria-expanded="false">DATOS COMPLEMENTARIOS</a></li>
-													<!-- <li role="presentation" class=""><a  data-toggle="tab" id="profile_tab_15" role="tab" href="#profile_16" aria-expanded="false">DATOS COMPLEMENTARIOS</a></li> -->
-													<!-- <li class="dropdown" role="presentation">
-														<a data-toggle="dropdown" class="dropdown-toggle" id="myTabDrop_15" href="#" aria-expanded="false">Dropdown <span class="caret"></span></a>
-														<ul id="myTabDrop_15_contents"  class="dropdown-menu">
-															<li class=""><a data-toggle="tab" id="dropdown_29_tab" role="tab" href="#dropdown_29" aria-expanded="true">@fat</a></li>
-															<li class=""><a data-toggle="tab" id="dropdown_30_tab" role="tab" href="#dropdown_30" aria-expanded="false">@mdo</a></li>
-														</ul>
-													</li> -->
+													<li class="active" role="presentation">
+														<a aria-expanded="true"  data-toggle="tab" role="tab" id="registro_basico_tab" href="#registro_basico">REGISTRO BÁSICO</a>
+													</li>
+													<li role="presentation" class="">
+														<a  data-toggle="tab" id="datos_complementarios_tab" role="tab" href="#datos_complementarios" aria-expanded="false">DATOS COMPLEMENTARIOS</a>
+													</li>
+													<li role="presentation" class="">
+														<a  data-toggle="tab" id="informe_tab" role="tab" href="#informe" aria-expanded="false">INFORME </a>
+													</li>
 												</ul>
 												<div class="tab-content" id="myTabContent_15">
-													<div  id="home_15" class="tab-pane fade active in" role="tabpanel">
+													<div  id="registro_basico" class="tab-pane fade active in" role="tabpanel">
 														@include('siniestros.detalle.bloque_1')
 													</div>
-													<div  id="profile_15" class="tab-pane fade" role="tabpanel">
+													<div  id="datos_complementarios" class="tab-pane fade" role="tabpanel">
 														@include('siniestros.detalle.bloque_2')
 													</div>
-													<!-- <div  id="profile_16" class="tab-pane fade" role="tabpanel">
-														
-													</div> -->
-													<!-- <div  id="dropdown_29" class="tab-pane fade " role="tabpanel">
-														<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo  retro fanny pack lo-fi farm-to-table readymade.</p>
+													<div  id="informe" class="tab-pane fade" role="tabpanel">
+														@include('siniestros.detalle.bloque_3')
 													</div>
-													<div  id="dropdown_30" class="tab-pane fade" role="tabpanel">
-														<p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater.</p>
-													</div> -->
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-
-						
-
-						 	
-
-						 
-					</div>
+						</div> 
+					
 				</div>
 			</div>
 		</div>
@@ -412,7 +420,9 @@ select{
 	<script src="{{ asset('plugins/ckeditor/adapters/jquery.js') }}"></script>
 	<script src="{{ asset('app/js/BuscarPersona.js') }}"></script>
 	<script src="{{ asset('plugins/jQueryUI/jquery-ui.min.js') }}"></script>
-	<!-- <script src="https://tecactus-4b42.kxcdn.com/reniec-sunat-js.min.js"></script> -->
+	<!-- <script src="https://tecactus-4b42.kxcdn.com/reniec-sunat-js.min.js"></script>190.102.150.94
+181.224.228.228
+ -->
 
 
 	<!-- <script src="vendors/bower_components/wysihtml5x/dist/wysihtml5x.min.js"></script> -->
