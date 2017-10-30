@@ -58,7 +58,6 @@
 					case 5:echo '<i class="fa fa-circle" style="color:#00a65a !important"></i>';break;
 					case 6:echo '<i class="fa fa-circle" style="color:#00a65a !important"></i>';break;
 					case 7:echo '<i class="fa fa-circle" style="color:#286090 !important"></i>';break;
-				
 				}
 				?>
 				@if(!empty($caso->Estado)){{$caso->Estado->description}}@endif
@@ -105,5 +104,5 @@
 </div>
 
 <div class="col-lg-3 col-md-12">
-	<p style="float:right;"><a href="{{url('ListaSiniestros')}}" style="font-size: 12px !important; padding-left: 12px;">Volver /</a> <label style="font-size: 12px !important;     color: #777777;padding-top: 15px !important;">Detalle del caso</label></p>
+	<p class="briefac"><a href="{{url('ListaSiniestros')}}" style="font-size: 12px !important; padding-left: 12px;">Volver /</a> <label style="font-size: 12px !important;     color: #777777;padding-top: 15px !important;">Detalle del caso</label></p>
 </div>

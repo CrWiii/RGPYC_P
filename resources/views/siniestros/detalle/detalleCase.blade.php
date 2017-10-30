@@ -7,349 +7,13 @@
 @section('styles')
 	<link href="{{ asset('/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>   
 	<link href="{{ asset('/dist/css/style.css') }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ asset('plugins/jQueryUI/jquery-ui.css') }}">
-	<link rel="stylesheet" href="{{ asset('app/css/DetalleCaso.css') }}">
-	<style type="text/css">
-.navbar.navbar-inverse.navbar-fixed-top .nav-header{
-   height: 85px !important;
-}
-/*.container-fluid{
-	padding-top: 20px !important;
-}*/
-.page-wrapper{
-	padding: 85px 0px 0px 0px !important;
-	background: #ffffff !important;
-}
-
-.custom-tab-2 .nav-tabs > li.active > a, .custom-tab-2 .nav-tabs > li.open > a {
-	color: #878787 !important;
-	/*background: #ad6262;*/
-}
-.custom-tab-2 .nav-tabs > li > a:active, .custom-tab-2 .nav-tabs > li > a:focus, .custom-tab-2 .nav-tabs > li > a:hover {
-	color: #878787 !important;
-}
-input{
-	height: 30px !important;
-}
-div.clearfix > ul > li > a {
-    padding: 3px 5px !important;
-}
-#searchPerson{
-	padding: 2px 15px !important;
-}
-/*.page-wrapper {
-	padding: 45px 0px !important;
-}*/
-.btn-fix-call-modal{
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-}
-/*.page-wrapper {
-    margin-left: 0px !important;
-    padding: 35px 0px;
-}*/
-.fix-panel{
-	padding-right: 0px !important;
-	padding-left: 0px !important;
-}
-.container-fluid{
-	padding-right: 0px !important;
-	padding-left: 0px !important;
-}
-.framn{
-	margin-left: 0px;padding: 0px;
-}
-.bhty{
-	width:100%;padding: 5px;
-}
-.title-reg{
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-.box-title{
-	font-size: 20px !important;
-	color:#505c62 !important;
-}
-.ui-autocomplete {
-    z-index: 5000;
-}
-
-.block_border{
-	margin:0; color:#555; border: 1px solid #a79a9a; padding:20px 10px 10px 10px; border-radius: 5px;
-}
-.la-red{
-	color: #FF0000;
-}
-.select2-selection {
-    font-size: 12px !important;
-}
-
-.select2-results__options{
-    font-size: 12px !important;
-}
-
-.select2-results__option{
-	text-transform: uppercase !important;
-    padding-top: 2px !important;
-    padding-bottom: 2px !important;
-}
-.select2-container--default .select2-selection--single .select2-selection__rendered{
-	line-height: 22px !important;
-}
-.ui-autocomplete {
-    max-height: 100px;
-    overflow-y: auto;
-    /* prevent horizontal scrollbar */
-    overflow-x: hidden;
- }
-  /* IE 6 doesn't support max-height
-   * we use height instead, but this forces the menu to always be this tall
-   */
-* html .ui-autocomplete {
-    height: 100px;
-}
-
-.btnarrw{
-		margin-top: 0px;
-		float: right;
-	}
-.btninf{
-	font-size: 0.8em !important;float: right;padding-top: 1px !important; padding-bottom: 1px !important; margin-right: 10px;margin-top: 2px !important;
-}
-.modal-backdrop.in {
-    opacity: 0 !important;
-}
-.box-body{
-	padding: 5px !important;
-}
-.panel-default{
-	margin-bottom: 0px !important;
-}
-.panel-heading{
-	padding: 5px !important;
-}
-.glyphicon{
-	color:#9ba7ad !important;
-}
-.numlist{
-	font-size: 100%;
-	color:#9ba7ad;
-}
-.frameTit{
-	vertical-align: middle;
-	padding-left: 10px !important; 
-	font-size: 0.95em !important;
-	color:#9ba7ad !important;
-}
-.gg{
-	margin-left: 0px;padding: 0px;
-}
-.ggt > tbody > tr > th {
-	padding-top: 4px !important;
-	background-color: #f5f5f5 !important;
-}
-
-.form-control{
-		color:#000000;
-}
- .collapsedBorder {
- 	margin-bottom: 10px;
- }
-.row{
-	font-size: 1em !important;
-}
-.form-label{
-	padding-top: 5px;
- 	padding-bottom: 3px;
- 	padding-right: 0px;
-}
-.form-group{
-	margin-bottom: 0px;
-}
-.sizePadding{
-	padding-right: 4px;
-	margin-bottom: 0px;
- /* height: 35px; */
-
-	/*padding-left: 5px;*/
-}
-.form-control{
-	color:#000000;
-}
-input, textarea{
-	text-transform: uppercase;
-} 
-input[type=submit] {
-	text-transform: capitalize;
-}
-input[type=email] {
-	text-transform: lowercase;
-}
-select.input-sm {
- 	height: 25px;
- 	line-height: 15px;
-}
-.input-sm {
-    padding: 2px 10px;
-}
-.collapsedBorder{
-	border:1px solid #a79a9a;
-}
-.glyphicon {
-	color: #484646 !important;
-}
-.tooltip-inner {
-	font-size: 0.9em !important;
-    max-width: 250px;
-    /* If max-width does not work, try using width instead */
-    width: 250px; 
-}
-.modal-lg {
-    height:   500px;
-}
-.removeValid{
-	border: 1px solid #ccc !important;
-}
-.addValid{
-	border: 2.5px solid #f90000 !important;
-}
-.fix-size-for-all .panel-body{
-    padding: 5px !important;
-}
-.fix-size-for-all .block_border {
-	padding: 10px !important;
-}
-input[type="radio"], input[type="checkbox"] {
-    margin: 0 !important;
-}
-label{
-	font-size: 0.9em !important;
-}
-
-.wizard > .actions {
-    padding-right: 35px !important;
-}
-.content{
-	margin-bottom: 0px !important;
-}
-
-.wizard .content > .body {
-    padding: 10px !important;
-}
-
-body{
-	font-size: 11.5px !important;
-}
-
-input{
-	height: 23px !important;
-	line-height: normal;
-	border-radius: 3px !important;
-	padding: 3px 6px !important;
-    font-size: 11.5px !important;
-    border: 1px solid #dedede !important;
-    /*background: #f6f6f6 !important;*/
-    color: #868686 !important;
-}
-
-select{
-    height: 22px !important;
-    line-height: normal;
-    border-radius: 3px !important;
-    padding: 3px 6px !important;
-    font-size: 11.5px !important;
-    border: 1px solid #dedede !important;
-    /*background: #f6f6f6 !important;*/
-    color: #868686 !important;
-}
-#notifier_name, #confirming_who_name{
-	background: #f6f6f6 !important;
-}
-
-.btn, .actions > ul > li > a{
-	/*height: 22px !important;*/
-	/*font-family: 'ABeeZee',Arial,Helvetica,sans-serif;*/
-	border-radius: 3px !important;
-    font-size: 11.5px !important;
-    font-size-adjust: none;
-    font-stretch: normal;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-    line-height: normal;
-    padding: 3px 6px !important;
-    border: 1px solid #dedede !important;
-    background: #f6f6f6 !important;
-    color: #868686 !important;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#efefef));
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    overflow: visible;
-}
-
-.content{
-	margin-bottom: 0px !important;
-}
-
-.wizard .steps ul > li span.number {
-	width: 20px !important;
-    height: 20px !important;
-    padding-top: 0px !important;
-}
-.wizard .steps .number {
-	font-size: 10px !important;
-}
-.input-group-addon {
-    padding: 2px 8px;
-}
-
-.wizard .steps ul > li.current {
-    background: #f6f6f6 !important;
-}
-.wizard .steps ul > li.done {
-    background: #f6f6f6 !important;
-}
-.headercaso{
-
-}
-.flex-stat{
-	padding-top: 15px !important;
-	margin: auto !important;
-    width: 360px !important;
-}
-    
-.flex-stat li{
-	width: auto !important;
-}
-
-.n-fixed-top{
-    position: fixed;
-    top:90;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-    background: #ffffff !important;
-    padding-bottom: 15px !important;
-}
-.card-view{
-	padding-top: 90px !important;
-}
-
-@media (max-width: 1024px){
-	.mobile-nav-open .navbar.navbar-inverse.navbar-fixed-top .mobile-only-nav {
-	    top: 90px;
-	}
-}
-
-</style>
-
-
+    <link href="{{ asset('plugins/jQueryUI/jquery-ui.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendors/bower_components/switchery/dist/switchery.min.css') }}" rel="stylesheet" type="text/css"/>
+	<link href="{{ asset('app/css/DetalleCaso.css') }}" rel="stylesheet">
+	<link href="{{ asset('vendors/bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css') }}" rel="stylesheet" type="text/css"/>
+	<link href="{{ asset('vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" type="text/css"/>
+	<link href="{{ asset('vendors/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet" type="text/css"/>
+	<link href="{{ asset('vendors/bower_components/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
 @endsection
 
 @section('main-content')
@@ -360,14 +24,14 @@ select{
 					<div class="box-header with-border n-fixed-top" style="width:100%;">
 						@include('siniestros.detalle.headCaso')
 					</div>
-						<div class="row">
-							<div class="col-lg-12 col-sm-12">
-								<div class="panel panel-default card-view">
-									<div class="panel-wrapper">
-										<div class="panel-body">
-											<p class="text-muted"> </p>
-											<div  class="tab-struct custom-tab-2">
-												<ul role="tablist" class="nav nav-tabs" id="myTabs_15">
+					<div class="row">
+						<div class="col-lg-12 col-sm-12">
+							<div class="panel panel-default card-view">
+								<div class="panel-wrapper">
+									<div class="panel-body">
+										<p class="text-muted"> </p>
+										<div  class="tab-struct custom-tab-2">
+											<ul role="tablist" class="nav nav-tabs" id="myTabs_15">
 													<li class="active" role="presentation">
 														<a aria-expanded="true"  data-toggle="tab" role="tab" id="registro_basico_tab" href="#registro_basico">REGISTRO BÁSICO</a>
 													</li>
@@ -377,31 +41,64 @@ select{
 													<li role="presentation" class="">
 														<a  data-toggle="tab" id="informe_tab" role="tab" href="#informe" aria-expanded="false">INFORME </a>
 													</li>
-												</ul>
-												<div class="tab-content" id="myTabContent_15">
-													<div  id="registro_basico" class="tab-pane fade active in" role="tabpanel">
-														@include('siniestros.detalle.bloque_1')
-													</div>
-													<div  id="datos_complementarios" class="tab-pane fade" role="tabpanel">
-														@include('siniestros.detalle.bloque_2')
-													</div>
-													<div  id="informe" class="tab-pane fade" role="tabpanel">
-														@include('siniestros.detalle.bloque_3')
-													</div>
+													<li class="dropdown" role="presentation">
+														<a data-toggle="dropdown" class="dropdown-toggle" id="myTabDrop_15" href="#" aria-expanded="false">INFORMES <span class="caret"></span></a>
+														<ul id="myTabDrop_15_contents"  class="dropdown-menu">
+															<?php $paramd =0;?>
+															@foreach($tipo_informe as $key => $value)
+																@if($value->id<=4)
+																	<li class="" disabled="disabled">
+																		<a data-toggle="tab" id="{{$value->id}}" role="tab" href="#{{$value->description}}" 
+																			@if($value->id == $tipo_informe_id_Selected) aria-expanded="true" @else aria-expanded="false" @endif>
+																				{{$value->description}}
+																		</a>
+																	</li>
+																@endif
+															@endforeach
+														</ul>
+													</li>
+											</ul>
+											<div class="tab-content" id="myTabContent_15">
+												<div  id="registro_basico" class="tab-pane fade active in" role="tabpanel">
+													@include('siniestros.detalle.bloque_1')
 												</div>
+												<div  id="datos_complementarios" class="tab-pane fade" role="tabpanel">
+													@include('siniestros.detalle.bloque_2')
+												</div>
+												<div  id="informe" class="tab-pane fade" role="tabpanel">
+													@include('siniestros.detalle.bloque_3')
+												</div>
+												@foreach($tipo_informe as $key => $value)
+													@if($value->id<=4)
+														<div  id="{{$value->description}}" class="tab-pane fade " role="tabpanel">
+															@if($value->id == 1)
+																<p>
+																	aaaaa
+																</p>
+															@endif
+															@if($value->id == 2)
+																<p>bbbbb</p>
+															@endif
+															@if($value->id == 3)
+																<p>ccccc</p>
+															@endif
+															@if($value->id == 4)
+																<p>ddddd</p>
+															@endif
+														</div>
+													@endif
+												@endforeach
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div> 
-					
+						</div>
+					</div> 
 				</div>
 			</div>
 		</div>
 	</div>
-
-
 @include('siniestros.detalle.modalDetalle')
 
 @endsection 
@@ -418,8 +115,18 @@ select{
 	<script src="{{ asset('dist/js/init.js') }}"></script>
 	<script src="{{ asset('plugins/ckeditor/ckeditor.js') }}"></script>
 	<script src="{{ asset('plugins/ckeditor/adapters/jquery.js') }}"></script>
+	<script src="{{ asset('vendors/bower_components/switchery/dist/switchery.min.js') }}"></script>
 	<script src="{{ asset('app/js/BuscarPersona.js') }}"></script>
 	<script src="{{ asset('plugins/jQueryUI/jquery-ui.min.js') }}"></script>
+	<script src="{{ asset('vendors/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
+	<script src="{{ asset('vendors/bower_components/moment/min/moment-with-locales.min.js') }}"></script>
+	<script src="{{ asset('vendors/bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js') }}"></script>
+	<script src="{{ asset('vendors/bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+	<script src="{{ asset('vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
+	<script src="{{ asset('vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+	<script src="{{ asset('dist/js/form-advance-data.js') }}"></script>
+	<!-- <script src="{{ asset('dist/js/form-picker-data.js') }}"></script> -->
+
 	<!-- <script src="https://tecactus-4b42.kxcdn.com/reniec-sunat-js.min.js"></script>190.102.150.94
 181.224.228.228
  -->
@@ -637,6 +344,15 @@ select{
 		 // alert($tipo_informe_id_Selected);
 		// tipo_inicial(String("2"));
 
+		$('input#firmas_checkbox').each(function(){
+			if($(this).hasClass('') && $(this).is(':checked')){
+				persona_selected_rubrica = $(this).attr('data-id');
+				console.log(persona_selected_rubrica);
+				$("[id='rubrica_checkbox'][data-id='"+persona_selected_rubrica+"']").prop("disabled", false);
+			}else{
+
+			}
+		});
 	});
 
 
