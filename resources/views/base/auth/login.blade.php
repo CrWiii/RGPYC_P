@@ -52,6 +52,9 @@ input{
     text-align: center !important;
     padding: 0 20px 20px 20px !important;
 }
+.txt-primary{
+    font-size: 0.85em !important;
+}
 </style>
 @endsection
 
@@ -102,8 +105,9 @@ input{
                                                     <input type="checkbox" id="checkbox_2" name="remember"> 
                                                     <label for="checkbox_2"> {{ trans('message.remember') }}</label>
                                                 </div>
-                                                <a class="txt-primary pull-right" href="{{ url('/password/reset') }}">{{ trans('message.forgotpassword') }}</a>
+                                                
                                                 <div class="clearfix"></div>
+                                                <a class="txt-primary" href="{{ url('/password/reset') }}">{{ trans('message.forgotpassword') }}</a>
                                             </div>
                                             <div class="form-group text-center">
                                                 <button type="submit" class="btnn">Ingresar</button>
