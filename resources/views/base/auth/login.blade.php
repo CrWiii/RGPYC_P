@@ -71,7 +71,7 @@ input{
                                     <h3 class="text-center txt-dark mb-10"><div id="logoo"><img id="logo" src="{{url('/img/pyc.png')}}" width="360" style="padding-left: 20px;"></div></h3>
                                     <h6 class="text-center nonecase-font txt-grey"></h6>
                                 </div>  
-                                    @if (count($errors) > 0)
+                                    @if(count($errors) > 0)
                                         <div class="alert alert-danger">
                                              {{ trans('message.someproblems') }}<br>
                                             <!--<ul>
